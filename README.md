@@ -1,6 +1,10 @@
-# Python Default Project
-
-## Setup 
+# Text Analytics Project
+* Git Setup
+* Requirements for src/data
+* Maintainers
+-------------
+ 
+## Git Setup 
 
 1. [Install](https://pipenv.pypa.io/en/latest/#install-pipenv-today) ```pipenv```. You might want to set ```export PIPENV_VENV_IN_PROJECT=1``` in your ```.bashrc/.zshrc``` for local virtual environments. Thereby you are making sure that all dependencies for your application are stored in the same directory under the `.venv` folder.
 <br>
@@ -24,17 +28,17 @@
 
 **Note:** To deactivate the environment again, simply run `deactivate`.
 
-## Testing
+#### Testing
 
 A script to automatically execute tests is already defined in the project's `Pipfile`. Therefore you can simply run: `pipenv run test`
 To generate a report on code coverage alongside run: `pipenv run test && pipenv run report`
 
-## Working with Git
+#### Working with Git
 
 In case you do not know about Git yet it is now time to make yourself familiar with it :)
 There are already plenty of very good tutorials about Git out there which is why  we refer to them. For a good introduction written in German you might want to go to [Roger Dudler's awesome post](https://rogerdudler.github.io/git-guide/index.de.html).
 
-### Git Workflow
+#### Git Workflow
 
 To coordinate the software development process a set of guidelines are necessary. It is helpful to rely on the [GitHub Flow](https://guides.github.com/introduction/flow/) strategy which defines a branch-based workflow. Essentially, it boils down to the following steps:
 
@@ -46,14 +50,22 @@ To coordinate the software development process a set of guidelines are necessary
 6. Optional discussion about the pull request. If necessary, additional changes can be made.
 7. New branch is merged into `main/master` branch.
 
-## Packaging
+#### Packaging
 
 Packaging a Python application is not as trivial as it seems to be. A good introduction into this topic is given by the official [docs](https://packaging.python.org/overview/). In any case you should always make sure that your program has only one entry point. In this example project it is the `src/main.py` file.
 
+-------------
 ## Requirements for src/data
 * [Register](https://www.ieee.org/profile/public/createwebaccount/showRegister.html) for a (free) IEE-Account to get access to the ***GeoCOV19Tweets Dataset***. 
 [Download](https://ieee-dataport.org/open-access/coronavirus-covid-19-geo-tagged-tweets-dataset#files 
-) all csv-files. There's is no button to to that all at once, 
-so you might want to you use an extension like [GetThemAll!](https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge). 
+) all csv-files. There's is no button to do that all at once, 
+so you might want to use an extension like [GetThemAll!](https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge). 
 If you use Chrome, go to settings, search for "downloads" and deactivate "Ask where to save each file before downloading" for convenience.
 Save files in `src/data/GeoCOV19TweetsDataset`
+
+-------------
+## Maintainers
+* [Ahmad Fadlallah](abohmaid@windowslive.com), 3442106, Applied Computer Science B.A.
+* [Severin Laicher](severin.laicher@web.de), 3665790, Applied Computer Science M.Sc.
+* [Sina Denzel](sinadenzel@gmail.com), 4018461, Computational Linguistics B.A
+* [Ute Gradmann](utegradmann@gmx.de), 4050818, Computational Linguistics B.A.
