@@ -6,7 +6,7 @@
 ##### Dezember 
 * Text preprocessing 
 * Data collection and analysis
-##### February 
+##### Januar 
 * Data analysis and interpretation 
 * Project presentation 
 * Project report
