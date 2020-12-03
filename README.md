@@ -1,6 +1,6 @@
 # Python Default Project
 
-## Setup
+## Setup 
 
 1. [Install](https://pipenv.pypa.io/en/latest/#install-pipenv-today) ```pipenv```. You might want to set ```export PIPENV_VENV_IN_PROJECT=1``` in your ```.bashrc/.zshrc``` for local virtual environments. Thereby you are making sure that all dependencies for your application are stored in the same directory under the `.venv` folder.
 <br>
@@ -18,7 +18,7 @@
 <br>
 
 6. Test setup: `pipenv run main`
-<br>
+<br> 
 
 7. Install Git hooks. They help you to execute tasks before your code is committed (see [Working with Git](#working-with-git)). Learn more about pre-commit in the [official docs](https://pre-commit.com/). ([Installation](https://pre-commit.com/#installation) and [Activation](https://pre-commit.com/#3-install-the-git-hook-scripts) are described here) In our case they are used to make sure that the application code is well formatted using [black](https://github.com/psf/black)/[autopep8](https://github.com/hhatto/autopep8), has no syntax errors using [flake8](https://gitlab.com/pycqa/flake8) and that the dependency imports are well sorted using [isort](https://github.com/PyCQA/isort). The pre-commit instructions are given by the `.pre-commit-config.yaml`. Any isort specific settings are given by the `.isort.cfg` file.
 
@@ -50,6 +50,10 @@ To coordinate the software development process a set of guidelines are necessary
 
 Packaging a Python application is not as trivial as it seems to be. A good introduction into this topic is given by the official [docs](https://packaging.python.org/overview/). In any case you should always make sure that your program has only one entry point. In this example project it is the `src/main.py` file.
 
-## Important Note
-
-Leave a star ⭐ ;)
+## Requirements for src/data
+* [Register](https://www.ieee.org/profile/public/createwebaccount/showRegister.html) for a (free) IEE-Account to get access to the ***GeoCOV19Tweets Dataset***. 
+[Download](https://ieee-dataport.org/open-access/coronavirus-covid-19-geo-tagged-tweets-dataset#files 
+) all csv-files. There's is no button to to that all at once, 
+so you might want to you use an extension like [GetThemAll!](https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge). 
+If you use Chrome, go to settings, search for "downloads" and deactivate "Ask where to save each file before downloading" for convenience.
+Save files in `src/data/GeoCOV19TweetsDataset`
