@@ -22,9 +22,7 @@ import json
 #credentials['ACCESS_TOKEN'] = "xxx"   # not needed for now?
 #credentials['ACCESS_SECRET'] = "xxx" # not needed for now?
 #credentials['BEARER_TOKEN'] = 'xxx' # seee celll above
-
-# <- comment out these lines after you have saved them to twitter_credentials.json to ita_project/
-# TODO is this part missing now? add again
+# comment out these lines after you have saved them to twitter_credentials.json to ita_project/
 
 log_into_file = True
 
