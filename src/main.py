@@ -2,12 +2,12 @@ import os
 
 from utils.sample import hello_world  # import of module from subfolder
 
-"""
-This script should serve as entrypoint to your program.
+
+"""This script should serve as entrypoint to your program.
 Every module or package it relies on has to be imported at the beginning.
 The code that is actually executed is the one below 'if __name__ ...' (if run
-as script).
-"""
+as script)."""
+
 
 if __name__ == "__main__":
     # run example function
