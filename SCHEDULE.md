@@ -28,4 +28,4 @@
 * Git Einrichtung aller
 * Twitter Credentials für alle
 * Tweet ID Hydration / Data acquisition (Sina, Severin)
-* Sentiment Development (Ute)
+* Sentiment Development (Ute)  

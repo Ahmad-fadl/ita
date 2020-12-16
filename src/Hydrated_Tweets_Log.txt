@@ -1,0 +1,10 @@
+
+-----FINAL REPORT------
+
+Looked through 32682 files.
+
+13660 tweets not found.
+
+Metadata extraction failed 627 times
+
+execution duration: 0.0h 33.0m 16.73225688934326s

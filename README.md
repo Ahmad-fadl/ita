@@ -55,13 +55,14 @@ To coordinate the software development process a set of guidelines are necessary
 Packaging a Python application is not as trivial as it seems to be. A good introduction into this topic is given by the official [docs](https://packaging.python.org/overview/). In any case you should always make sure that your program has only one entry point. In this example project it is the `src/main.py` file.
 
 -------------
-## Requirements for src/data
-* [Register](https://www.ieee.org/profile/public/createwebaccount/showRegister.html) for a (free) IEE-Account to get access to the ***GeoCOV19Tweets Dataset***. 
+## Requirements for src/data 
+  * [Register](https://www.ieee.org/profile/public/createwebaccount/showRegister.html) for a (free) IEE-Account to get access to the ***GeoCOV19Tweets Dataset***. 
 [Download](https://ieee-dataport.org/open-access/coronavirus-covid-19-geo-tagged-tweets-dataset#files 
 ) all csv-files. There's is no button to do that all at once, 
 so you might want to use an extension like [GetThemAll!](https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge). 
 If you use Chrome, go to settings, search for "downloads" and deactivate "Ask where to save each file before downloading" for convenience.
 Save files in `src/data/GeoCOV19TweetsDataset`
+  * open `Twitter-Access.py` and follow instructions in there (credentials for the Twitter API * Tweets Hydration)
 
 -------------
 ## Maintainers
