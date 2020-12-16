@@ -1,0 +1,2171 @@
+--------
+16.12.20, 20:01 --- Start hydration and logging...
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+1. File: april10_april11.csv:
+ 12 tweets NOT found.
+ 3 metadata extractions failed.
+ 281 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+2. File: april11_april12.csv:
+ 5 tweets NOT found.
+ 3 metadata extractions failed.
+ 273 tweets extracted
+--------------------
+
+3. File: april12_april13.csv:
+ 11 tweets NOT found.
+ 0 metadata extractions failed.
+ 294 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+4. File: april13_april14.csv:
+ 6 tweets NOT found.
+ 3 metadata extractions failed.
+ 250 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+5. File: april14_april15.csv:
+ 9 tweets NOT found.
+ 4 metadata extractions failed.
+ 235 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+6. File: april15_april16.csv:
+ 9 tweets NOT found.
+ 2 metadata extractions failed.
+ 196 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+7. File: april16_april17.csv:
+ 10 tweets NOT found.
+ 2 metadata extractions failed.
+ 261 tweets extracted
+--------------------
+
+8. File: april17_april18.csv:
+ 8 tweets NOT found.
+ 0 metadata extractions failed.
+ 229 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+9. File: april18_april19.csv:
+ 26 tweets NOT found.
+ 5 metadata extractions failed.
+ 677 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+10. File: april19_april20.csv:
+ 11 tweets NOT found.
+ 2 metadata extractions failed.
+ 571 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+11. File: april1_april2.csv:
+ 19 tweets NOT found.
+ 1 metadata extractions failed.
+ 401 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+12. File: april20_april21.csv:
+ 21 tweets NOT found.
+ 7 metadata extractions failed.
+ 551 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+13. File: april21_april22.csv:
+ 17 tweets NOT found.
+ 3 metadata extractions failed.
+ 510 tweets extracted
+--------------------
+
+14. File: april22_april23.csv:
+ 17 tweets NOT found.
+ 0 metadata extractions failed.
+ 508 tweets extracted
+--------------------
+
+15. File: april23_april24.csv:
+ 21 tweets NOT found.
+ 0 metadata extractions failed.
+ 538 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+16. File: april24_april25.csv:
+ 23 tweets NOT found.
+ 6 metadata extractions failed.
+ 479 tweets extracted
+--------------------
+
+17. File: april25_april26.csv:
+ 20 tweets NOT found.
+ 0 metadata extractions failed.
+ 449 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+18. File: april26_april27.csv:
+ 28 tweets NOT found.
+ 4 metadata extractions failed.
+ 575 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+19. File: april27_april28.csv:
+ 18 tweets NOT found.
+ 2 metadata extractions failed.
+ 452 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+20. File: april28_april29.csv:
+ 95 tweets NOT found.
+ 7 metadata extractions failed.
+ 811 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+21. File: april29_april30.csv:
+ 113 tweets NOT found.
+ 5 metadata extractions failed.
+ 1043 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+22. File: april2_april3.csv:
+ 19 tweets NOT found.
+ 2 metadata extractions failed.
+ 442 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+23. File: april30_may1.csv:
+ 111 tweets NOT found.
+ 7 metadata extractions failed.
+ 955 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+24. File: april3_april4.csv:
+ 21 tweets NOT found.
+ 4 metadata extractions failed.
+ 406 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+25. File: april4_april5.csv:
+ 11 tweets NOT found.
+ 2 metadata extractions failed.
+ 417 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+26. File: april5_april6.csv:
+ 22 tweets NOT found.
+ 1 metadata extractions failed.
+ 501 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+27. File: april6_april7.csv:
+ 11 tweets NOT found.
+ 1 metadata extractions failed.
+ 325 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+28. File: april7_april8.csv:
+ 7 tweets NOT found.
+ 1 metadata extractions failed.
+ 366 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+29. File: april8_april9.csv:
+ 19 tweets NOT found.
+ 2 metadata extractions failed.
+ 263 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+30. File: april9_april10.csv:
+ 16 tweets NOT found.
+ 2 metadata extractions failed.
+ 261 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+31. File: august10_august11.csv:
+ 76 tweets NOT found.
+ 2 metadata extractions failed.
+ 896 tweets extracted
+--------------------
+
+32. File: august11_august12.csv:
+ 76 tweets NOT found.
+ 0 metadata extractions failed.
+ 987 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+33. File: august12_august13.csv:
+ 70 tweets NOT found.
+ 2 metadata extractions failed.
+ 1060 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+34. File: august13_august14.csv:
+ 76 tweets NOT found.
+ 3 metadata extractions failed.
+ 1034 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+35. File: august14_august15.csv:
+ 94 tweets NOT found.
+ 1 metadata extractions failed.
+ 1144 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+36. File: august15_august16.csv:
+ 91 tweets NOT found.
+ 4 metadata extractions failed.
+ 1119 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+37. File: august16_august17.csv:
+ 123 tweets NOT found.
+ 1 metadata extractions failed.
+ 923 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+38. File: august17_august18.csv:
+ 77 tweets NOT found.
+ 4 metadata extractions failed.
+ 998 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+39. File: august18_august19.csv:
+ 86 tweets NOT found.
+ 5 metadata extractions failed.
+ 1319 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+40. File: august19_august20.csv:
+ 75 tweets NOT found.
+ 3 metadata extractions failed.
+ 1036 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+41. File: august1_august2.csv:
+ 63 tweets NOT found.
+ 2 metadata extractions failed.
+ 966 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+42. File: august20_august21.csv:
+ 83 tweets NOT found.
+ 2 metadata extractions failed.
+ 1077 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+43. File: august21_august22.csv:
+ 61 tweets NOT found.
+ 3 metadata extractions failed.
+ 1050 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+44. File: august22_august23.csv:
+ 73 tweets NOT found.
+ 3 metadata extractions failed.
+ 924 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+45. File: august23_august24.csv:
+ 73 tweets NOT found.
+ 3 metadata extractions failed.
+ 818 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+46. File: august24_august25.csv:
+ 77 tweets NOT found.
+ 2 metadata extractions failed.
+ 908 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+47. File: august25_august26.csv:
+ 70 tweets NOT found.
+ 1 metadata extractions failed.
+ 1041 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+48. File: august26_august27.csv:
+ 103 tweets NOT found.
+ 3 metadata extractions failed.
+ 1015 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+49. File: august27_august28.csv:
+ 79 tweets NOT found.
+ 2 metadata extractions failed.
+ 934 tweets extracted
+--------------------
+
+50. File: august28_august29.csv:
+ 71 tweets NOT found.
+ 0 metadata extractions failed.
+ 910 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+51. File: august29_august30.csv:
+ 65 tweets NOT found.
+ 2 metadata extractions failed.
+ 947 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+52. File: august2_august3.csv:
+ 55 tweets NOT found.
+ 1 metadata extractions failed.
+ 811 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+53. File: august30_august31.csv:
+ 51 tweets NOT found.
+ 4 metadata extractions failed.
+ 776 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+54. File: august31_september1.csv:
+ 57 tweets NOT found.
+ 4 metadata extractions failed.
+ 821 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+55. File: august3_august4.csv:
+ 62 tweets NOT found.
+ 1 metadata extractions failed.
+ 914 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+56. File: august4_august5.csv:
+ 73 tweets NOT found.
+ 1 metadata extractions failed.
+ 983 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+57. File: august5_august6.csv:
+ 70 tweets NOT found.
+ 4 metadata extractions failed.
+ 1026 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+58. File: august6_august7.csv:
+ 76 tweets NOT found.
+ 2 metadata extractions failed.
+ 1047 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+59. File: august7_august8.csv:
+ 70 tweets NOT found.
+ 1 metadata extractions failed.
+ 1084 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+60. File: august8_august9.csv:
+ 75 tweets NOT found.
+ 5 metadata extractions failed.
+ 1123 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+61. File: august9_august10.csv:
+ 71 tweets NOT found.
+ 2 metadata extractions failed.
+ 943 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+62. File: december1_december2.csv:
+ 22 tweets NOT found.
+ 1 metadata extractions failed.
+ 419 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+63. File: july10_july11.csv:
+ 80 tweets NOT found.
+ 3 metadata extractions failed.
+ 1040 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+64. File: july11_july12.csv:
+ 75 tweets NOT found.
+ 4 metadata extractions failed.
+ 1061 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+65. File: july12_july13.csv:
+ 61 tweets NOT found.
+ 1 metadata extractions failed.
+ 908 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+66. File: july13_july14.csv:
+ 70 tweets NOT found.
+ 1 metadata extractions failed.
+ 805 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+67. File: july14_july15.csv:
+ 76 tweets NOT found.
+ 1 metadata extractions failed.
+ 906 tweets extracted
+--------------------
+
+68. File: july15_july16.csv:
+ 60 tweets NOT found.
+ 0 metadata extractions failed.
+ 824 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+69. File: july16_july17.csv:
+ 70 tweets NOT found.
+ 2 metadata extractions failed.
+ 871 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+70. File: july17_july18.csv:
+ 91 tweets NOT found.
+ 3 metadata extractions failed.
+ 1056 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+71. File: july18_july19.csv:
+ 68 tweets NOT found.
+ 3 metadata extractions failed.
+ 1151 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+72. File: july19_july20.csv:
+ 76 tweets NOT found.
+ 7 metadata extractions failed.
+ 948 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+73. File: july1_july2.csv:
+ 91 tweets NOT found.
+ 5 metadata extractions failed.
+ 1207 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+74. File: july20_july21.csv:
+ 65 tweets NOT found.
+ 1 metadata extractions failed.
+ 868 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+75. File: july21_july22.csv:
+ 58 tweets NOT found.
+ 4 metadata extractions failed.
+ 1008 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+76. File: july22_july23.csv:
+ 53 tweets NOT found.
+ 3 metadata extractions failed.
+ 999 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+77. File: july23_july24.csv:
+ 70 tweets NOT found.
+ 3 metadata extractions failed.
+ 1030 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+78. File: july24_july25.csv:
+ 71 tweets NOT found.
+ 3 metadata extractions failed.
+ 1124 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+79. File: july25_july26.csv:
+ 80 tweets NOT found.
+ 1 metadata extractions failed.
+ 1044 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+80. File: july26_july27.csv:
+ 64 tweets NOT found.
+ 2 metadata extractions failed.
+ 947 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+81. File: july27_july28.csv:
+ 56 tweets NOT found.
+ 5 metadata extractions failed.
+ 820 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+82. File: july28_july29.csv:
+ 49 tweets NOT found.
+ 3 metadata extractions failed.
+ 780 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+83. File: july29_july30.csv:
+ 57 tweets NOT found.
+ 4 metadata extractions failed.
+ 825 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+84. File: july2_july3.csv:
+ 68 tweets NOT found.
+ 6 metadata extractions failed.
+ 974 tweets extracted
+--------------------
+
+85. File: july30_july31.csv:
+ 42 tweets NOT found.
+ 0 metadata extractions failed.
+ 793 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+86. File: july31_august1.csv:
+ 75 tweets NOT found.
+ 2 metadata extractions failed.
+ 920 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+87. File: july3_july4.csv:
+ 64 tweets NOT found.
+ 4 metadata extractions failed.
+ 1010 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+88. File: july4_july5.csv:
+ 108 tweets NOT found.
+ 5 metadata extractions failed.
+ 1401 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+89. File: july5_july6.csv:
+ 72 tweets NOT found.
+ 4 metadata extractions failed.
+ 1011 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+90. File: july6_july7.csv:
+ 68 tweets NOT found.
+ 3 metadata extractions failed.
+ 870 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+91. File: july7_july8.csv:
+ 59 tweets NOT found.
+ 2 metadata extractions failed.
+ 852 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+92. File: july8_july9.csv:
+ 73 tweets NOT found.
+ 2 metadata extractions failed.
+ 898 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+93. File: july9_july10.csv:
+ 94 tweets NOT found.
+ 2 metadata extractions failed.
+ 1233 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+94. File: june10_june11.csv:
+ 63 tweets NOT found.
+ 4 metadata extractions failed.
+ 623 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+95. File: june11_june12.csv:
+ 57 tweets NOT found.
+ 4 metadata extractions failed.
+ 668 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+96. File: june12_june13.csv:
+ 50 tweets NOT found.
+ 2 metadata extractions failed.
+ 697 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+97. File: june13_june14.csv:
+ 56 tweets NOT found.
+ 2 metadata extractions failed.
+ 595 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+98. File: june14_june15.csv:
+ 48 tweets NOT found.
+ 1 metadata extractions failed.
+ 612 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+99. File: june15_june16.csv:
+ 80 tweets NOT found.
+ 6 metadata extractions failed.
+ 1048 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+100. File: june16_june17.csv:
+ 81 tweets NOT found.
+ 8 metadata extractions failed.
+ 1069 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+101. File: june17_june18.csv:
+ 103 tweets NOT found.
+ 2 metadata extractions failed.
+ 982 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+102. File: june18_june19.csv:
+ 90 tweets NOT found.
+ 4 metadata extractions failed.
+ 1028 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+103. File: june19_june20.csv:
+ 91 tweets NOT found.
+ 5 metadata extractions failed.
+ 1044 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+104. File: june1_june2.csv:
+ 73 tweets NOT found.
+ 4 metadata extractions failed.
+ 690 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+105. File: june20_june21.csv:
+ 67 tweets NOT found.
+ 2 metadata extractions failed.
+ 1096 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+106. File: june21_june22.csv:
+ 70 tweets NOT found.
+ 3 metadata extractions failed.
+ 909 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+107. File: june22_june23.csv:
+ 81 tweets NOT found.
+ 4 metadata extractions failed.
+ 945 tweets extracted
+--------------------
+
+108. File: june23_june24.csv:
+ 77 tweets NOT found.
+ 0 metadata extractions failed.
+ 943 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+109. File: june24_june25.csv:
+ 64 tweets NOT found.
+ 3 metadata extractions failed.
+ 937 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+110. File: june25_june26.csv:
+ 85 tweets NOT found.
+ 3 metadata extractions failed.
+ 981 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+111. File: june26_june27.csv:
+ 69 tweets NOT found.
+ 5 metadata extractions failed.
+ 944 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+112. File: june27_june28.csv:
+ 70 tweets NOT found.
+ 5 metadata extractions failed.
+ 1249 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+113. File: june28_june29.csv:
+ 71 tweets NOT found.
+ 1 metadata extractions failed.
+ 906 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+114. File: june29_june30.csv:
+ 80 tweets NOT found.
+ 3 metadata extractions failed.
+ 1011 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+115. File: june2_june3.csv:
+ 65 tweets NOT found.
+ 5 metadata extractions failed.
+ 490 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+116. File: june30_july1.csv:
+ 79 tweets NOT found.
+ 3 metadata extractions failed.
+ 965 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+117. File: june3_june4.csv:
+ 70 tweets NOT found.
+ 5 metadata extractions failed.
+ 596 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+118. File: june4_june5.csv:
+ 61 tweets NOT found.
+ 3 metadata extractions failed.
+ 674 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+119. File: june5_june6.csv:
+ 53 tweets NOT found.
+ 5 metadata extractions failed.
+ 698 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+120. File: june6_june7.csv:
+ 52 tweets NOT found.
+ 1 metadata extractions failed.
+ 617 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+121. File: june7_june8.csv:
+ 67 tweets NOT found.
+ 3 metadata extractions failed.
+ 574 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+122. File: june8_june9.csv:
+ 54 tweets NOT found.
+ 7 metadata extractions failed.
+ 675 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+123. File: june9_june10.csv:
+ 55 tweets NOT found.
+ 5 metadata extractions failed.
+ 672 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+124. File: march20_march21.csv:
+ 43 tweets NOT found.
+ 5 metadata extractions failed.
+ 891 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+125. File: march21_march22.csv:
+ 34 tweets NOT found.
+ 3 metadata extractions failed.
+ 688 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+126. File: march22_march23.csv:
+ 35 tweets NOT found.
+ 4 metadata extractions failed.
+ 740 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+127. File: march23_march24.csv:
+ 68 tweets NOT found.
+ 4 metadata extractions failed.
+ 670 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+128. File: march24_march25.csv:
+ 40 tweets NOT found.
+ 1 metadata extractions failed.
+ 626 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+129. File: march25_march26.csv:
+ 27 tweets NOT found.
+ 5 metadata extractions failed.
+ 600 tweets extracted
+--------------------
+
+130. File: march26_march27.csv:
+ 24 tweets NOT found.
+ 0 metadata extractions failed.
+ 539 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+131. File: march27_march28.csv:
+ 32 tweets NOT found.
+ 6 metadata extractions failed.
+ 544 tweets extracted
+--------------------
+
+132. File: march28_march29.csv:
+ 34 tweets NOT found.
+ 0 metadata extractions failed.
+ 510 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+133. File: march30_march31.csv:
+ 13 tweets NOT found.
+ 3 metadata extractions failed.
+ 354 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+134. File: march31_april1.csv:
+ 22 tweets NOT found.
+ 1 metadata extractions failed.
+ 404 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Batch Lookup Error: Twitter API returned a 503 (Service Unavailable), An error occurred processing your request.
+
+135. File: may10_may11.csv:
+ 65 tweets NOT found.
+ 3 metadata extractions failed.
+ 684 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+136. File: may11_may12.csv:
+ 78 tweets NOT found.
+ 3 metadata extractions failed.
+ 766 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+137. File: may12_may13.csv:
+ 73 tweets NOT found.
+ 9 metadata extractions failed.
+ 1084 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+138. File: may13_may14.csv:
+ 86 tweets NOT found.
+ 7 metadata extractions failed.
+ 861 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+139. File: may14-may15.csv:
+ 90 tweets NOT found.
+ 1 metadata extractions failed.
+ 1115 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+140. File: may15_may16.csv:
+ 85 tweets NOT found.
+ 3 metadata extractions failed.
+ 1003 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+141. File: may16_may17.csv:
+ 109 tweets NOT found.
+ 2 metadata extractions failed.
+ 898 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+142. File: may17_may18.csv:
+ 59 tweets NOT found.
+ 8 metadata extractions failed.
+ 854 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+143. File: may18_may19.csv:
+ 69 tweets NOT found.
+ 9 metadata extractions failed.
+ 934 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+144. File: may19_may20.csv:
+ 77 tweets NOT found.
+ 1 metadata extractions failed.
+ 833 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+145. File: may1_may2.csv:
+ 133 tweets NOT found.
+ 5 metadata extractions failed.
+ 1145 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+146. File: may20_may21.csv:
+ 71 tweets NOT found.
+ 8 metadata extractions failed.
+ 852 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+147. File: may21_may22.csv:
+ 85 tweets NOT found.
+ 4 metadata extractions failed.
+ 1011 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+148. File: may22_may23.csv:
+ 70 tweets NOT found.
+ 2 metadata extractions failed.
+ 1060 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+149. File: may23_may24.csv:
+ 71 tweets NOT found.
+ 4 metadata extractions failed.
+ 816 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+150. File: may24_may25.csv:
+ 77 tweets NOT found.
+ 9 metadata extractions failed.
+ 792 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+151. File: may25_may26.csv:
+ 59 tweets NOT found.
+ 3 metadata extractions failed.
+ 695 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+152. File: may26_may27.csv:
+ 58 tweets NOT found.
+ 9 metadata extractions failed.
+ 656 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+153. File: may27_may28.csv:
+ 76 tweets NOT found.
+ 5 metadata extractions failed.
+ 764 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+154. File: may28_may29.csv:
+ 64 tweets NOT found.
+ 5 metadata extractions failed.
+ 791 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+155. File: may29_may30.csv:
+ 70 tweets NOT found.
+ 2 metadata extractions failed.
+ 731 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+156. File: may2_may3.csv:
+ 109 tweets NOT found.
+ 7 metadata extractions failed.
+ 1188 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+157. File: may30_may31.csv:
+ 76 tweets NOT found.
+ 3 metadata extractions failed.
+ 735 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+158. File: may31_june1.csv:
+ 69 tweets NOT found.
+ 6 metadata extractions failed.
+ 630 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+159. File: may3_may4.csv:
+ 104 tweets NOT found.
+ 2 metadata extractions failed.
+ 924 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+160. File: may4_may5.csv:
+ 87 tweets NOT found.
+ 8 metadata extractions failed.
+ 993 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+161. File: may5_may6.csv:
+ 80 tweets NOT found.
+ 3 metadata extractions failed.
+ 1081 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+162. File: may6_may7.csv:
+ 98 tweets NOT found.
+ 4 metadata extractions failed.
+ 990 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+163. File: may7_may8.csv:
+ 93 tweets NOT found.
+ 2 metadata extractions failed.
+ 1000 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+164. File: may8_may9.csv:
+ 122 tweets NOT found.
+ 1 metadata extractions failed.
+ 1053 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+165. File: may9_may10.csv:
+ 86 tweets NOT found.
+ 5 metadata extractions failed.
+ 901 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+166. File: november10_november11.csv:
+ 35 tweets NOT found.
+ 1 metadata extractions failed.
+ 395 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+167. File: november11_november12.csv:
+ 34 tweets NOT found.
+ 1 metadata extractions failed.
+ 412 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+168. File: november12_november13.csv:
+ 24 tweets NOT found.
+ 1 metadata extractions failed.
+ 396 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+169. File: november13_november14.csv:
+ 26 tweets NOT found.
+ 2 metadata extractions failed.
+ 412 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+170. File: november14_november15.csv:
+ 26 tweets NOT found.
+ 1 metadata extractions failed.
+ 475 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+171. File: november15_november16.csv:
+ 37 tweets NOT found.
+ 1 metadata extractions failed.
+ 417 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+172. File: november16_november17.csv:
+ 24 tweets NOT found.
+ 1 metadata extractions failed.
+ 335 tweets extracted
+--------------------
+
+173. File: november17_november18.csv:
+ 26 tweets NOT found.
+ 0 metadata extractions failed.
+ 415 tweets extracted
+--------------------
+
+174. File: november18_november19.csv:
+ 40 tweets NOT found.
+ 0 metadata extractions failed.
+ 402 tweets extracted
+--------------------
+
+175. File: november19_november20.csv:
+ 51 tweets NOT found.
+ 0 metadata extractions failed.
+ 419 tweets extracted
+--------------------
+
+176. File: november1_november2.csv:
+ 35 tweets NOT found.
+ 0 metadata extractions failed.
+ 562 tweets extracted
+--------------------
+
+177. File: november20_november21.csv:
+ 32 tweets NOT found.
+ 0 metadata extractions failed.
+ 436 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+178. File: november21_november22.csv:
+ 41 tweets NOT found.
+ 1 metadata extractions failed.
+ 430 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+179. File: november22_november23.csv:
+ 31 tweets NOT found.
+ 1 metadata extractions failed.
+ 412 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+180. File: november23_november24.csv:
+ 31 tweets NOT found.
+ 2 metadata extractions failed.
+ 370 tweets extracted
+--------------------
+
+181. File: november24_november25.csv:
+ 26 tweets NOT found.
+ 0 metadata extractions failed.
+ 419 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+182. File: november25_november26.csv:
+ 37 tweets NOT found.
+ 1 metadata extractions failed.
+ 452 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+183. File: november26_november27.csv:
+ 22 tweets NOT found.
+ 1 metadata extractions failed.
+ 594 tweets extracted
+--------------------
+
+184. File: november27_november28.csv:
+ 25 tweets NOT found.
+ 0 metadata extractions failed.
+ 418 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+185. File: november28_november29.csv:
+ 45 tweets NOT found.
+ 1 metadata extractions failed.
+ 391 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+186. File: november29_november30.csv:
+ 25 tweets NOT found.
+ 1 metadata extractions failed.
+ 358 tweets extracted
+--------------------
+
+187. File: november2_november3.csv:
+ 28 tweets NOT found.
+ 0 metadata extractions failed.
+ 458 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+188. File: november30_december1.csv:
+ 28 tweets NOT found.
+ 3 metadata extractions failed.
+ 373 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+189. File: november3_november4.csv:
+ 38 tweets NOT found.
+ 2 metadata extractions failed.
+ 531 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+190. File: november4_november5.csv:
+ 41 tweets NOT found.
+ 1 metadata extractions failed.
+ 633 tweets extracted
+--------------------
+
+191. File: november5_november6.csv:
+ 42 tweets NOT found.
+ 0 metadata extractions failed.
+ 700 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+192. File: november6_november7.csv:
+ 49 tweets NOT found.
+ 1 metadata extractions failed.
+ 500 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+193. File: november7_november8.csv:
+ 35 tweets NOT found.
+ 2 metadata extractions failed.
+ 479 tweets extracted
+--------------------
+
+194. File: november8_november9.csv:
+ 37 tweets NOT found.
+ 0 metadata extractions failed.
+ 414 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+195. File: november9_november10.csv:
+ 27 tweets NOT found.
+ 1 metadata extractions failed.
+ 295 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+196. File: october10_october11.csv:
+ 28 tweets NOT found.
+ 1 metadata extractions failed.
+ 382 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+197. File: october11_october12.csv:
+ 28 tweets NOT found.
+ 1 metadata extractions failed.
+ 335 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+198. File: october12_october13.csv:
+ 25 tweets NOT found.
+ 1 metadata extractions failed.
+ 315 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+199. File: october13_october14.csv:
+ 27 tweets NOT found.
+ 1 metadata extractions failed.
+ 334 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+200. File: october14_october15.csv:
+ 30 tweets NOT found.
+ 1 metadata extractions failed.
+ 375 tweets extracted
+--------------------
+
+201. File: october15_october16.csv:
+ 30 tweets NOT found.
+ 0 metadata extractions failed.
+ 330 tweets extracted
+--------------------
+
+202. File: october16_october17.csv:
+ 29 tweets NOT found.
+ 0 metadata extractions failed.
+ 365 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+203. File: october17_october18.csv:
+ 32 tweets NOT found.
+ 1 metadata extractions failed.
+ 407 tweets extracted
+--------------------
+
+204. File: october18_october19.csv:
+ 31 tweets NOT found.
+ 0 metadata extractions failed.
+ 334 tweets extracted
+--------------------
+
+205. File: october19_october20.csv:
+ 29 tweets NOT found.
+ 0 metadata extractions failed.
+ 374 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+206. File: october1_october2.csv:
+ 31 tweets NOT found.
+ 2 metadata extractions failed.
+ 396 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+207. File: october20_october21.csv:
+ 31 tweets NOT found.
+ 2 metadata extractions failed.
+ 361 tweets extracted
+--------------------
+
+208. File: october21_october22.csv:
+ 32 tweets NOT found.
+ 0 metadata extractions failed.
+ 374 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+209. File: october22_october23.csv:
+ 37 tweets NOT found.
+ 2 metadata extractions failed.
+ 342 tweets extracted
+--------------------
+
+210. File: october23_october24.csv:
+ 34 tweets NOT found.
+ 0 metadata extractions failed.
+ 471 tweets extracted
+--------------------
+
+211. File: october24_october25.csv:
+ 35 tweets NOT found.
+ 0 metadata extractions failed.
+ 424 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+212. File: october25_october26.csv:
+ 25 tweets NOT found.
+ 1 metadata extractions failed.
+ 302 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+213. File: october26_october27.csv:
+ 39 tweets NOT found.
+ 3 metadata extractions failed.
+ 334 tweets extracted
+--------------------
+214. File: data/GeoCOV19TweetsDataset\october27_october28.csv)
+Length mismatch: Expected axis has 1 elements, new values have 2 elements --------------------
+
+215. File: october28_october29.csv:
+ 33 tweets NOT found.
+ 0 metadata extractions failed.
+ 367 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+216. File: october29_october30.csv:
+ 31 tweets NOT found.
+ 1 metadata extractions failed.
+ 432 tweets extracted
+--------------------
+
+217. File: october2_october3.csv:
+ 21 tweets NOT found.
+ 0 metadata extractions failed.
+ 203 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+218. File: october30_october31.csv:
+ 41 tweets NOT found.
+ 1 metadata extractions failed.
+ 427 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+219. File: october31_november1.csv:
+ 39 tweets NOT found.
+ 3 metadata extractions failed.
+ 769 tweets extracted
+--------------------
+
+220. File: october3_october4.csv:
+ 22 tweets NOT found.
+ 0 metadata extractions failed.
+ 252 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+221. File: october4_october5.csv:
+ 34 tweets NOT found.
+ 2 metadata extractions failed.
+ 252 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+222. File: october5_october6.csv:
+ 26 tweets NOT found.
+ 1 metadata extractions failed.
+ 195 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+223. File: october6_october7.csv:
+ 23 tweets NOT found.
+ 1 metadata extractions failed.
+ 246 tweets extracted
+--------------------
+
+224. File: october7_october8.csv:
+ 35 tweets NOT found.
+ 0 metadata extractions failed.
+ 302 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+225. File: october8_october9.csv:
+ 38 tweets NOT found.
+ 2 metadata extractions failed.
+ 305 tweets extracted
+--------------------
+
+226. File: october9_october10.csv:
+ 26 tweets NOT found.
+ 0 metadata extractions failed.
+ 358 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+227. File: september10_september11.csv:
+ 37 tweets NOT found.
+ 3 metadata extractions failed.
+ 397 tweets extracted
+--------------------
+
+228. File: september11_september12.csv:
+ 33 tweets NOT found.
+ 0 metadata extractions failed.
+ 430 tweets extracted
+--------------------
+
+229. File: september12_september13.csv:
+ 38 tweets NOT found.
+ 0 metadata extractions failed.
+ 432 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+230. File: september13_september14.csv:
+ 43 tweets NOT found.
+ 2 metadata extractions failed.
+ 400 tweets extracted
+--------------------
+
+231. File: september14_september15.csv:
+ 42 tweets NOT found.
+ 0 metadata extractions failed.
+ 380 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+232. File: september15_september16.csv:
+ 53 tweets NOT found.
+ 1 metadata extractions failed.
+ 426 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+233. File: september16_september17.csv:
+ 32 tweets NOT found.
+ 1 metadata extractions failed.
+ 397 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+234. File: september17_september18.csv:
+ 40 tweets NOT found.
+ 1 metadata extractions failed.
+ 365 tweets extracted
+--------------------
+
+235. File: september18_september19.csv:
+ 40 tweets NOT found.
+ 0 metadata extractions failed.
+ 471 tweets extracted
+--------------------
+
+236. File: september19_september20.csv:
+ 51 tweets NOT found.
+ 0 metadata extractions failed.
+ 439 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+237. File: september1_september2.csv:
+ 79 tweets NOT found.
+ 3 metadata extractions failed.
+ 952 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+238. File: september20_september21.csv:
+ 56 tweets NOT found.
+ 1 metadata extractions failed.
+ 359 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+239. File: september21_september22.csv:
+ 49 tweets NOT found.
+ 4 metadata extractions failed.
+ 375 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+240. File: september22_september23.csv:
+ 49 tweets NOT found.
+ 1 metadata extractions failed.
+ 413 tweets extracted
+--------------------
+
+241. File: september23_september24.csv:
+ 35 tweets NOT found.
+ 0 metadata extractions failed.
+ 397 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+242. File: september24_september25.csv:
+ 57 tweets NOT found.
+ 1 metadata extractions failed.
+ 410 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+243. File: september25_september26.csv:
+ 48 tweets NOT found.
+ 1 metadata extractions failed.
+ 415 tweets extracted
+--------------------
+
+244. File: september26_september27.csv:
+ 48 tweets NOT found.
+ 0 metadata extractions failed.
+ 399 tweets extracted
+--------------------
+
+245. File: september27_september28.csv:
+ 45 tweets NOT found.
+ 0 metadata extractions failed.
+ 360 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+246. File: september28_september29.csv:
+ 43 tweets NOT found.
+ 1 metadata extractions failed.
+ 353 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+247. File: september29_september30.csv:
+ 54 tweets NOT found.
+ 1 metadata extractions failed.
+ 347 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+248. File: september2_september3.csv:
+ 69 tweets NOT found.
+ 3 metadata extractions failed.
+ 864 tweets extracted
+--------------------
+
+249. File: september30_october1.csv:
+ 41 tweets NOT found.
+ 0 metadata extractions failed.
+ 358 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+250. File: september3_september4.csv:
+ 67 tweets NOT found.
+ 4 metadata extractions failed.
+ 840 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+251. File: september4_september5.csv:
+ 72 tweets NOT found.
+ 2 metadata extractions failed.
+ 1066 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+252. File: september5_september6.csv:
+ 63 tweets NOT found.
+ 4 metadata extractions failed.
+ 931 tweets extracted
+--------------------
+
+253. File: september6_september7.csv:
+ 53 tweets NOT found.
+ 0 metadata extractions failed.
+ 822 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+254. File: september7_september8.csv:
+ 56 tweets NOT found.
+ 1 metadata extractions failed.
+ 874 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+255. File: september8_september9.csv:
+ 73 tweets NOT found.
+ 4 metadata extractions failed.
+ 881 tweets extracted
+--------------------
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+Metadata Extraction failed: 'NoneType' object is not subscriptable (probably no location provided)
+
+256. File: september9_september10.csv:
+ 41 tweets NOT found.
+ 8 metadata extractions failed.
+ 748 tweets extracted
+--------------------
+-----FINAL REPORT------
+16.12.20, 20:40
+Looked through 256 files.
+13674 tweets not found.
+Metadata extraction failed 627 times
+1 corrupted .csv-files
+execution duration: 0.0h 38.0m 44s
+
+
