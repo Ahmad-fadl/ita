@@ -20,7 +20,7 @@ def print_log(msg):
 
 emoji_subs_fails = 0
 url_subs_fails = 0
-
+remove_specialChairs_fails = 0
 
 
 
@@ -70,9 +70,9 @@ def remove_urls(data) -> str:
     
 # Remove all non alphabetic chairs but some selected
 def remove_specialChairs(data) -> str:
-    regex = re.compile('[^a-zA-Z #.,!?]')
     global remove_specialChairs_fails
     try:
+        regex = re.compile('[^a-zA-Z #.,!?]')
         return regex.sub('', str(data))
     except Exception as e:
         print_log(e)
