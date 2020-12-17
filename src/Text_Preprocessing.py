@@ -68,15 +68,15 @@ def remove_urls(data) -> str:
         return str(data)
 
     
-# Remove all non alphabetic chairs but .,!?#
+# Remove all non alphabetic chairs but some selected
 def remove_specialChairs(data) -> str:
     regex = re.compile('[^a-zA-Z #.,!?]')
-    global url_subs_fails
+    global remove_specialChairs_fails
     try:
         return regex.sub('', str(data))
     except Exception as e:
         print_log(e)
-        url_subs_fails += 1
+        remove_specialChairs_fails += 1
         return str(data) 
 
 count_files = 0
@@ -97,7 +97,7 @@ for entry in os.scandir(directory):
     Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_emojis)
     # Preprocessing: Remove all URLs from the raw text    
     Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_urls)
-    # Preprocessing: Remove all non alphabetic chairs but .,!?#
+    # Preprocessing: Remove some non alphabetic chairs but few selected
     Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_specialChairs)
     
     # Save DF to csv file
@@ -108,3 +108,4 @@ print_log(f"-----FINAL REPORT------\n"
           f"Looked through {count_files} iles. \n"
           f"{emoji_subs_fails} emoji substitutions failed \n"
           f"{url_subs_fails} URL substitutions failed.\n\n\n")
+          f"{remove_specialChairs_fails} Special chair substitutions failed.\n\n\n")
