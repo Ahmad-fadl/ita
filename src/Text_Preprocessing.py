@@ -105,7 +105,7 @@ for entry in os.scandir(directory):
     print_log(f"File {count_files}, {os.path.basename(entry.path)} contains: {len(Twitter_Tweets)} Tweets")
 
 print_log(f"-----FINAL REPORT------\n"
-          f"Looked through {count_files} iles. \n"
+          f"Looked through {count_files} Files. \n"
           f"{emoji_subs_fails} emoji substitutions failed \n"
-          f"{url_subs_fails} URL substitutions failed.\n\n\n")
+          f"{url_subs_fails} URL substitutions failed. \n"
           f"{remove_specialChairs_fails} Special chair substitutions failed.\n\n\n")
