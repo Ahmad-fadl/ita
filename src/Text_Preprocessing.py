@@ -73,7 +73,7 @@ def remove_specialChairs(data) -> str:
     regex = re.compile('[^a-zA-Z #.,!?]')
     global url_subs_fails
     try:
-        return regex.sub('', string(data))
+        return regex.sub('', str(data))
     except Exception as e:
         print_log(e)
         url_subs_fails += 1
