@@ -73,7 +73,8 @@ def remove_specialChairs(data) -> str:
     global remove_specialChairs_fails
     try:
         regex = re.compile('[^a-zA-Z #.,!?]')
-        return regex.sub('', str(data))
+        data = regex.sub('', str(data))
+        return ' '.join([w for w in data.split() if len(w)>1])
     except Exception as e:
         print_log(e)
         remove_specialChairs_fails += 1
@@ -103,7 +104,7 @@ for entry in os.scandir(directory):
     # Save DF to csv file
     Twitter_Tweets.to_csv("data/Preprocessed_Tweets/" + os.path.basename(entry.path), index=False, header=True)
     print_log(f"File {count_files}, {os.path.basename(entry.path)} contains: {len(Twitter_Tweets)} Tweets")
-
+    
 print_log(f"-----FINAL REPORT------\n"
           f"Looked through {count_files} Files. \n"
           f"{emoji_subs_fails} emoji substitutions failed \n"
