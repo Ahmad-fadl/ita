@@ -22,6 +22,10 @@ emoji_subs_fails = 0
 url_subs_fails = 0
 
 
+
+
+
+
 # Remove Emojis Method
 def remove_emojis(data):
     global emoji_subs_fails
@@ -63,6 +67,17 @@ def remove_urls(data) -> str:
         url_subs_fails += 1
         return str(data)
 
+    
+# Remove all non alphabetic chairs but .,!?#
+def remove_specialChairs(data) -> str:
+    regex = re.compile('[^a-zA-Z #.,!?]')
+    global url_subs_fails
+    try:
+        return regex.sub('', string(data))
+    except Exception as e:
+        print_log(e)
+        url_subs_fails += 1
+        return str(data) 
 
 count_files = 0
 directory = "data/Hydrated_Tweets"
@@ -82,7 +97,8 @@ for entry in os.scandir(directory):
     Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_emojis)
     # Preprocessing: Remove all URLs from the raw text    
     Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_urls)
-    # .........
+    # Preprocessing: Remove all non alphabetic chairs but .,!?#
+    Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_specialChairs)
     
     # Save DF to csv file
     Twitter_Tweets.to_csv("data/Preprocessed_Tweets/" + os.path.basename(entry.path), index=False, header=True)
