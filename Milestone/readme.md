@@ -112,7 +112,7 @@ is very import for our project, since we want to assign each tweet to a specific
 to explicitly agree that his tweets get geo-tagged. Additionally, we plan to use the given sentiment scores as a baseline later on. 
 
 ## Basic Statistics
-The file "ita/src/plot.html" contains various visualizations of the extracted data. You can find all metadata there. 
+The file "ita/src/vis.ipynb" contains various visualizations of the extracted data. You can find all metadata there. 
 
 ## Outlook and Examples 
 We basically want our sentiment classifier to work as follows: 
