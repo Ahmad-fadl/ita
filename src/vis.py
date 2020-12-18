@@ -48,7 +48,7 @@ Ind_Tweets =All_Tweets.loc[All_Tweets['COUNTRY'] == 'Republik Indien']
 
 # In[17]:
 
-
+#a
 print(np.unique(US_Tweets['MONTH']))
 print(US_Tweets.columns)
 
