@@ -53,8 +53,9 @@ In the conversation with our tutor it was pointed out that we should expect a lo
 * The preprocessed csv files are stored in "ita/src/data/Preprocessed_Tweets".
 
  
-3. UTE
-* <span style="color:red">UTE</span>
+3. Sentiment Classification
+* The classification of our data will be done by an implemented classifier. This classifier will count on a coarse-grained level words labeled with a positive or negative sentiment based on the NRC Emotion Lexicon by Mohamad & Turney 2013 (https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm). This lexicon also provides the basis for a more fine-grained analysis. We can also implement the intensity of the sentiment based on the MPQA Subjectivity Lexicon by Wilson, Wiebe & Hoffmann 2005 (https://mpqa.cs.pitt.edu/lexicons/subj_lexicon/) Furthermore, linguistic features like negation detection, personal pronouns, capitalization of entire words and punctuation (e.g. exclamation marks) will play a role (Jurafsky & Manning 2019, https://web.stanford.edu/~jurafsky/slp3/). As we don’t have labeled data, the classifier is not built to learn features that indicate a respective sentiment but we will simply implement a detection of the features describes above and analyze them with respect to time and events. 
+
 
 
 ## Expected State
@@ -73,7 +74,7 @@ In the following we state all subgoals we planned to achieve until end of Decemb
 
 ### December
 1. Finishing the Sentiment Classifier
-* <span style="color:red">UTE</span>
+* Based on the preprocessing of the data and the lexicons described above, the classifier will be implemented by the end of December. 
 
 2. Prepare Evaluation of Classifier
 * As mentioned earlier, the csv files we use consist of tweet ID and sentiment score pairs. Therefore, it makes sense to evaluate our classifier against the available sentiment scores. In this part of the project we prepare the evluation of our model on a stratified random sampled subset of the tweets. We apply stratified sampling since we consider the three different countries in a balanced way. 
