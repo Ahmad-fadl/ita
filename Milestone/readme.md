@@ -52,11 +52,6 @@ In the conversation with our tutor it was pointed out that we should expect a lo
 
 * The preprocessed csv files are stored in "ita/src/data/Preprocessed_Tweets".
 
- 
-3. Sentiment Classification
-* The classification of our data will be done by an implemented classifier. This classifier will count on a coarse-grained level words labeled with a positive or negative sentiment based on the NRC Emotion Lexicon by Mohamad & Turney 2013 (https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm). This lexicon also provides the basis for a more fine-grained analysis. We can also implement the intensity of the sentiment based on the MPQA Subjectivity Lexicon by Wilson, Wiebe & Hoffmann 2005 (https://mpqa.cs.pitt.edu/lexicons/subj_lexicon/) Furthermore, linguistic features like negation detection, personal pronouns, capitalization of entire words and punctuation (e.g. exclamation marks) will play a role (Jurafsky & Manning 2019, https://web.stanford.edu/~jurafsky/slp3/). As we don’t have labeled data, the classifier is not built to learn features that indicate a respective sentiment but we will simply implement a detection of the features describes above and analyze them with respect to time and events. 
-
-
 
 ## Expected State
 In the following we state all subgoals we planned to achieve until end of December, according to our proposal:
@@ -68,13 +63,13 @@ In the following we state all subgoals we planned to achieve until end of Decemb
 * As part of our project, we are looking for correlations between tweets and infection rates/policies regarding Corona. This requires a detailed background check for the countries investigated. Unfortunately, we have not yet been able to address this task at all, as we have assigned it rather a low priority at the beginning of the project. Since we did not expect it to be done until december 18th but until end of december, we still plan to achieve this goal.   
 
 3. Developing methods for sentiment analysis:
-* Just like the research of political events, we planned to finish our sentiment classifier until end of december. Currently, we are convinced that we will achieve this subgoal in time. As described in [Actual State](#actual-state) we have alrady started implementing the classifier, but only rudimentaryly. We still have to put in some implementation effort in achieving this subgoal.  
+* Just like the research of political events, we planned to finish our sentiment classifier until end of december. Currently, we are convinced that we will achieve this subgoal in time. As described in [Actual State](#actual-state) we have alrady started planning/implementing the classifier, but only rudimentaryly. We still have to put in some implementation effort in achieving this subgoal.  
 
 ## Future Planning
 
 ### December
-1. Finishing the Sentiment Classifier
-* Based on the preprocessing of the data and the lexicons described above, the classifier will be implemented by the end of December. 
+1. Implement the Sentiment Classifier
+* The classification of our data will be done by an implemented classifier. This classifier will count on a coarse-grained level words labeled with a positive or negative sentiment based on the NRC Emotion Lexicon by Mohamad & Turney 2013 (https://saifmohammad.com/WebPages/NRC-Emotion-Lexicon.htm). This lexicon also provides the basis for a more fine-grained analysis. We can also implement the intensity of the sentiment based on the MPQA Subjectivity Lexicon by Wilson, Wiebe & Hoffmann 2005 (https://mpqa.cs.pitt.edu/lexicons/subj_lexicon/) Furthermore, linguistic features like negation detection, personal pronouns, capitalization of entire words and punctuation (e.g. exclamation marks) will play a role (Jurafsky & Manning 2019, https://web.stanford.edu/~jurafsky/slp3/). As we don’t have labeled data, the classifier is not built to learn features that indicate a respective sentiment but we will simply implement a detection of the features describes above and analyze them with respect to time and events. 
 
 2. Prepare Evaluation of Classifier
 * As mentioned earlier, the csv files we use consist of tweet ID and sentiment score pairs. Therefore, it makes sense to evaluate our classifier against the available sentiment scores. In this part of the project we prepare the evluation of our model on a stratified random sampled subset of the tweets. We apply stratified sampling since we consider the three different countries in a balanced way. 
