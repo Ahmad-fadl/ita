@@ -74,12 +74,18 @@ In the following we state all subgoals we planned to achieve until end of Decemb
 ### December
 1. Finishing the Sentiment Classifier
 * <span style="color:red">UTE</span>
-2. Prepare Baseline/Evaluation of Classifier
-* <span style="color:red">SEVERIN</span>
+
+2. Prepare Evaluation of Classifier
+* As mentioned earlier, the csv files we use consist of tweet ID and sentiment score pairs. Therefore, it makes sense to evaluate our classifier against the available sentiment scores. In this part of the project we prepare the evluation of our model on a stratified random sampled subset of the tweets. We apply stratified sampling since we consider the three different countries in a balanced way. 
+
+* The original plan was that we annotate a subset of the tweets by hand and then use this as the gold standard. However, we discarded this idea, because it would take a lot of time that we probably won't have.  
+
 3. Theoretical Research - USA
-* <span style="color:red">SEVERIN</span>
+* As part of our project, we are looking for correlations between tweets and infection rates/policies regarding Corona. This requires a detailed background check for the countries investigated. We start with the country from which we have the most tweets (USA) and take care of the other two countries later. We plan to create a timeline of the most important events and infection numbers in form of some nice visualizations. Furthermore, after creating the timeline, we will state multiple hypothesis which we will later verify or reject using our classifier. E.g. We state that the number of tweets increases in December, as the number of infections has increased.  
+
 4. Correlation Analysis - USA 
-* <span style="color:red">SEVERIN</span>
+* In this part of our project we will test all of our previously statet hypothesis using the sentiment classifier.  
+
 5. Evaluate Classifier - USA
 
 ### January
@@ -110,8 +116,7 @@ is very import for our project, since we want to assign each tweet to a specific
 to explicitly agree that his tweets get geo-tagged. Additionally, we plan to use the given sentiment scores as a baseline later on. 
 
 ## Basic Statistics
-* <span style="color:red">AHMAD</span>
-The file ... contains various visualizations of the extracted data. You can find all metadata there. 
+The file "ita/src/vis.py" contains various visualizations of the extracted data. You can find all metadata there. 
 
 ## Outlook and Examples 
 We basically want our sentiment classifier to work as follows: 
