@@ -21,7 +21,7 @@ This could be relevant for request limits, for extraction, but just once.
 Twitter seems to use a sliding window for remaining requests / restart time, but further research is needed. 
 We have implemented a time-delay-function, which is useful when using `/statuses/show` to not run into limits.
 But we have replaced that method with using batch-extraction (100 Tweets per batch).  
-In 15 minutes you can now make 90.000 requests when using the Twython lookup_status method (100 tweets==1 batch per second), 
+In 15 minutes you can now get 90.000 tweets when using the Twython lookup_status method (100 tweets==1 batch per second), 
 so we would exceed the request rate limit thrice if the runtime was 0 seconds. 
 Since the extraction for 880 tweets (9 batches=requests) took 20 seconds in a test, 
 we don't reach the rate limit anymore. We keep the delay-function and the parameter option to make use of it or not (delay=True/False), in case something changes or other systems run in better time and then get a Too Many Request Error.
