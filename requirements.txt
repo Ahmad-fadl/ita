@@ -1,0 +1,6 @@
+numpy
+twython
+tqdm
+pandas
+
+
