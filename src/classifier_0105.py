@@ -10,7 +10,7 @@ def posneg_classifier(tweet):
     tweet_words = tweet_open.read().split()
     positive = 0
     negative = 0
-    with open("./NRC-Emotion-Lexicon-Wordlevel-v0.92.txt") as lex:
+    with open("data/Sentiment_Classifier/NRC-Emotion-Lexicon-Wordlevel-v0.92.txt") as lex:
         lex_reader = csv.reader(lex, delimiter = '\t')
         for entry in lex_reader:
             if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "positive" and entry[2] == "1":
@@ -30,7 +30,7 @@ def subjectivity(tweet):
     tweet_words = tweet_read.split()
     strong_subj = 0
     weak_subj = 0
-    with open("./subjclueslen1-HLTEMNLP05.tff", "r") as lex:
+    with open("data/Sentiment_Classifier/subjclueslen1-HLTEMNLP05.tff", "r") as lex:
         lex_reader = lex.read().splitlines()
         lex_reader_clean = []
         for element in lex_reader:
@@ -67,7 +67,7 @@ def fine_sentiment(tweet):
     sadness = 0
     surprise = 0
     trust = 0
-    with open("./NRC-Emotion-Lexicon-Wordlevel-v0.92.txt") as lex:
+    with open("data/Sentiment_Classifier/NRC-Emotion-Lexicon-Wordlevel-v0.92.txt") as lex:
         lex_reader = csv.reader(lex, delimiter = '\t')
         for entry in lex_reader:
             if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "anger" and entry[2] == "1":
@@ -95,6 +95,11 @@ def fine_sentiment(tweet):
         print("surprise: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * surprise))
         print("trust: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * trust))
 
-#subjectivity("./tweet_test.txt")
-#posneg_classifier("./tweet_test.txt")
-#fine_sentiment("./tweet_test.txt")
+#import os
+#print (os.getcwd())
+
+subjectivity("data/Sentiment_Classifier/tweet_test.txt")
+print ("")
+posneg_classifier("data/Sentiment_Classifier/tweet_test.txt")
+print ("")
+fine_sentiment("data/Sentiment_Classifier/tweet_test.txt")
