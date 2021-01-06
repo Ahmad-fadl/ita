@@ -4,10 +4,11 @@ import re
 
 
 def posneg_classifier(tweet):
-    """ compares the words in the tweet to the NRC Emotion lexicon, counts positive and
-    negative words and calculates the percentage"""
+    """ compares the words in the <tweet> to the NRC Emotion lexicon, counts positive and
+    negative words and calculates the percentage. returns positive sentiment percentage"""
     tweet_open = open(tweet, "r") #### bzw. preprocessed tweet, am besten lemmatized
     tweet_words = tweet_open.read().split()
+    print (tweet_words, "\n")
     positive = 0
     negative = 0
     with open("data/Sentiment_Classifier/NRC-Emotion-Lexicon-Wordlevel-v0.92.txt") as lex:
@@ -17,16 +18,18 @@ def posneg_classifier(tweet):
                 positive += 1
             if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "negative" and entry[2] == "1":
                 negative += 1
-        print("positive: " + str(100/(positive+negative) * positive) + " % and negative: " + str(100/(positive+negative) * negative) + " %")
+        print(f"positive: {str(100 / (positive + negative) * positive)}% and negative: {str(100 / (positive + negative) * negative)}%")
+        return 100 / (positive + negative) * positive
+
 
 def subjectivity(tweet):
-    """counts the strong subjective and weak subjective words based on  the
-    MPQA lexicon. Returns the percentage of strong subjective, weak subjective
+    """counts the strong subjective and weak subjective words based on the
+    MPQA lexicon. Prints the percentage of strong subjective, weak subjective
     and neutral words. If a sequence of minimum 9 characters (including whitespace)
     is found, the count of strong subjective words is doubled"""
     tweet_open = open(tweet, "r") #### bzw. preprocessed tweet, am besten lemmatized
     tweet_read = tweet_open.read()
-    print(tweet_read)
+    #print(tweet_read, "\n")
     tweet_words = tweet_read.split()
     strong_subj = 0
     weak_subj = 0
@@ -49,57 +52,36 @@ def subjectivity(tweet):
     regex = "([A-Z\s]){9,200}"
     regex = re.compile(regex)
     if re.search(regex, tweet_read):
+        print (re.search(regex, tweet_read))
         strong_subj = strong_subj*2
     print("strongsubj: " + str(100/(strong_subj + weak_subj + neutral) * strong_subj))
     print("weaksubj: " + str(100/(strong_subj + weak_subj + neutral) * weak_subj))
     print("neutral: " + str(100/(strong_subj + weak_subj + neutral) * neutral))
 
 def fine_sentiment(tweet):
-    """ compares the words in the tweet to the NRC Emotion lexicon, counts the
-    amount of words of every category and calculates the percentage"""
+    """ compares the words in the <tweet> to the NRC Emotion lexicon, counts the
+    amount of words of every sentiment category and calculates the percentage"""
     tweet_open = open(tweet, "r") #### bzw. preprocessed tweet, am besten lemmatized
     tweet_words = tweet_open.read().split()
-    anger = 0
-    anticipation = 0
-    disgust = 0
-    fear = 0
-    joy = 0
-    sadness = 0
-    surprise = 0
-    trust = 0
+    sentiments = ["anger", "anticipation", "disgust", "fear", "joy", "sadness", "surprise", "trust"]
+    sentiment_dict = {key: 0 for key in sentiments}
     with open("data/Sentiment_Classifier/NRC-Emotion-Lexicon-Wordlevel-v0.92.txt") as lex:
         lex_reader = csv.reader(lex, delimiter = '\t')
         for entry in lex_reader:
-            if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "anger" and entry[2] == "1":
-                anger += 1
-            if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "anticipation" and entry[2] == "1":
-                anticipation += 1
-            if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "disgust" and entry[2] == "1":
-                disgust += 1
-            if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "fear" and entry[2] == "1":
-                fear += 1
-            if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "joy" and entry[2] == "1":
-                joy += 1
-            if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "sadness" and entry[2] == "1":
-                sadness += 1
-            if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "surprise" and entry[2] == "1":
-                surprise += 1
-            if len(entry) == 3 and entry[0] in tweet_words and entry[1] == "trus" and entry[2] == "1":
-                trust += 1
-        print("anger: " + str(100/(anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * anger))
-        print("anticipation: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * anticipation))
-        print("disgust: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * disgust))
-        print("fear: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * fear))
-        print("joy: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * joy))
-        print("sadness: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * sadness))
-        print("surprise: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * surprise))
-        print("trust: " + str(100 / (anger + anticipation + disgust + fear + joy + sadness + surprise + trust) * trust))
+            if len(entry) == 3 and entry[0] in tweet_words and entry[2] == "1" and entry[1] in sentiments:
+                sentiment_dict[entry[1]] += 1
+
+    print(sentiment_dict)
+    total = sum(value for k, value in sentiment_dict.items())
+    for k, v in sentiment_dict.items():
+        print(f"{k}: {v*100/total}%")
+
 
 #import os
 #print (os.getcwd())
 
-subjectivity("data/Sentiment_Classifier/tweet_test.txt")
-print ("")
 posneg_classifier("data/Sentiment_Classifier/tweet_test.txt")
+print ("")
+subjectivity("data/Sentiment_Classifier/tweet_test.txt")
 print ("")
 fine_sentiment("data/Sentiment_Classifier/tweet_test.txt")
