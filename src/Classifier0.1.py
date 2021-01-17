@@ -14,7 +14,7 @@ from nltk.stem import WordNetLemmatizer
 import re
 import numpy as np
 nltk.download('wordnet')
-directory = "data/Hydrated_Tweets/"
+directory = "data/Preprocessed_Tweets/"
 
 
 # In[ ]:
@@ -63,17 +63,8 @@ def get_emotions(tweet):
             #print("Word *"+ word + "* is not in the lexikon")
             for i in range(10):
                 emotions[j].append(0)
-       """ try:
-            subj_index = subjlex.loc[subjlex["word1"]==word].index[0]  
-            if subjlex.at[subj_index,"type"]=="strongsubj":
-                emotions[j].append(1)
-                emotions[j].append(0)
-            if subjlex.at[subj_index,"type"]=="weaksubj":    
-                emotions[j].append(0)
-                emotions[j].append(1)
-        except:
-            emotions[j].append(0)
-            emotions[j].append(0) """
+
+      
         finally:
             j=j+1         
   
@@ -90,12 +81,13 @@ def Create_df_with_emotions(Preprocessed_Tweets):
                                              'Sentiment anger',  'Sentiment anticipation' , 'Sentiment  disgust',
                                              'Sentiment fear' , 'Sentiment joy','NEGATIVE','POSITIVE', 'Sentiment sadness', 
                                              'Sentiment surprise' , 'Sentiment trust', 'Capital Letters' ,
-                                             'Longest Sequence Capital Letters'])
+                                             'Longest Sequence Capital Letters', "TEXT_RAW_PUNCTUATION"])
     Sentiment_Tweets['ID'] = Preprocessed_Tweets['ID']
     Sentiment_Tweets['COUNTRY'] = Preprocessed_Tweets['COUNTRY']
     Sentiment_Tweets['DAY'] = Preprocessed_Tweets['DAY']
     Sentiment_Tweets['MONTH'] = Preprocessed_Tweets['MONTH']
     Sentiment_Tweets['TEXT_RAW'] = Preprocessed_Tweets['TEXT_RAW']
+    Sentiment_Tweets['TEXT_RAW_PUNCTUATION'] = Preprocessed_Tweets['TEXT_RAW_PUNCTUATION']
     for index, row in Sentiment_Tweets.iterrows():
         emotions = get_emotions(row['TEXT_RAW'])
         emotions=np.array([np.array(xi) for xi in emotions])
@@ -114,10 +106,30 @@ def Create_df_with_emotions(Preprocessed_Tweets):
             Sentiment_Tweets.at[index,'Sentiment sadness'] = emotions[:,7]
         except:
             print("emotions error the emotions list are",emotions,"Tweet ID is",Sentiment_Tweets.at[index,'ID'])
+            
+  
         Sentiment_Tweets.at[index,'Sentiment surprise'] = emotions[:,8]
         Sentiment_Tweets.at[index,'Sentiment trust'] = emotions[:,9]
-        Sentiment_Tweets.at[index,'Capital Letters'] = sum(1 for c in row['TEXT_RAW'] if c.isupper())
-        Sentiment_Tweets.at[index,'Longest Sequence Capital Letters'] = max(re.findall('[A-Z]+',row['TEXT_RAW']), key=len)
+        
+        
+        
+        
+        
+        try:
+            Sentiment_Tweets.at[index,'Capital Letters'] = sum(1 for c in row['TEXT_RAW'] if c.isupper())
+        except:
+            Sentiment_Tweets.at[index,'Capital Letters'] = 0
+            
+            
+            
+            
+            
+            
+        try:
+            Sentiment_Tweets.at[index,'Longest Sequence Capital Letters'] = max(re.findall('[A-Z]+',row['TEXT_RAW']), key=len)
+        except:
+            Sentiment_Tweets.at[index,'Longest Sequence Capital Letters'] = 0
+            continue
     return Sentiment_Tweets
         
         
@@ -135,7 +147,7 @@ emolex_df = pd.read_csv(filepath,  names=["word", "emotion", "association"], ski
 
 for entry in tqdm(os.scandir(directory)):
     if not entry.path.endswith(".csv"):
-        print(f"skipped {os.path.basename(entry.path)}")
+        print(f"skipped {os.path.basename(entry.path)}")    
     Preprocessed_Tweets = pd.read_csv(entry.path)
     Tweets_with_emotions = Create_df_with_emotions(Preprocessed_Tweets)
     Tweets_with_emotions.to_csv("data/Tweetswithemotions/" + os.path.basename(entry.path), index=False, header=True)
