@@ -137,6 +137,7 @@ def Create_df_with_emotions(Preprocessed_Tweets):
 for entry in tqdm(os.scandir(directory)):
     if not entry.path.endswith(".csv"):
         print(f"skipped {os.path.basename(entry.path)}")
+        continue
     Preprocessed_Tweets = pd.read_csv(entry.path)
     Tweets_with_emotions = Create_df_with_emotions(Preprocessed_Tweets)
     Tweets_with_emotions.to_csv("data/Sentiment_Tweets/" + os.path.basename(entry.path), index=False, header=True)
