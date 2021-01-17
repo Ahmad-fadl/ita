@@ -72,7 +72,7 @@ def remove_urls(data) -> str:
 def remove_specialChairsAll(data) -> str:
     global remove_specialChairs_fails
     try:
-        regex = re.compile('[^a-zA-Z]')
+        regex = re.compile('[^a-zA-Z ]')
         data = regex.sub('', str(data))
         return ' '.join([w for w in data.split() if len(w)>1])
     except Exception as e:
