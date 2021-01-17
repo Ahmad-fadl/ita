@@ -93,12 +93,13 @@ def Create_df_with_emotions(Preprocessed_Tweets):
                                              'Sentiment anger',  'Sentiment anticipation' , 'Sentiment  disgust',
                                              'Sentiment fear' , 'Sentiment joy','NEGATIVE','POSITIVE', 'Sentiment sadness', 
                                              'Sentiment surprise' , 'Sentiment trust', 'Capital Letters' ,
-                                             'Longest Sequence Capital Letters'])
+                                             'Longest Sequence Capital Letters', "TEXT_RAW_PUNCTUATION"])
     Sentiment_Tweets['ID'] = Preprocessed_Tweets['ID']
     Sentiment_Tweets['COUNTRY'] = Preprocessed_Tweets['COUNTRY']
     Sentiment_Tweets['DAY'] = Preprocessed_Tweets['DAY']
     Sentiment_Tweets['MONTH'] = Preprocessed_Tweets['MONTH']
     Sentiment_Tweets['TEXT_RAW'] = Preprocessed_Tweets['TEXT_RAW']
+    Sentiment_Tweets['TEXT_RAW_PUNCTUATION'] = Preprocessed_Tweets['TEXT_RAW_PUNCTUATION']
     for index, row in Sentiment_Tweets.iterrows():
         tweet_words = lemmatize(row['TEXT_RAW'])
         emotions = get_emotions(tweet_words)
