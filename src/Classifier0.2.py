@@ -37,7 +37,6 @@ def lemmatize(tweet):
 
 def get_emotions(tweet_words):
     """    get emotions for ech word in a string
-
     :param: tweet a string
     :return: returns a list of lists where ech list has the emotions of a word in a string in the ordere 
     'Sentiment anger',  'Sentiment anticipation' , 'Sentiment  disgust', 'Sentiment fear' , 
@@ -121,7 +120,16 @@ def Create_df_with_emotions(Preprocessed_Tweets):
             print("emotions error the emotions list are",emotions,"Tweet ID is",Sentiment_Tweets.at[index,'ID'])
         Sentiment_Tweets.at[index,'Sentiment surprise'] = emotions[:,8]
         Sentiment_Tweets.at[index,'Sentiment trust'] = emotions[:,9]
-        Sentiment_Tweets.at[index,'Capital Letters'] = sum(1 for c in row['TEXT_RAW'] if c.isupper())
+        
+    
+        
+        try:
+            Sentiment_Tweets.at[index,'Capital Letters'] = sum(1 for c in row['TEXT_RAW'] if c.isupper())
+        except:
+            Sentiment_Tweets.at[index,'Capital Letters'] = 0
+        
+        
+        
         try:
             Sentiment_Tweets.at[index,'Longest Sequence Capital Letters'] = max(re.findall('[A-Z]+',row['TEXT_RAW']), key=len)
         except:
@@ -137,10 +145,9 @@ def Create_df_with_emotions(Preprocessed_Tweets):
 for entry in tqdm(os.scandir(directory)):
     if not entry.path.endswith(".csv"):
         print(f"skipped {os.path.basename(entry.path)}")
-        continue
     Preprocessed_Tweets = pd.read_csv(entry.path)
     Tweets_with_emotions = Create_df_with_emotions(Preprocessed_Tweets)
-    Tweets_with_emotions.to_csv("data/Sentiment_Tweets/" + os.path.basename(entry.path), index=False, header=True)
+    Tweets_with_emotions.to_csv("data/Tweetswithemotions/" + os.path.basename(entry.path), index=False, header=True)
 
 
 # In[398]:
@@ -150,7 +157,3 @@ for entry in tqdm(os.scandir(directory)):
 
 
 # In[ ]:
-
-
-
-
