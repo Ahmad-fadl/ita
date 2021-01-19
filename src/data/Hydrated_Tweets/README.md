@@ -38,6 +38,6 @@ which we don't use ([source](https://developer.twitter.com/en/docs/twitter-api/v
 ### Recommendation for optics
 * If you are using PyCharm and want a proper looking loading bar output while hydrating the Tweets, go to `Run` `Edit Configurations` and check `Emulate terminal in output console`.
 
--------------
-### Requirements for src/data
-
+___________
+### Check Success
+* See how properly the hydration worked in the automatically generated hydration report ``src/data/`` after running Twitter-Access.py

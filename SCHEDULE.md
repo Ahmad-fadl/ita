@@ -17,15 +17,15 @@
 ### Deadlines
 * 27.11 Proposal
 * 03.12 Mentor Feedback
-* **18.12 First Milestone (als nächstes)**
-* 08.2 Second Feedback
+* 18.12 First Milestone
+* **04.02 Second Feedback (coming up)**
 * 25.02 Final Code + Presentation
 * 15.03 Report Deadline
 
 
 --------------------------------------
 #### bis 8.12
-* Git Einrichtung aller
-* Twitter Credentials für alle
-* Tweet ID Hydration / Data acquisition (Sina, Severin)
-* Sentiment Development (Ute)  
+* DONE Git Einrichtung aller
+* DONE Twitter Credentials für alle
+* DONE Tweet ID Hydration / Data acquisition (Sina, Severin)
+* DONE Sentiment Development (Ute)  

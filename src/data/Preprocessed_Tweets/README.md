@@ -13,3 +13,7 @@ See main readme, and readme in `Hydrated_Tweets`
 ### Further Preprocessing Steps
 * Typo Correction
 * ?
+
+-----------
+### Check Success
+* See how properly the preprocessing worked in the automatically generated preprocessing report in ``src/data/`` after running Text_Preprocessing.py
