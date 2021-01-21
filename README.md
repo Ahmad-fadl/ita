@@ -32,7 +32,12 @@ Save files in `src/data/GeoCOV19TweetsDataset`
 * If you want to see some statistics about the data .... **TODO** @Ahmad. what should we do to run your code? Please document here. (question: should we transform it to py? jupyter may not be optimal here)
 
 ### Sentiment Classification
-* **TODO** What to do now? Please describe
+* When you have done the above, run ``src/Classifier0.2.py``.
+* This python file creates feature vectors for the preprocessed tweets
+* May take a few hours.
+
+
 
 ### Evaluation
-* **TODO**  @Severins Code 
+* When you have done the above, run ``src/Classifier_Evaluation.py``.
+* This python file creates numeric features out of the recently created features. On those features several classifiers are compared regarding their performance using the given sentiments as gold labels. In addition several visualizations are computed and saved locally. 
