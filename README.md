@@ -33,7 +33,7 @@ Save files in `src/data/GeoCOV19TweetsDataset`
 
 ### Sentiment Classification
 * When you have done the above, run ``src/Classifier0.2.py``.
-* This python file creates feature vectors for the preprocessed tweets
+* This python file creates feature vectors for the preprocessed tweets saved in `src/data/Sentiment_Tweets`
 * May take a few hours.
 
 
