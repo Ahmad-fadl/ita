@@ -141,3 +141,4 @@ for entry in tqdm(list(os.scandir(directory))):
     Preprocessed_Tweets = pd.read_csv(entry.path)
     Tweets_with_emotions = create_df_with_emotions(Preprocessed_Tweets)
     Tweets_with_emotions.to_csv(target_path + "/" + os.path.basename(entry.path), index=False, header=True)
+
