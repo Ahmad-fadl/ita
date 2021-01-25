@@ -132,7 +132,7 @@ if not os.path.exists(target_path):
 for entry in tqdm(list(os.scandir(directory))):
 
     # checks if file already exist, so you can stop/continue anytime with generating the files
-    if os.path.exists(target_path + os.path.basename(entry.path)):
+    if os.path.exists(target_path + "/" + os.path.basename(entry.path)):
         continue
 
     if not entry.path.endswith(".csv"):
@@ -140,4 +140,4 @@ for entry in tqdm(list(os.scandir(directory))):
 
     Preprocessed_Tweets = pd.read_csv(entry.path)
     Tweets_with_emotions = create_df_with_emotions(Preprocessed_Tweets)
-    Tweets_with_emotions.to_csv(target_path + os.path.basename(entry.path), index=False, header=True)
+    Tweets_with_emotions.to_csv(target_path + "/" + os.path.basename(entry.path), index=False, header=True)
