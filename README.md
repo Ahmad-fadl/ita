@@ -1,6 +1,6 @@
 # Text Analytics Project
 * Maintainers
-* Requirements for Twitter Access (src/data)
+* Runthrough
 
 -------------
 -------------
@@ -9,6 +9,15 @@
 * [Severin Laicher](severin.laicher@web.de), 3665790, Applied Computer Science M.Sc.
 * [Sina Denzel](sinadenzel@gmail.com), 4018461, Computational Linguistics B.A
 * [Ute Gradmann](utegradmann@gmx.de), 4050818, Computational Linguistics B.A.
+-------------
+## General requirements
+* numpy
+* twython
+* tqdm
+* pandas
+* Please add missing
+
+
 -------------
 
 ## Runthrough
@@ -37,10 +46,10 @@ Save files in `src/data/GeoCOV19TweetsDataset`
 * May take a few hours. You can stop and restart the session, since already generated files will be skipped then.
 
 
-
 ### Evaluation
 * When you have done the above, run ``src/Classifier_Evaluation.py``.
 * This python file creates numeric features out of the recently created features. 
   On those features several classifiers are compared regarding their performance using the given sentiments as gold labels. 
   In addition several visualizations are computed and saved locally in the ``src/`` folder as svg.  
  
+-------------

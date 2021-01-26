@@ -1,6 +1,0 @@
-numpy
-twython
-tqdm
-pandas
-
-
