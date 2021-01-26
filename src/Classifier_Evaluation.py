@@ -12,6 +12,9 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
+import datetime
+import matplotlib.patches as mpatches
+from scipy.signal import savgol_filter
 
 # Import the gold sentiments
 directory = "data/GeoCOV19TweetsDataset"
@@ -103,13 +106,13 @@ classified['gold'] = classified['gold'].apply(getBinary)
 y = np.array(classified["gold"].tolist())
 
 # Only use the "relevant" features
-classified = classified[['WORD COUNT', 'Sentiment anger',
+forFeatures = classified[['WORD COUNT', 'Sentiment anger',
                          'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
                          'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
                          'Sentiment surprise', 'Sentiment trust', 'Longest Sequence Capital Letters']]
 
 # The feature values of each tweet as array --> feature matrix
-x = classified.to_numpy()
+x = forFeatures.to_numpy()
 
 
 # Method that splits data in to k-folds in order to apply k-fold-cross-validation
@@ -137,7 +140,7 @@ def crossValidation(x, y, k, classifier):
 
 
 ######## Test multiple classifiers
-
+"""
 clf = DecisionTreeClassifier(random_state=0)
 f1 = crossValidation(x, y, 5, clf)
 print(f"{clf} : f1-score: {f1}\n")
@@ -153,7 +156,7 @@ print(f"{clf} : f1-score: {f1}\n")
 clf = GaussianNB()
 f1 = crossValidation(x, y, 5, clf)
 print(f"{clf} : f1-score: {f1}\n")
-
+"""
 
 ####### Fix one classifier and show results
 
@@ -164,7 +167,6 @@ predictedLabels = clf.predict(x)
 
 # Append prediction to df
 classified["prediction"] = list(predictedLabels)
-
 
 # Method that converts string into date object
 def convertToDate(date):
