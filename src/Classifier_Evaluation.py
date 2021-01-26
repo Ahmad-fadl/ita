@@ -136,29 +136,26 @@ def crossValidation(x, y, k, classifier):
     return np.mean(np.array(f1))
 
 
-################# Test multiple classifiers
+######## Test multiple classifiers
 
 clf = DecisionTreeClassifier(random_state=0)
 f1 = crossValidation(x, y, 5, clf)
-print(f"{clf} : {f1}")
-print("")
+print(f"{clf} : f1-score: {f1}\n")
 
 clf = RandomForestClassifier(max_depth=10, random_state=0)
 f1 = crossValidation(x, y, 5, clf)
-print(f"{clf} : {f1}")
-print("")
+print(f"{clf} : f1-score: {f1}\n")
 
 clf = KNeighborsClassifier(n_neighbors=10)
 f1 = crossValidation(x, y, 5, clf)
-print(f"{clf} : {f1}")
-print("")
+print(f"{clf} : f1-score: {f1}\n")
 
 clf = GaussianNB()
 f1 = crossValidation(x, y, 5, clf)
-print(f"{clf} : {f1}")
-print("")
+print(f"{clf} : f1-score: {f1}\n")
 
-########################## Fix one classifier and show results
+
+####### Fix one classifier and show results
 
 # Choose on classifier and apply it on the complete dataset
 clf = DecisionTreeClassifier(random_state=0)
