@@ -50,6 +50,7 @@ Save files in `src/data/GeoCOV19TweetsDataset`
 * When you have done the above, run ``src/Classifier_Evaluation.py``.
 * This python file creates numeric features out of the recently created features. 
   On those features several classifiers are compared regarding their performance using the given sentiments as gold labels. 
-  In addition several visualizations are computed and saved locally in the ``src/`` folder as svg.  
+  In addition several visualizations are computed and saved locally in the ``src/`` folder as svg.
+* May take 15-35 minutes.
  
 -------------
