@@ -228,7 +228,7 @@ plt.plot(x, yNeut, linewidth=2, color="red")
 plt.plot(x, yPos, linewidth=2, color="green")
 
 plt.show()
-fig.savefig("1)TotalSentiments.svg", format="svg")
+fig.savefig("data/Classifier_Evaluation/1)TotalSentiments.svg", format="svg")
 
 # For Country Count USA
 relativeSentiments = classified[['COUNTRY', 'date', 'prediction']]
@@ -276,7 +276,7 @@ plt.plot(x, yNeut, linewidth=2, color="red")
 plt.plot(x, yPos, linewidth=2, color="green")
 
 plt.show()
-fig.savefig("2)TotalSentiments_USA.svg", format="svg")
+fig.savefig("data/Classifier_Evaluation/2)TotalSentiments_USA.svg", format="svg")
 
 # For Country Count USA
 relativeSentiments = classified[['COUNTRY', 'date', 'prediction']]
@@ -324,7 +324,7 @@ plt.plot(x, yNeut, linewidth=2, color="red")
 plt.plot(x, yPos, linewidth=2, color="green")
 
 plt.show()
-fig.savefig("3)TotalSentiments_Indien.svg", format="svg")
+fig.savefig("data/Classifier_Evaluation/3)TotalSentiments_Indien.svg", format="svg")
 
 # For Country Count USA
 relativeSentiments = classified[['COUNTRY', 'date', 'prediction']]
@@ -372,11 +372,11 @@ plt.plot(x, yNeut, linewidth=2, color="red")
 plt.plot(x, yPos, linewidth=2, color="green")
 
 plt.show()
-fig.savefig("4)TotalSentiments_England.svg", format="svg")
+fig.savefig("data/Classifier_Evaluation/4)TotalSentiments_England.svg", format="svg")
 
 # For Total Sentiments + Total Infections
 ##########################################################################
-path = "data/Infections/owid-covid-data.csv"
+path = "data/Classifier_Evaluation/owid-covid-data.csv"
 coronaMeta = pd.read_csv(path, index_col=False)
 coronaMeta = coronaMeta[["location", "date", "new_cases", "new_deaths"]]
 coronaMeta = coronaMeta.loc[coronaMeta['location'].isin(['India', 'United Kingdom', 'United States'])]
@@ -433,4 +433,4 @@ plt.plot(x, yTotal, linewidth=2, color="black")
 plt.plot(x, yInfections, linewidth=2, color="red")
 
 plt.show()
-fig.savefig("5)TotalSentiments+TotalInfections.svg", format="svg")
+fig.savefig("data/Classifier_Evaluation/5)TotalSentiments+TotalInfections.svg", format="svg")
