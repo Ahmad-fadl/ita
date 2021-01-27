@@ -31,8 +31,8 @@ so you might want to use an extension like [GetThemAll!](https://chrome.google.c
 If you use Chrome, go to settings, search for "downloads" and deactivate "Ask where to save each file before downloading" for convenience.
 Save files in `src/data/GeoCOV19TweetsDataset`
   * open `src/Twitter-Access.py` with an editor and follow the instructions given in the python-file (credentials for the Twitter API * Tweets Hydration)
-
-
+For the final evaluation we need a file containing some information and numbers regarding Covid-19. Therefore got to https://github.com/owid/covid-19-data/tree/master/public/data and click "Download our complete COVID-19 dataset" as csv. Save the file in `src/data/Classifier_Evaluation/owid-covid-data.csv`. 
+ 
 ### Data Preprocessing
 * When you have done the above, run ``src/Text_Preprocessing.py``. 
 * While this is running, you may want to check out the readme's in ``src/data/Hydrated_Tweets`` and ``src/data/Preprocessed_Tweets`` (not needed to execute the following steps).
