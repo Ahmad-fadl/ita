@@ -139,7 +139,7 @@ def crossValidation(x, y, k, classifier):
     return np.mean(np.array(f1))
 
 
-######## Test multiple classifiers
+######## Test multiple classifiers         # comment out if not needed right now for speed up
 """
 clf = DecisionTreeClassifier(random_state=0)
 f1 = crossValidation(x, y, 5, clf)

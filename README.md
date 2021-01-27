@@ -47,7 +47,8 @@ For the final evaluation we need a file containing some information and numbers 
 
 
 ### Evaluation
-* When you have done the above, run ``src/Classifier_Evaluation.py``.
+* When you have done the above, go to ``src/data/Classifier_Evaluation`` and download the data how it's described in the readme there.
+* Now run ``src/Classifier_Evaluation.py``.
 * This python file creates numeric features out of the recently created features. This results in an numpy array that contains one row for each tweet and each row consists of multiple numeric features (number of anger words, number of sad words...)
 * Then the given sentiment scores are loaded into the program in order to have the "gold truth".
 * Then we test multiple classifiers applying k-fold-cross-validation on the given feature matrix and the given "gold truth".
