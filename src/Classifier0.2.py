@@ -11,15 +11,106 @@ from nltk.stem import WordNetLemmatizer
 import re
 import numpy as np
 import pandas.errors
+import regex
+from string import punctuation
 
-os.chdir(os.path.dirname(__file__))  # changes path to current file path, to make sure it works for everyone
+#os.chdir(os.path.dirname(__file__))  # changes path to current file path, to make sure it works for everyone
 
 nltk.download('wordnet')
 directory = "data/Preprocessed_Tweets/"
 
 lemmatizer = WordNetLemmatizer()
 
+#################################################
+# This method gets as input a string  outputs a list of all emojis in the string
+def findEmojis(data):
+    global emoji_subs_fails
+    
+    try:
+        removeWords = re.compile('[a-zA-Z]')
+        emoji = re.compile("["
+            u"\U0001F600-\U0001F64F"  
+            u"\U0001F300-\U0001F5FF"  
+            u"\U0001F680-\U0001F6FF" 
+            u"\U0001F1E0-\U0001F1FF"  
+            u"\U00002500-\U00002BEF"  
+            u"\U00002702-\U000027B0"
+            u"\U00002702-\U000027B0"
+            u"\U000024C2-\U0001F251"
+            u"\U0001f926-\U0001f937"
+            u"\U00010000-\U0010ffff"
+            u"\u2640-\u2642" 
+            u"\u2600-\u2B55"
+            u"\u200d"
+            u"\u23cf"
+            u"\u23e9"
+            u"\u231a"
+            u"\ufe0f"  
+            u"\u3030"
+                          "]+", re.UNICODE)
+        
+        temp = str(re.sub(removeWords, '', data))
+        temp = [char for char in temp]
+        return emoji.findall(str(temp))
+    except Exception as e:
+        print_log(e)
+        emoji_subs_fails += 1
+        
+        return data
 
+# This method gets as input a list of emojis outputs a binary vector that "says" if a smiley is in the string
+def convertEmojisToVector(data):
+    # This are the most frequent smileys 
+    SMILEYS = ['👐', '🍆', '🔬', '𝗼', '🥡', '🌪', '💌', '💆', '🏍', '🧢', '💴', '𝐄', '😯', '🏎', '⛪', '😟', '🏙', '⚔', '🦦', '🍏', '😖', '𝘁', '𝙞', '𝙤', '⛽', '🥦', '🥓', '🚩', '🏘', '⚫', '⛈', '🦞',
+               '👎', '🐔', '𝐃', '🛒', '🧨', '𝐮', '🎇', 'Ⓦ', '💳', '⬆', '🐀', '🐒', '●', '🚘', '𝙖', '𝗻', '🔵', '🥒', '🌽', '☯', '🔙', '🌃', '💼', '🇽', '𝐓', '🕯', '🤚', 'Ⓞ', '✏', '🍀', '👅', '🏰', '𝕤',
+               '🐏', '𝙚', '🥕', '𝗮', '𝗶', '🥬', '🎡', '📽', '💘', '😹', '🦸', '𝐥', 'Ⓡ', '𝕚', '𝕥', '⛄', '♻', '🍉', '😰', '🍝', '🇭', '🥋', '😠', '🧿', '𝐧', '𝐀', '👕', '🌵', '🛏', '🤵', '🕶', '🐅', '♠',
+               '🥘', '🐍', '🎢', '☁', '🐠', '🐘', '𝕠', '✝', '🧜', '➖', '🧸', '🤛', '🏚', '🗳', '𝗲', '🧚', '🏳', '🌭', '🍞', '🛹', '🦊', '🙀', '🦢', '🦾', '😪', '🐈', '🩺', '😣', '𝕖', '🥤', '🥩',
+               '🦓', '♡', '🐐', '⛔', '🌷', '🏄', '🌶', '𝕒', '🎀', '🐥', '🧪', '𝐬', '☆', '𝐫', '🦌', '🏔', '🐰', '💵', '🌡', '🤲', '🧠', '🎆', '🖥', '☘', '🙊', '🥑', '🚙', '🐣', '🦅', '🇯', '🤴', '🌤',
+               '🍬', '🖐', '📦', '🎞', '🌾', '💣', '🍗', '⛱', '🐄', '🗓', '🏫', '👰', '🥇', '☃', '🔴', '🔹', '🍌', '👙', '🏁', '👦', '🐼', '⛰', '⛵', '🔫', '🔑', '🤜', '🍊', '🦆', '▶', '🎾', '👣',
+               '☮', '￼', '🧁', '🌬', '🐯', '🌏', '💸', '🥁', '😓', '🦄', '🍅', '𝐚', '𝐭', '🧀', '🩸', '🐆', '🤒', '🥗', '⬅', '🍪', '💍', '🍩', '🐟', '🍭', '💧', '🐴', '𝐨', '🍫', '𝐢', '🦍', '🌙', '😕',
+               '🐺', '🦇', '🧻', '🐱', '👯', '🧟', '😮', '🐿', '𝐞', '🍟', '▫', '😲', '🇵', '😑', '☎', '🤠', '🚗', '🏌', '🇪', '🤨', '👱', '🧑', '💝', '⚾', '⚪', '🧔', '📱', '🧤', '🍴', '🦁', '🍿', '📢',
+               '☑', '🌄', '💄', '💭', '😛', '🍓', '💊', '🤮', '☔', '🇦', '🎹', '🐦', '🚶', '🤎', '🍦', '🤑', '😐', '🤝', '👧', '📞', '😴', '🤫', '🤢', '📈', '❓', '📖', 'ー', '📣', '📌', '🤡', '🕊',
+               '😥', '🤸', '🌧', '👁', '✍', '🛑', '🌛', '🇹', '🚲', '🇨', '💤', '🔐', '⬇', '⛳', '😞', '💩', '🛍', '☹', '🏀', '🎙', '🎭', '🐻', '📀', '🏞', '🍰', '🍄', '🌲', '🏥', '🙅', '🇷', '🌼', '🤭',
+               '👶', '🔒', '🏈', '🥶', '🎯', '💓', '🍋', '⚕', '📺', '🌀', '🗽', '🎸', '🚫', '👸', '🍎', '💡', '💅', '😌', '🏊', '🍑', '🥃', '🥊', '🐝', '🧐', '🏆', '👆', '🧼', '🚀', '🚴', '☠', '🏴',
+               '🤟', '👈', '❌', '🌮', '😡', '📲', '🔊', '😤', '🎼', '🍕', '🏝', '🐕', '💐', '🦋', '🤤', '🍔', '🕉', '🍳', '🇲', '🍽', '👽', '💎', '😻', '🌹', '🍂', '♐', '🕺', '🦃', '😒', '🎧', '▪',
+               '🍃', '🎨', '🌻', '☢', '🏠', '💰', '🤬', '👟', '🎓', '😫', '🎵', '📝', '🍸', '💔', '📍', '🥴', '📆', '😝', '🥵', '😄', '💞', '😇', '💇', '✔', '⚜', '📚', '🎬', '🎊', '🤧', '🍹', '⚽',
+               '✈', '🎅', '🙂', '🌺', '💈', '🤓', '🐾', '🎈', '🌿', '😏', '😔', '🤯', '💁', '🎤', '🙋', '➡', '🏖', '💦', '💨', '🍁', '🏋', '☣', '❣', '🌱', '❗', '☺', '💉', '😱', '⚡', '🙈', '❄', '👻',
+               '🤞', '🙃', '🔮', '🌍', '🤙', '😈', '🗣', '💻', '🧘', '🎁', '👋', '⚠', '👇', '🌸', '🍾', '🧡', '🌳', '🌟', '👑', '🌎', '💋', '🌴', '💗', '😬', '💃', '🥺', '📷', '🖕', '🤘', '😢', '💫', '☕',
+               '🤍', '🐶', '🎂', '👨', '✂', '👊', '🌊', '💖', '😩', '🎥', '🇮', '🍷', '🌆', '🇳', '🏃', '🥂', '💀', '🤗', '😀', '😳', '🙄', '👩', '😆', '👉', '😜', '🍻', '🎃', '👌', '🇧', '💛', '🏡', '🍺',
+               '🇬', '💥', '🥳', '⭐', '🌞', '😭', '👏', '✊', '😅', '💚', '🎶', '♥', '✅', '🤩', '😋', '🎄', '🌈', '⠀', '💜', '🤪', '👀', '✌', '🖤', '🌅', '😘', '😉', '🤔', '🚨', '🏿', '💾', 'Ⓨ', '🎉',
+               '😁', '☝', 'Ⓣ', 'Ⓢ', '😃', '😊', '🤦', '💙', '・', '👍', '💕', '☀', '🤷', '💯', '📸', '🥰', '🙌', '😎', '🇸', '✨', '🇺', '😍', '💪', '🦠', '🤣', '🔥', '♂', '♀', '🏼', '🏾', '🏽', '🏻', '🙏',
+               '😂', '😷', '❤']
+    
+    vector = [0 for i in range(0, len(SMILEYS))]
+    for i in range(0, len(SMILEYS)):
+        if SMILEYS[i] in data:
+            vector[i]=1
+        
+    return vector
+        
+# This method gets as input a string and outputs a list of counts for each special chair
+def findSpecialChairs(data):
+    specialChairs = list(set(punctuation))
+    vector = [0 for i in range(0, len(specialChairs))]
+    for i in range(0, len(specialChairs)):
+        vector[i] = data.count(specialChairs[i])
+    return vector
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+###################################################
 def lemmatize(tweet):
     """returns lemmatized tweet of raw text"""
     text_tweet = str(tweet)
@@ -122,6 +213,27 @@ def create_df_with_emotions(Preprocessed_Tweets):
             Sentiment_Tweets.at[index, 'Longest Sequence Capital Letters'] = max(re.findall('[A-Z]+', row['TEXT_RAW']), key=len)
         except:
             Sentiment_Tweets.at[index, 'Longest Sequence Capital Letters'] = 0
+            
+            
+        try:
+            # Find all emojis
+            Sentiment_Tweets["rawEmojis"] =  Preprocessed_Tweets["TEXT_RAW_PUNCTUATION"].apply(findEmojis)
+        except:
+            continue
+
+        try:
+            # Convert emojis to binary vectors
+            Sentiment_Tweets["rawEmojis"] =  Sentiment_Tweets["rawEmojis"].apply(convertEmojisToVector)
+        except:
+            continue
+            
+        try:
+            # Create special chair counts
+            Sentiment_Tweets["specialChairs"] =  Preprocessed_Tweets["TEXT_RAW_PUNCTUATION"].apply(findSpecialChairs)
+        except:
+            continue
+                        
+            
     return Sentiment_Tweets
 
 
@@ -149,3 +261,5 @@ for entry in tqdm(list(os.scandir(directory))):
     Tweets_with_emotions = create_df_with_emotions(Preprocessed_Tweets)
     Tweets_with_emotions.to_csv(target_path + "/" + os.path.basename(entry.path), index=False, header=True)
 
+    break
+    

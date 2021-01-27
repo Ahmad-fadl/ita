@@ -37,7 +37,7 @@ classified = pd.DataFrame(columns=['ID', 'COUNTRY', 'DAY', 'MONTH', 'TEXT_RAW', 
                                    'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
                                    'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
                                    'Sentiment surprise', 'Sentiment trust', 'Capital Letters',
-                                   'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION'])
+                                   'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis", "specialChairs"])
 
 for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory)))):
     if entry.path.endswith(".csv"):
@@ -48,7 +48,7 @@ for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))))
                                   'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
                                   'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
                                   'Sentiment surprise', 'Sentiment trust', 'Capital Letters',
-                                  'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION']
+                                  'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis", "specialChairs"]
             classified = classified.append(tweets_csv)
         except ValueError as e:
             continue
@@ -68,6 +68,20 @@ def getValue(liste):
             continue
     return summe / len(liste.split())
 
+# This methods transforms binary strings into binary vectors
+def getList(liste):
+    liste = str(liste)
+    summe = 0
+    liste = liste.strip('][')
+    newList = []
+    for val in liste:
+        try:
+            newList.append(int(val))
+        except:
+            continue
+    return np.array(newList)   
+    
+
 
 # This methods counts the length of the inputted string and returns it
 def countLength(word):
@@ -86,6 +100,11 @@ def getBinary(score):
 
 
 # Put all "features" into the desired format by transforming them into numeric values
+
+
+
+classified['rawEmojis'] = classified['rawEmojis'].apply(getList)
+classified['specialChairs'] = classified['specialChairs'].apply(getList)
 classified['Sentiment anger'] = classified['Sentiment anger'].apply(getValue)
 classified['Sentiment anticipation'] = classified['Sentiment anticipation'].apply(getValue)
 classified['Sentiment  disgust'] = classified['Sentiment  disgust'].apply(getValue)
@@ -98,9 +117,16 @@ classified['Sentiment surprise'] = classified['Sentiment surprise'].apply(getVal
 classified['Sentiment trust'] = classified['Sentiment trust'].apply(getValue)
 classified['Longest Sequence Capital Letters'] = classified['Longest Sequence Capital Letters'].apply(countLength)
 
+
+
 # Here we merge the gold sentiments and the calculated features into one df
 classified = pd.merge(classified, sentiments, on="ID")
 classified['gold'] = classified['gold'].apply(getBinary)
+
+
+
+
+
 
 # The gold labels of each tweet as array
 y = np.array(classified["gold"].tolist())
@@ -111,8 +137,17 @@ forFeatures = classified[['WORD COUNT', 'Sentiment anger',
                          'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
                          'Sentiment surprise', 'Sentiment trust', 'Longest Sequence Capital Letters']]
 
+
+
+
+emojis = np.array(classified["rawEmojis"].tolist())
+specialChairs = np.array(classified["specialChairs"].tolist())
+
 # The feature values of each tweet as array --> feature matrix
 x = forFeatures.to_numpy()
+x = np.concatenate((x,emojis), axis=1)
+x = np.concatenate((x,specialChairs), axis=1)
+
 
 
 # Method that splits data in to k-folds in order to apply k-fold-cross-validation
@@ -139,8 +174,11 @@ def crossValidation(x, y, k, classifier):
     return np.mean(np.array(f1))
 
 
+
+
+
 ######## Test multiple classifiers
-"""
+
 clf = DecisionTreeClassifier(random_state=0)
 f1 = crossValidation(x, y, 5, clf)
 print(f"{clf} : f1-score: {f1}\n")
@@ -156,7 +194,7 @@ print(f"{clf} : f1-score: {f1}\n")
 clf = GaussianNB()
 f1 = crossValidation(x, y, 5, clf)
 print(f"{clf} : f1-score: {f1}\n")
-"""
+
 
 ####### Fix one classifier and show results
 
