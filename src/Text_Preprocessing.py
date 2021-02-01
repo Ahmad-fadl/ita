@@ -80,22 +80,6 @@ def remove_specialChairsAll(data) -> str:
         remove_specialChairs_fails += 1
         return str(data) 
     
-    
-    
-# Remove all non alphabetic chairs but some selected
-def remove_specialChairsNotAll(data) -> str:
-    global remove_specialChairs_fails
-    try:
-        regex = re.compile('[^a-zA-Z #.,!?]')
-        data = regex.sub('', str(data))
-        return ' '.join([w for w in data.split() if len(w)>1])
-    except Exception as e:
-        print_log(e)
-        remove_specialChairs_fails += 1
-        return str(data) 
-    
-    
-    
 
 count_files = 0
 directory = "data/Hydrated_Tweets"
@@ -111,21 +95,18 @@ for entry in os.scandir(directory):
     Twitter_Tweets = pd.read_csv(entry.path)
 
 
-    
-    
+
     # Preprocessing: Remove all emojis from the raw text
-    Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_emojis)
+    #Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_emojis)
     # Preprocessing: Remove all URLs from the raw text    
     Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_urls)
-    # Preprocessing: Remove some non alphabetic chairs but few selected
-    
-    Twitter_Tweets['TEXT_RAW_PUNCTUATION'] = Twitter_Tweets['TEXT_RAW'].apply(remove_specialChairsNotAll)
-    Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_specialChairsAll)
+    # Preprocessing: Kremove every non alphabetic chair
+    Twitter_Tweets['TEXT_RAW'] = Twitter_Tweets['TEXT_RAW'].apply(remove_specialChairsAll)    
+    # Keep the raw text with punctuation etc. if we need it
+    Twitter_Tweets['TEXT_RAW_PUNCTUATION'] = Twitter_Tweets['TEXT_RAW']
     
 
-    
-    
-    
+
     # Save DF to csv file
     Twitter_Tweets.to_csv("data/Preprocessed_Tweets/" + os.path.basename(entry.path), index=False, header=True)
     print_log(f"File {count_files}, {os.path.basename(entry.path)} contains: {len(Twitter_Tweets)} Tweets")
