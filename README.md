@@ -56,5 +56,8 @@ For the final evaluation we need a file containing some information and numbers 
 * Then we apply it to all of the tweets in order to get an idea how the final distribution looks like. 
 * In addition several visualizations are computed and saved locally in the `src/data/Classifier_Evaluation/` folder as svg.
 * May take 15-35 minutes.
- 
+
+### Relation to real world Covid development
+* In the file ``src/data/timeline_corona_events_csv.csv`` the main covid-related events in the US, India and the UK are listed by date of the event.
+Events of special importance are marked with 'x' and it will be checked if they show effects in twitter data, be it the number of tweets or a specific sentiment. 
 -------------
