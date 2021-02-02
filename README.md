@@ -40,20 +40,19 @@ For the final evaluation we need a file containing some information and numbers 
 ### Look at statistics
 * If you want to see some statistics about the data .... **TODO** @Ahmad. what should we do to run your code? Please document here. (question: should we transform it to py? jupyter may not be optimal here)
 
-### Sentiment Classification
+### Sentiment Feature Extraction
 * When you have done the above, run ``src/Classifier0.2.py``.
 * This python file creates feature vectors for the preprocessed tweets saved in `src/data/Sentiment_Tweets/TweetsWithEmotions`
 * May take 25 hours. You can stop and restart the session, since already generated files will be skipped then.
 
-
-### Evaluation
+### Sentiment Classification & Evaluation
 * When you have done the above, go to ``src/data/Classifier_Evaluation`` and download the data how it's described in the readme there.
 * Now run ``src/Classifier_Evaluation.py``.
 * This python file creates numeric features out of the recently created features. This results in an numpy array that contains one row for each tweet and each row consists of multiple numeric features (number of anger words, number of sad words...)
-* Then the given sentiment scores are loaded into the program in order to have the "gold truth".
+* Then the given sentiment scores are loaded into the program. For now we use them as "gold truth" until we have annotated our own data. 
 * Then we test multiple classifiers applying k-fold-cross-validation on the given feature matrix and the given "gold truth".
-* The classification task is classifying each tweet to  on a subset of the data. 
-* Then we apply it to all of the tweets in order to get an idea how the final distribution looks like. 
+* The classification task is assigning each tweet either a positive, a negative or a neutral sentiment. 
+* Afterwards we choose the best of the recently tested classifiers to for further work. We apply it to all of the tweets in order to get an idea how the final distribution looks like. 
 * In addition several visualizations are computed and saved locally in the `src/data/Classifier_Evaluation/` folder as svg.
 * May take 15-35 minutes.
 
