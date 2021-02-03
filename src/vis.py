@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[99]:
 
 
 import numpy as np
@@ -19,11 +19,12 @@ from twython import Twython
 import json
 
 tweets_csv=[]
-directory= "data/Hydrated_Tweets/"
+directory= "data/Preprocessed_Tweets/"
 iterator = 0
 for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory)))):
     if not entry.path.endswith(".csv"):
         print(f"skipped {os.path.basename(entry.path)}")
+        continue
 
 
     # Load csv file containing the tweet ID's
@@ -37,7 +38,7 @@ for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))))
  
 
 
-# In[2]:
+# In[100]:
 
 
 All_Tweets = pd.concat(tweets_csv, axis=0, ignore_index=True)
@@ -46,14 +47,14 @@ GB_Tweets =All_Tweets.loc[All_Tweets['COUNTRY'] == 'Vereinigtes Königreich']
 Ind_Tweets =All_Tweets.loc[All_Tweets['COUNTRY'] == 'Republik Indien']  
 
 
-# In[3]:
+# In[101]:
 
 
 print(np.unique(US_Tweets['MONTH']))
 print(US_Tweets.columns)
 
 
-# In[4]:
+# In[102]:
 
 
 print(len(US_Tweets))
@@ -66,7 +67,7 @@ plt.bar(x,y)
 plt.show()  
 
 
-# In[5]:
+# In[103]:
 
 
 Number_Tweets_Each_Month = All_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
@@ -80,7 +81,7 @@ plt.bar(Number_Tweets_Each_Month['MONTH'],Number_Tweets_Each_Month["counts"])
 plt.show()  
 
 
-# In[6]:
+# In[104]:
 
 
 US_Tweets_Each_Month=US_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
@@ -97,7 +98,7 @@ Ind_Tweets_Each_Month['MONTH'] = pd.Categorical(Ind_Tweets_Each_Month['MONTH'], 
 Ind_Tweets_Each_Month.sort_values(by='MONTH',inplace=True)
 
 
-# In[7]:
+# In[105]:
 
 
 x = np.arange(len(Ind_Tweets_Each_Month['MONTH']))  # the label locations
@@ -116,51 +117,59 @@ ax.set_xticklabels(Ind_Tweets_Each_Month['MONTH'])
 ax.legend()
 
 
-# In[70]:
+# In[106]:
 
 
 word_Cloud = All_Tweets["TEXT_RAW"].str.split(expand=True).stack().value_counts()[:100]
 word_Cloud=word_Cloud[word_Cloud.index.str.len()>5]
 
 
-# In[73]:
+# In[107]:
 
 
 word_Cloud.plot.bar(title='most used words in all countries')
 
 
-# In[75]:
+# In[108]:
 
 
 All_Tweets['char_count'] = All_Tweets['TEXT_RAW'].str.len()
 
 
-# In[82]:
+# In[109]:
 
 
 char_count=All_Tweets.groupby(['char_count']).size().reset_index(name='counts').sort_values("char_count",ascending=False)
 
 
-# In[87]:
+# In[110]:
 
 
 print(char_count.columns)
 
 
-# In[95]:
+# In[113]:
 
 
 plt.figure(figsize=(20, 5))
 plt.title("Y is the number of tweets and X is the number of chars in each tweet")
-plt.bar(np.array(char_count[char_count["char_count"]<120]["char_count"]),char_count[char_count["char_count"]<120]["counts"],width=0.8)
+plt.bar(np.array(char_count[char_count["char_count"]<160]["char_count"]),char_count[char_count["char_count"]<160]["counts"],width=0.8)
 
 
-# In[96]:
+# In[112]:
 
 
 plt.figure(figsize=(20, 5))
 plt.title("Y is the number of tweets and X is the number of chars in each tweet")
 plt.bar(np.array(char_count[char_count["char_count"]>=120]["char_count"]),char_count[char_count["char_count"]>=120]["counts"],width=0.8)
+
+
+# In[114]:
+
+
+plt.figure(figsize=(20, 5))
+plt.title("Y is the number of tweets and X is the number of chars in each tweet")
+plt.bar(np.array(char_count[char_count["char_count"]<20]["char_count"]),char_count[char_count["char_count"]<20]["counts"],width=0.8)
 
 
 # In[ ]:
