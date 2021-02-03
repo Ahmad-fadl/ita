@@ -38,13 +38,20 @@ For the final evaluation we need a file containing some information and numbers 
 * While this is running, you may want to check out the readme's in ``src/data/Hydrated_Tweets`` and ``src/data/Preprocessed_Tweets`` (not needed to execute the following steps).
 
 ### Look at statistics
-* If you want to see some statistics about the data .... **TODO** @Ahmad. what should we do to run your code? Please document here. (question: should we transform it to py? jupyter may not be optimal here)
+* To get a better overview and statistics about the data run the file vis.py .
+* It visualizes the preproceced data from "data/Preprocessed_Tweets/" so make sure the preprocessed data are in data directory before running this file.
+* Data like which country has how many tweets.
+* the number of chars in each tweet.
+* the most used words....
+* It also provides an overview about how many tweet in each month from march to december.
 
 ### Sentiment Feature Extraction
 * When you have done the above, run ``src/Classifier0.2.py``.
-* This python file creates feature vectors for the preprocessed tweets saved in `src/data/Sentiment_Tweets/TweetsWithEmotions`
+* to run this file you need to download the word lexikon from https://raw.githubusercontent.com/sebastianruder/emotion_proposition_store/master/NRC-Emotion-Lexicon-v0.92/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt int "data/Sentiment_Classifier/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt"
 * May take 25 hours. You can stop and restart the session, since already generated files will be skipped then.
-
+* after running this file the folowing columns will beadded to our dataframe each column is a lis of (o or 1) with len="the number of words in each tweet"
+* [WORD COUNT]['LEMMATIZED']['Sentiment anger']['Sentiment anticipation']['Sentiment disgust']['Sentiment fear']['Sentiment joy']['NEGATIVE']['POSITIVE']
+* the new dataframe will be saved in `src/data/Sentiment_Tweets/TweetsWithEmotions`
 ### Sentiment Classification & Evaluation
 * When you have done the above, go to ``src/data/Classifier_Evaluation`` and download the data how it's described in the readme there.
 * Now run ``src/Classifier_Evaluation.py``.
