@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[11]:
+# In[1]:
 
 
 import numpy as np
@@ -17,7 +17,7 @@ import os
 # Import the Twython class
 from twython import Twython
 import json
-#save the data from csv to a dataframe
+
 tweets_csv=[]
 directory= "data/Hydrated_Tweets/"
 iterator = 0
@@ -37,7 +37,7 @@ for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))))
  
 
 
-# In[16]:
+# In[2]:
 
 
 All_Tweets = pd.concat(tweets_csv, axis=0, ignore_index=True)
@@ -46,241 +46,124 @@ GB_Tweets =All_Tweets.loc[All_Tweets['COUNTRY'] == 'Vereinigtes Königreich']
 Ind_Tweets =All_Tweets.loc[All_Tweets['COUNTRY'] == 'Republik Indien']  
 
 
-# In[17]:
+# In[3]:
 
-#a
+
 print(np.unique(US_Tweets['MONTH']))
 print(US_Tweets.columns)
 
 
-# In[51]:
+# In[4]:
 
 
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Jul']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 4)
-plt.title("number of tweets USA Jul")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Dec']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 1)
-plt.title("number of tweets USA Dec")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Apr']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets USA April")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Aug']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 3)
-plt.title("number of tweets USA Aug")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-
-plt.show()
-
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Jun']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 4)
-plt.title("number of tweets USA Jun")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Mar']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 1)
-plt.title("number of tweets USA Mar")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Nov']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets USA Nov")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Oct']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 3)
-plt.title("number of tweets USA Oct")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-
-plt.show()
+print(len(US_Tweets))
+print(len(GB_Tweets))
+print(len(Ind_Tweets))
+x=["USA","GB","IND"]
+y= [len(US_Tweets),len(GB_Tweets),len(Ind_Tweets)]
+plt.title("Number of tweets in each country")
+plt.bar(x,y)
+plt.show()  
 
 
-plt.subplot(1, 2, 1)
-plt.title("number of tweets USA Oct")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'May']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(1, 2, 2)
-plt.title("number of tweets USA May")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = US_Tweets.loc[US_Tweets['MONTH'] == 'Sep']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets USA Sep")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-plt.show()
+# In[5]:
 
 
-# In[54]:
+Number_Tweets_Each_Month = All_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+# sort the data by months
+Number_Tweets_Each_Month['MONTH'] = pd.Categorical(Number_Tweets_Each_Month['MONTH'], categories=months, ordered=True)
+Number_Tweets_Each_Month.sort_values(by='MONTH',inplace=True)
+plt.title("Number of tweets in each month")
+plt.bar(Number_Tweets_Each_Month['MONTH'],Number_Tweets_Each_Month["counts"])
+plt.show()  
 
 
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Jul']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 4)
-plt.title("number of tweets GB Jul")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Dec']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 1)
-plt.title("number of tweets GB Dec")
-plt.scatter(np.array((GB_Tweets['DAY'])),np.array(temp['freq']))
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Apr']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets GB April")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Aug']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 3)
-plt.title("number of tweets GB Aug")
-plt.scatter(np.array((GB_Tweets['DAY'])),np.array(temp['freq']))
-
-plt.show()
-
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Jun']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 4)
-plt.title("number of tweets GB Jun")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Mar']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 1)
-plt.title("number of tweets GB Mar")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Nov']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets GB Nov")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Oct']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 3)
-plt.title("number of tweets GB Oct")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-
-plt.show()
+# In[6]:
 
 
-plt.subplot(1, 2, 1)
-plt.title("number of tweets GB Oct")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'May']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(1, 2, 2)
-plt.title("number of tweets GB May")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = GB_Tweets.loc[GB_Tweets['MONTH'] == 'Sep']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets GB Sep")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-plt.show()
-
-#indien
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Jul']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 4)
-plt.title("number of tweets India Jul")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Dec']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 1)
-plt.title("number of tweets India Dec")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Apr']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets India April")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Aug']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 3)
-plt.title("number of tweets India Aug")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-
-plt.show()
-
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Jun']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 4)
-plt.title("number of tweets India Jun")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Mar']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 1)
-plt.title("number of tweets India Mar")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Nov']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets India Nov")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Oct']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 3)
-plt.title("number of tweets India Oct")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-
-plt.show()
+US_Tweets_Each_Month=US_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
+# sort the data by months
+US_Tweets_Each_Month['MONTH'] = pd.Categorical(US_Tweets_Each_Month['MONTH'], categories=months, ordered=True)
+US_Tweets_Each_Month.sort_values(by='MONTH',inplace=True)
+GB_Tweets_Each_Month=GB_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
+# sort the data by months
+GB_Tweets_Each_Month['MONTH'] = pd.Categorical(GB_Tweets_Each_Month['MONTH'], categories=months, ordered=True)
+GB_Tweets_Each_Month.sort_values(by='MONTH',inplace=True)
+Ind_Tweets_Each_Month=Ind_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
+# sort the data by months
+Ind_Tweets_Each_Month['MONTH'] = pd.Categorical(Ind_Tweets_Each_Month['MONTH'], categories=months, ordered=True)
+Ind_Tweets_Each_Month.sort_values(by='MONTH',inplace=True)
 
 
-plt.subplot(1, 2, 1)
-plt.title("number of tweets India Oct")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'May']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(1, 2, 2)
-plt.title("number of tweets India May")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-temp = Ind_Tweets.loc[Ind_Tweets['MONTH'] == 'Sep']
-temp['freq'] = temp.groupby('DAY')['DAY'].transform('count')
-temp = temp[['DAY' ,'freq']]
-plt.subplot(2, 2, 2)
-plt.title("number of tweets India Sep")
-plt.scatter(np.array((temp['DAY'])),np.array(temp['freq']))
-plt.show()
+# In[7]:
 
+
+x = np.arange(len(Ind_Tweets_Each_Month['MONTH']))  # the label locations
+width = 0.33  # the width of the bars
+
+fig, ax = plt.subplots()
+rects1 = ax.bar(x + width, US_Tweets_Each_Month['counts'], width, label='USA')
+rects2 = ax.bar(x  , GB_Tweets_Each_Month['counts'], width, label='GB')
+rects2 = ax.bar(x - width , Ind_Tweets_Each_Month['counts'], width, label='Ind')
+
+# Add some text for labels, title and custom x-axis tick labels, etc.
+ax.set_ylabel('counts')
+ax.set_title('Number of tweets in each country and in each month')
+ax.set_xticks(x)
+ax.set_xticklabels(Ind_Tweets_Each_Month['MONTH'])
+ax.legend()
+
+
+# In[70]:
+
+
+word_Cloud = All_Tweets["TEXT_RAW"].str.split(expand=True).stack().value_counts()[:100]
+word_Cloud=word_Cloud[word_Cloud.index.str.len()>5]
+
+
+# In[73]:
+
+
+word_Cloud.plot.bar(title='most used words in all countries')
+
+
+# In[75]:
+
+
+All_Tweets['char_count'] = All_Tweets['TEXT_RAW'].str.len()
+
+
+# In[82]:
+
+
+char_count=All_Tweets.groupby(['char_count']).size().reset_index(name='counts').sort_values("char_count",ascending=False)
+
+
+# In[87]:
+
+
+print(char_count.columns)
+
+
+# In[95]:
+
+
+plt.figure(figsize=(20, 5))
+plt.title("Y is the number of tweets and X is the number of chars in each tweet")
+plt.bar(np.array(char_count[char_count["char_count"]<120]["char_count"]),char_count[char_count["char_count"]<120]["counts"],width=0.8)
+
+
+# In[96]:
+
+
+plt.figure(figsize=(20, 5))
+plt.title("Y is the number of tweets and X is the number of chars in each tweet")
+plt.bar(np.array(char_count[char_count["char_count"]>=120]["char_count"]),char_count[char_count["char_count"]>=120]["counts"],width=0.8)
 
 
 # In[ ]:
-
 
 
 
