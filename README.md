@@ -47,7 +47,7 @@ For the final evaluation we need a file containing some information and numbers 
 
 ### Sentiment Feature Extraction
 * When you have done the above, run ``src/Classifier0.2.py``.
-* to run this file you need to download the word lexikon from https://raw.githubusercontent.com/sebastianruder/emotion_proposition_store/master/NRC-Emotion-Lexicon-v0.92/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt int "data/Sentiment_Classifier/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt"
+* to run this file you need to download the word lexikon from https://raw.githubusercontent.com/sebastianruder/emotion_proposition_store/master/NRC-Emotion-Lexicon-v0.92/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt intp "data/Sentiment_Classifier/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt"
 * May take 25 hours. You can stop and restart the session, since already generated files will be skipped then.
 * after running this file the folowing columns will beadded to our dataframe each column is a lis of (o or 1) with len="the number of words in each tweet"
 * [WORD COUNT]['LEMMATIZED']['Sentiment anger']['Sentiment anticipation']['Sentiment disgust']['Sentiment fear']['Sentiment joy']['NEGATIVE']['POSITIVE']
