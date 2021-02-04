@@ -34,7 +34,7 @@ def generate_annot_dict(annot_dict_path):
             if entry.path.endswith(".csv"):
                 doc_names.append(f"{os.path.basename(entry.path)}")
 
-        annot_basis = random.choices(doc_names, k=100)
+        annot_basis = random.choices(doc_names, k=20)  # change back to 100 or anything else. 20 is for short testing
 
         annot_dict = {}
         for entry in annot_basis:
@@ -45,7 +45,7 @@ def generate_annot_dict(annot_dict_path):
             # text = tweet["TEXT_RAW"]
             annot_dict[ID] = {'path': entry, 'ahmad': None, 'severin': None, 'sina': None, 'ute': None}
 
-        # print(annot_dict)
+        print(annot_dict)
 
         with open(annot_dict_path, 'wb') as f:  # generate and save annot dict as a pickle
             pickle.dump(annot_dict, f)
@@ -98,7 +98,7 @@ def annotate_basis_tweets(annot_dict_path):
 
 annot_dict_path = "data/Manual_Annotation/annot_ID_dict.pkl"
 
-# generate_annot_dict(annot_dict_path=annot_dict_path)  # already run and output uploaded by sina. don't overwrite
+generate_annot_dict(annot_dict_path=annot_dict_path)  # already run and output uploaded by sina. don't overwrite
 annotate_basis_tweets(annot_dict_path=annot_dict_path)
 
 # TODO implement kappa / annotator agreement
