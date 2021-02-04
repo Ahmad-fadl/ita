@@ -15,8 +15,15 @@
 * twython
 * tqdm
 * pandas
-* Please add missing
-
+* matplotlib
+* csv
+* re
+* os
+* nltk
+* random
+* sklearn
+* datetime
+* scipy
 
 -------------
 
