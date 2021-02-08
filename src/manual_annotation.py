@@ -12,7 +12,7 @@ import pandas as pd
 motivationals = ["All tweets can come true, if we have the courage to rate them.",
                  "The secret of getting ahead is getting started.",
                  "The best time to rate a tweet was 20 years ago. The second best time is now!",
-                 "If people are doubting how many tweets you judge, go so far that they can't judge you anymore.",
+                 "If people are doubting how many tweets you can judge, go so far that they can't judge you anymore.",
                  "Rate one tweet every day that scares you.",
                  "Choose the sentiment that you feel in your heart to be right – for you’ll be criticized anyway.",
                  "Smart people learn from everything and everyone, average people from their experiences, "
@@ -57,7 +57,7 @@ def generate_annot_dict(annot_dict_path):
 def annotate_basis_tweets(annot_dict_path):
     with open(annot_dict_path, 'rb') as f:
         annot_dict = pickle.load(f)
-    # pprint(annot_dict)
+    #pprint(annot_dict)
     annotator = None
     while annotator not in ['ahmad', 'severin', 'sina', 'ute']:
         annotator = input("Welcome to the manual sentiment annotation.\n"
@@ -92,7 +92,7 @@ def annotate_basis_tweets(annot_dict_path):
                     f"You have annotated {count} tweets. I feel you should hear this:\n{random.choice(motivationals)}")
             elif count % 10 == 0:
                 print(f"You have annotated {count} tweets so far. YOU GO {annotator.upper()}!")
-    print("You have annotated 100 tweets. Thanks. ")
+    print(f"You have annotated {count} tweets. Thanks. ")
     # TODO implement evaluation for more tweets but for single persons
 
 
