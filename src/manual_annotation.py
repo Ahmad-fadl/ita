@@ -57,13 +57,18 @@ def generate_annot_dict(annot_dict_path):
 def annotate_basis_tweets(annot_dict_path):
     with open(annot_dict_path, 'rb') as f:
         annot_dict = pickle.load(f)
-    #pprint(annot_dict)
+    pprint(annot_dict)
     annotator = None
     while annotator not in ['ahmad', 'severin', 'sina', 'ute']:
         annotator = input("Welcome to the manual sentiment annotation.\n"
                           "What's your name? Choose from 'ahmad', 'severin', 'sina' and 'ute':\n")
-    print(f"Hello {annotator}! Please rate the sentiment of the following tweets regarding the Corona situation.\n"
-          f"Negative (-1), neutral (0) or positive (1). If unsure or not applicable choose (0) too.\n"
+    print(f"Hello {annotator}! Please rate the sentiment of the following tweets.\n"
+          f"Negative (-1), neutral (0) or positive (1). If you can't tell or if not applicable choose (0) too.\n"
+          f"- Rate it regarding the Corona situation. (example: 'I hate my sister!' would be (0))\n"
+          f"- If you see something positive, but are not sure if it's really THAT much positive or even actually positive, choose (1)..\n"
+          f"- Rate the sentiment that is (somehow) transported by the tweeter- do not rate the positivity of the provided facts. "
+          f"(example: neutral conveyed news about rise in deaths)\n"
+          f"- Don't click on links or google for unknown concepts. Tweet itself = full information (Exception: unknown vocabluary)\n"
           f"You can cancel and continue anytime.\n")
     count = 0
     for i in annot_dict:
