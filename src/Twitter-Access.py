@@ -134,11 +134,14 @@ print_log("--------\n" + time.strftime("%d.%m.%y, %H:%M") + " --- Start hydratio
 
 # For each csv-file (containing two days)
 for csv in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))), desc="Files", position=1):
-    if os.path.exists("Long_" + str(csv)):
+    long_path = "data/Hydrated_Tweets_Long/Long_" + os.path.basename(csv.path)
+    print(long_path, "HIER")
+    if os.path.exists(long_path):
         print(f"skipped {os.path.basename(csv.path)}, because it's already hydrated")
         continue
     if not csv.path.endswith(".csv"):
         print(f"skipped {os.path.basename(csv.path)}")
+        continue
 
     count_files += 1
     metadata_fail = 0
@@ -214,7 +217,7 @@ for csv in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))), d
             continue
 
     # Save DF to csv file
-    Twitter_Tweets.to_csv("data/Hydrated_Tweets_Long/Long_" + os.path.basename(csv.path), index=False, header=True)
+    Twitter_Tweets.to_csv(long_path, index=False, header=True)
     print_log("")
     if len(ID_list) != len(Twitter_Tweets):
         print_log(
