@@ -8,7 +8,7 @@ See main readme.
 -----------
 ### Issues
 * In the extracted files is one column too much. Some tweets show text in there, like " Pub  â€” https://t.co/ndtlNUjAbi" or " LEARN CLUB https://t.co/WNDCww4mm4"  
-TODO Why / Remove them ?  
+TODO Why / Remove them?  
 * File october28_october29.csv (File 214) lead to an error: `ValueError: Length mismatch: Expected axis has 1 elements, new values have 2 elements`, pointing to line 
 `tweets_csv.columns = ["ID","Sentiment"]`. Currently handled by Exception Catch and omitting file.  
 TODO check problem, fix corrupted file(s)? 

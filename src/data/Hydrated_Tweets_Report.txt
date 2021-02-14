@@ -2167,5 +2167,3 @@ Looked through 256 files.
 Metadata extraction failed 627 times
 1 corrupted .csv-files
 execution duration: 0.0h 38.0m 44s
-
-
