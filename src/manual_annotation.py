@@ -17,7 +17,7 @@ motivationals = ["All tweets can come true, if we have the courage to rate them.
                  "Choose the sentiment that you feel in your heart to be right – for you’ll be criticized anyway.",
                  "Smart people learn from everything and everyone, average people from their experiences, "
                  "stupid people already have all the answers.",
-                 "You can either experience the pain of discipline or the pain of regret. The choice is yours.",
+                 "You can either experience the pain of sentiments or the pain of regret. The choice is yours.",
                  "If something is important enough, even if the odds are stacked against you, you should still do it.",
                  "If you hear a voice within you say ‘you cannot rate,’ "
                  "then by all means rate and that voice will be silenced."]
@@ -34,7 +34,7 @@ def generate_annot_dict(annot_dict_path):
             if entry.path.endswith(".csv"):
                 doc_names.append(f"{os.path.basename(entry.path)}")
 
-        annot_basis = random.choices(doc_names, k=20)  # change back to 100 or anything else. 20 is for short testing
+        annot_basis = random.choices(doc_names, k=1000)  # change back to 100 or anything else. 20 is for short testing
 
         annot_dict = {}
         for entry in annot_basis:
@@ -45,65 +45,120 @@ def generate_annot_dict(annot_dict_path):
             # text = tweet["TEXT_RAW"]
             annot_dict[ID] = {'path': entry, 'ahmad': None, 'severin': None, 'sina': None, 'ute': None}
 
-        print(annot_dict)
+        #print(annot_dict)
 
         with open(annot_dict_path, 'wb') as f:  # generate and save annot dict as a pickle
             pickle.dump(annot_dict, f)
 
-        with open(annot_dict_path, 'wb') as f:
-            pickle.dump(annot_dict, f)
 
 
-def annotate_basis_tweets(annot_dict_path):
-    with open(annot_dict_path, 'rb') as f:
-        annot_dict = pickle.load(f)
-    pprint(annot_dict)
+def annotate_basis_tweets(annot_dict_path,kappa_test=True):
     annotator = None
     while annotator not in ['ahmad', 'severin', 'sina', 'ute']:
         annotator = input("Welcome to the manual sentiment annotation.\n"
                           "What's your name? Choose from 'ahmad', 'severin', 'sina' and 'ute':\n")
+
+    if kappa_test == True:
+        with open(annot_dict_path, 'rb') as f:
+            annot_dict = pickle.load(f)
+    elif kappa_test == False:
+        with open(str(annot_dict_path+"_"+annotator+".pkl"), 'rb') as f:
+            annot_dict = pickle.load(f)
+
     print(f"Hello {annotator}! Please rate the sentiment of the following tweets.\n"
-          f"Negative (-1), neutral (0) or positive (1). If you can't tell or if not applicable choose (0) too.\n"
+          f"Negative (-1), neutral (0) or positive (1). \n"
+          f"- If you can't tell or if not applicable choose (0) too.\n"
           f"- Rate it regarding the Corona situation. (example: 'I hate my sister!' would be (0))\n"
-          f"- If you see something positive, but are not sure if it's really THAT much positive or even actually positive, choose (1)..\n"
+          f"- If you see something positive, but are not sure if it's really THAT much positive or even actually positive, choose (1)\n"
           f"- Rate the sentiment that is (somehow) transported by the tweeter- do not rate the positivity of the provided facts. "
           f"(example: neutral conveyed news about rise in deaths)\n"
           f"- Don't click on links or google for unknown concepts. Tweet itself = full information (Exception: unknown vocabluary)\n"
           f"You can cancel and continue anytime.\n")
     count = 0
     for i in annot_dict:
-        if annot_dict[i][annotator] is not None:
+        if annotator in annot_dict[i] and annot_dict[i][annotator] is not None:
             count += 1
     print(f"You have annotated {count} tweets so far.\n")
-
     for tweet_id in annot_dict:
-        if annot_dict[tweet_id][annotator] is None:
+        if annotator in annot_dict[tweet_id] and annot_dict[tweet_id][annotator] is None:
             ID = np.int64(tweet_id)
             tweets = pd.read_csv(f"data/Hydrated_Tweets/{annot_dict[tweet_id]['path']}")[["ID", "TEXT_RAW"]]
             tweet = tweets[tweets['ID'].values == ID]
-            print("------------------------------------------------")
-            print(tweet["TEXT_RAW"].values[0])
-            print("------------------------------------------------")
+            raw_tweet = tweet["TEXT_RAW"].values[0]
+            print(f"{len(raw_tweet)*'-'}")
+            print(raw_tweet)
+            print(f"{len(raw_tweet)*'-'}")
             sentiment = None
             while sentiment not in ["-1", "0", "1"]:
                 sentiment = input("rate it: ")
             sentiment = int(sentiment)
             annot_dict[tweet_id][annotator] = sentiment
-            with open(annot_dict_path, 'wb') as g:
+            with open((annot_dict_path+"_"+annotator+".pkl"), 'wb') as g:
                 pickle.dump(annot_dict, g)
             count += 1
+
             if count % 20 == 0:
                 print(
                     f"You have annotated {count} tweets. I feel you should hear this:\n{random.choice(motivationals)}")
             elif count % 10 == 0:
                 print(f"You have annotated {count} tweets so far. YOU GO {annotator.upper()}!")
+
     print(f"You have annotated {count} tweets. Thanks. ")
     # TODO implement evaluation for more tweets but for single persons
 
 
-annot_dict_path = "data/Manual_Annotation/annot_ID_dict.pkl"
+#annot_dict_path = "data/Manual_Annotation/annot_ID_dict.pkl"
+#generate_annot_dict(annot_dict_path=annot_dict_path)  # already run and output uploaded by sina. don't overwrite
+#annotate_basis_tweets(annot_dict_path=annot_dict_path)
 
-generate_annot_dict(annot_dict_path=annot_dict_path)  # already run and output uploaded by sina. don't overwrite
-annotate_basis_tweets(annot_dict_path=annot_dict_path)
 
-# TODO implement kappa / annotator agreement
+
+def gen_great_annot_dict(annot_dict_path):
+    if os.path.exists(annot_dict_path+"_sina.pkl"):
+        print("You may be not supposed to run this again. "
+              "Delete annot_dict file first if you really want to regenerate and overwrite the dict.")
+        return 0
+    else:
+        doc_names = []
+        for entry in os.scandir("data/Hydrated_Tweets"):
+            if entry.path.endswith(".csv"):
+                doc_names.append(f"{os.path.basename(entry.path)}")
+
+        annot_basis = random.choices(doc_names, k=1000)  # change back to 100 or anything else. 20 is for short testing
+
+        annot_dict = {}
+
+        annot_dict_splits = [annot_basis[i:i + 250] for i in range(0, len(annot_basis), 250)]
+        team = ['ahmad', 'severin', 'sina', 'ute']
+        for split, annotator in zip(annot_dict_splits, team):
+            for entry in split:
+                tweet = pd.read_csv(f"data/Hydrated_Tweets/{entry}")[["ID", "TEXT_RAW"]].sample(1)
+                ID = int(tweet["ID"].values[0])
+                while ID in annot_dict:
+                    tweet = pd.read_csv(f"data/Hydrated_Tweets/{entry}")[["ID", "TEXT_RAW"]].sample(1)
+                    ID = int(tweet["ID"].values[0])
+                annot_dict[ID] = {'path': entry, annotator: None}
+
+            with open(annot_dict_path+"_"+annotator+".pkl", 'wb') as f:  # generate and save annot dict as a pickle
+                pickle.dump(annot_dict, f)
+                #pprint(annot_dict)
+                #pprint(len(annot_dict))
+
+
+def merge_single_anno_dicts():
+    merged_dict = {}
+    for member in ['ahmad', 'ute', 'severin', 'sina']:
+        with open("data/Manual_Annotation/annot_ID_dict_"+member+".pkl", 'rb') as f:
+            member_dict = pickle.load(f)
+        merged_dict.update(member_dict)
+
+    with open("data/Manual_Annotation/merged_annotation_dict.pkl", 'wb') as f:  # generate and save annot dict as a pickle
+        pickle.dump(merged_dict, f)
+    #pprint(merged_dict)
+    print("Annotation dicts are merged now. Please add/push to Git, if you are the last finishing annotator.")
+
+
+long_annot_dict_path = "data/Manual_Annotation/annot_ID_dict" # without pkl
+# gen_great_annot_dict(long_annot_dict_path)
+annotate_basis_tweets(long_annot_dict_path, kappa_test=False)
+merge_single_anno_dicts()
