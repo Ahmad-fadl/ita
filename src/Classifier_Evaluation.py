@@ -37,7 +37,7 @@ classified = pd.DataFrame(columns=['ID', 'COUNTRY', 'DAY', 'MONTH', 'TEXT_RAW', 
                                    'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
                                    'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
                                    'Sentiment surprise', 'Sentiment trust', 'Capital Letters',
-                                   'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis", "specialChairs"])
+                                   'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis", "specialChairs", "rawHashtags"])
 
 for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory)))):
     if entry.path.endswith(".csv"):
@@ -48,7 +48,7 @@ for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))))
                                   'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
                                   'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
                                   'Sentiment surprise', 'Sentiment trust', 'Capital Letters',
-                                  'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis", "specialChairs"]
+                                  'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis", "specialChairs", "rawHashtags"]
             classified = classified.append(tweets_csv)
         except ValueError as e:
             continue
@@ -56,12 +56,14 @@ for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))))
 classified['ID'] = classified['ID'].astype(str)
 
 
+print(len(classified))
+
 # This methods transforms binary vectors into real numbers
 def getValue(liste):
     liste = str(liste)
     summe = 0
     liste = liste.strip('][')
-    for val in liste:
+    for val in liste.split(","):
         try:
             summe = summe + int(val)
         except:
@@ -74,7 +76,7 @@ def getList(liste):
     summe = 0
     liste = liste.strip('][')
     newList = []
-    for val in liste:
+    for val in liste.split(","):
         try:
             newList.append(int(val))
         except:
@@ -105,6 +107,8 @@ def getBinary(score):
 
 classified['rawEmojis'] = classified['rawEmojis'].apply(getList)
 classified['specialChairs'] = classified['specialChairs'].apply(getList)
+classified['rawHashtags'] = classified['rawHashtags'].apply(getList)
+
 classified['Sentiment anger'] = classified['Sentiment anger'].apply(getValue)
 classified['Sentiment anticipation'] = classified['Sentiment anticipation'].apply(getValue)
 classified['Sentiment  disgust'] = classified['Sentiment  disgust'].apply(getValue)
@@ -124,7 +128,8 @@ classified = pd.merge(classified, sentiments, on="ID")
 classified['gold'] = classified['gold'].apply(getBinary)
 
 
-
+TEST1 = classified.head(200)['TEXT_RAW_PUNCTUATION'].tolist()
+TEST2 = classified.head(200)['gold'].tolist()
 
 
 
@@ -142,13 +147,16 @@ forFeatures = classified[['WORD COUNT', 'Sentiment anger',
 
 emojis = np.array(classified["rawEmojis"].tolist())
 specialChairs = np.array(classified["specialChairs"].tolist())
+rawHashtags = np.array(classified["rawHashtags"].tolist())
+
+
 
 # The feature values of each tweet as array --> feature matrix
+#x = np.zeros_like(forFeatures)
 x = forFeatures.to_numpy()
 x = np.concatenate((x,emojis), axis=1)
 x = np.concatenate((x,specialChairs), axis=1)
-
-
+x = np.concatenate((x,rawHashtags), axis=1)
 
 # Method that splits data in to k-folds in order to apply k-fold-cross-validation
 def split_folds(data, target, L):
@@ -169,7 +177,10 @@ def crossValidation(x, y, k, classifier):
         y_test_f = y_folds[n]
         classifier.fit(X_train_f, y_train_f)
         y_pred = classifier.predict(X_test_f)
-        f1.append(f1_score(y_test_f, y_pred, average='micro'))
+        #f1.append(f1_score(y_test_f, y_pred, average='micro'))
+        f1.append(adjusted_rand_score(y_test_f, y_pred))
+        
+        
 
     return np.mean(np.array(f1))
 
@@ -471,3 +482,4 @@ plt.plot(x, yInfections, linewidth=2, color="red")
 
 plt.show()
 fig.savefig("data/Classifier_Evaluation/5)TotalSentiments+TotalInfections.svg", format="svg")
+"""
