@@ -16,4 +16,4 @@ This is to recalculate kappa and later build the 'medoid' average to also use th
 - if completed, the annotation for another 250 tweets will start. Each of us get different tweets.
 - if completed, the existing dicts get merged. When we all have uploaded our pickle-files, the last person finishing, should also upload the generated merged dict.
 - since the dicts are separated and get re-merged at the end, there is no need to wait for team members to upload/update their annotations.
-- at the end we have 100+50 gold labeled sentiment tweets for training.
+- at the end we have 1000+50 gold labeled sentiment tweets for training.
