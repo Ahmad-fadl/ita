@@ -5,7 +5,6 @@ import os
 import pickle
 import random
 from pprint import pprint
-
 import numpy as np
 import pandas as pd
 
@@ -23,8 +22,7 @@ motivationals = ["All tweets can come true, if we have the courage to rate them.
                  "then by all means rate and that voice will be silenced."]
 
 
-def generate_annot_dict(annot_dict_path):
-    """generates """
+def generate_kappa_anno_dict(annot_dict_path):
     if os.path.exists(annot_dict_path):
         print("You may be not supposed to run this again. "
               "Delete annot_dict file first if you really want to regenerate and overwrite the dict.")
@@ -58,10 +56,10 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
         annotator = input("Welcome to the manual sentiment annotation.\n"
                           "What's your name? Choose from 'ahmad', 'severin', 'sina' and 'ute':\n")
 
-    if kappa_test == True:
+    if kappa_test:
         with open(annot_dict_path, 'rb') as f:
             annot_dict = pickle.load(f)
-    elif kappa_test == False:
+    elif not kappa_test:
         with open(str(annot_dict_path + "_" + annotator + ".pkl"), 'rb') as f:
             annot_dict = pickle.load(f)
 
@@ -72,13 +70,16 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
           f"- If you see something positive, but are not sure if it's really THAT much positive or even actually positive, choose (1)\n"
           f"- Rate the sentiment that is (somehow) transported by the tweeter- do not rate the positivity of the provided facts. "
           f"(example: neutral conveyed news about rise in deaths)\n"
-          f"- Don't click on links or google for unknown concepts. Tweet itself = full information (Exception: unknown vocabluary)\n"
+          f"- Don't click on links or google for unknown concepts. Tweet itself = full information (Exception: unknown vocabulary)\n"
           f"You can cancel and continue anytime.\n")
+
     count = 0
     for i in annot_dict:
         if annotator in annot_dict[i] and annot_dict[i][annotator] is not None:
             count += 1
+
     print(f"You have annotated {count} tweets so far.\n")
+
     for tweet_id in annot_dict:
         if annotator in annot_dict[tweet_id] and annot_dict[tweet_id][annotator] is None:
             ID = np.int64(tweet_id)
@@ -102,14 +103,7 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
                     f"You have annotated {count} tweets. I feel you should hear this:\n{random.choice(motivationals)}")
             elif count % 10 == 0:
                 print(f"You have annotated {count} tweets so far. YOU GO {annotator.upper()}!")
-
     print(f"You have annotated {count} tweets. Thanks. ")
-    # TODO implement evaluation for more tweets but for single persons
-
-
-annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test.pkl"
-# generate_annot_dict(annot_dict_path=annot_dict_path)  # already run and output uploaded by sina. don't overwrite
-annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
 
 def gen_great_annot_dict(annot_dict_path):
@@ -124,11 +118,10 @@ def gen_great_annot_dict(annot_dict_path):
                 doc_names.append(f"{os.path.basename(entry.path)}")
 
         annot_basis = random.choices(doc_names, k=1000)  # change back to 100 or anything else. 20 is for short testing
-
         annot_dict = {}
-
         annot_dict_splits = [annot_basis[i:i + 250] for i in range(0, len(annot_basis), 250)]
         team = ['ahmad', 'severin', 'sina', 'ute']
+
         for split, annotator in zip(annot_dict_splits, team):
             for entry in split:
                 tweet = pd.read_csv(f"data/Hydrated_Tweets/{entry}")[["ID", "TEXT_RAW"]].sample(1)
@@ -159,7 +152,14 @@ def merge_single_anno_dicts():
     print("Annotation dicts are merged now. Please add/push to Git, if you are the last finishing annotator.")
 
 
-long_annot_dict_path = "data/Manual_Annotation/annot_ID_dict"  # without pkl
-# gen_great_annot_dict(long_annot_dict_path) # already run and output uploaded by sina. don't overwrite
-annotate_basis_tweets(long_annot_dict_path, kappa_test=False)
-merge_single_anno_dicts()
+if __name__ == '__main__':
+    # for second kappa test
+    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test.pkl"
+    # generate_kappa_anno_dict(annot_dict_path=annot_dict_path)  # already run and output uploaded by sina. don't overwrite
+    annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
+
+    # for single annotation of 250 tweets per team member
+    long_annot_dict_path = "data/Manual_Annotation/annot_ID_dict"
+    # gen_great_annot_dict(long_annot_dict_path) # already run and output uploaded by sina. don't overwrite
+    annotate_basis_tweets(long_annot_dict_path, kappa_test=False)
+    merge_single_anno_dicts()  # merge dicts of each team member. irrelevant if complete or not.
