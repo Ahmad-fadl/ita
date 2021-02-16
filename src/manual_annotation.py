@@ -22,7 +22,8 @@ motivationals = ["All tweets can come true, if we have the courage to rate them.
                  "then by all means rate and that voice will be silenced."]
 
 
-def generate_kappa_anno_dict(annot_dict_path):
+def generate_kappa_anno_dict(annot_dict_path,sample=20):
+    """param sample: how many tweets should be in dict"""
     if os.path.exists(annot_dict_path):
         print("You may be not supposed to run this again. "
               "Delete annot_dict file first if you really want to regenerate and overwrite the dict.")
@@ -33,7 +34,7 @@ def generate_kappa_anno_dict(annot_dict_path):
             if entry.path.endswith(".csv"):
                 doc_names.append(f"{os.path.basename(entry.path)}")
 
-        annot_basis = random.choices(doc_names, k=50)  # change back to 100 or anything else. 20 is for short testing
+        annot_basis = random.choices(doc_names, k=sample)
 
         annot_dict = {}
         for entry in annot_basis:
@@ -106,7 +107,8 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
     print(f"You have annotated {count} tweets. Thanks. ")
 
 
-def gen_great_annot_dict(annot_dict_path):
+def gen_great_annot_dict(annot_dict_path, sample=1000):
+    "param sample: how many tweets should be in the dict"
     if os.path.exists(annot_dict_path + "_sina.pkl"):
         print("You may be not supposed to run this again. "
               "Delete annot_dict file first if you really want to regenerate and overwrite the dict.")
@@ -153,13 +155,18 @@ def merge_single_anno_dicts():
 
 
 if __name__ == '__main__':
-    # for second kappa test
-    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test.pkl"
-    # generate_kappa_anno_dict(annot_dict_path=annot_dict_path)  # already run and output uploaded by sina. don't overwrite
+    # for 2. kappa test with 20 samples
+    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test_20.pkl"
+    # generate_kappa_anno_dict(annot_dict_path=annot_dict_path, sample=20)  # already run and output uploaded by sina. don't overwrite
     annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
-    # for single annotation of 250 tweets per team member
+    # for 3. kappa test
+    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_3._kappa_test_50.pkl"
+    # generate_kappa_anno_dict(annot_dict_path=annot_dict_path, sample=50)  # already run and output uploaded by sina. don't overwrite
+    annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
+
+    # for single annotation of 250 tweets per team member, 1000 in total
     long_annot_dict_path = "data/Manual_Annotation/annot_ID_dict"
-    # gen_great_annot_dict(long_annot_dict_path) # already run and output uploaded by sina. don't overwrite
+    # gen_great_annot_dict(long_annot_dict_path, sample=1000) # already run and output uploaded by sina. don't overwrite
     annotate_basis_tweets(long_annot_dict_path, kappa_test=False)
     merge_single_anno_dicts()  # merge dicts of each team member. irrelevant if complete or not.
