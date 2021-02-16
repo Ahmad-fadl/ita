@@ -59,6 +59,7 @@ For the final evaluation we need a file containing some information and numbers 
 * after running this file the folowing columns will beadded to our dataframe each column is a list of (o or 1) with len="the number of words in each tweet"
 * [WORD COUNT]['LEMMATIZED']['Sentiment anger']['Sentiment anticipation']['Sentiment disgust']['Sentiment fear']['Sentiment joy']['NEGATIVE']['POSITIVE']["rawEmojis"]["specialChairs"]["rawHashtags"]
 * the new dataframe will be saved in `src/data/Sentiment_Tweets/TweetsWithEmotions`
+
 ### Sentiment Classification & Evaluation
 * When you have done the above, go to ``src/data/Classifier_Evaluation`` and download the data how it's described in the readme there.
 * Now run ``src/Classifier_Evaluation.py``.
@@ -75,4 +76,7 @@ For the final evaluation we need a file containing some information and numbers 
 Events of special importance are marked with 'x' and it will be checked if they show effects in twitter data, be it the number of tweets or a specific sentiment.  
   We have collected and put together the data by ourselfs, using these sources: https://www.ajmc.com/view/a-timeline-of-covid19-developments-in-2020,,https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_India_(January%E2%80%93May_2020),,https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_England_(2020),
 https://timesofindia.indiatimes.com/india/coronavirus-india-timeline/articleshow/80030867.cms
--------------
+
+
+### Manual Annotation
+* To run an get information on the manual annotation see ``src/manual_annotation.py`` and Readme in ``src/data/Manual_Annotation/``
