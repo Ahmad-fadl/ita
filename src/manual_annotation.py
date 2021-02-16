@@ -58,7 +58,7 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
                           "What's your name? Choose from 'ahmad', 'severin', 'sina' and 'ute':\n")
 
     if kappa_test:
-        with open(annot_dict_path, 'rb') as f:
+        with open(annot_dict_path+".pkl", 'rb') as f:
             annot_dict = pickle.load(f)
     elif not kappa_test:
         with open(str(annot_dict_path + "_" + annotator + ".pkl"), 'rb') as f:
@@ -96,8 +96,12 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
                 sentiment = input("rate it: ")
             sentiment = int(sentiment)
             annot_dict[tweet_id][annotator] = sentiment
-            with open((annot_dict_path + "_" + annotator + ".pkl"), 'wb') as g:
-                pickle.dump(annot_dict, g)
+            if kappa_test:
+                with open((annot_dict_path+".pkl"), 'wb') as g:
+                    pickle.dump(annot_dict, g)
+            elif not kappa_test:
+                with open((annot_dict_path + "_" + annotator + ".pkl"), 'wb') as g:
+                    pickle.dump(annot_dict, g)
             count += 1
 
             if count % 20 == 0:
@@ -157,12 +161,12 @@ def merge_single_anno_dicts():
 
 if __name__ == '__main__':
     # for 2. kappa test with 20 samples
-    # annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test_20.pkl"
+    # annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test_20"
     # generate_kappa_anno_dict(annot_dict_path=annot_dict_path, sample=20)  # already run and output uploaded by sina. don't overwrite
     # annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
     # for 3. kappa test
-    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_3._kappa_test_50.pkl"
+    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_3._kappa_test_50"
     # generate_kappa_anno_dict(annot_dict_path=annot_dict_path, sample=50)  # already run and output uploaded by sina. don't overwrite
     annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
