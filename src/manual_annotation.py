@@ -72,6 +72,7 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
           f"- Rate the sentiment that is (somehow) transported by the tweeter- do not rate the positivity of the provided facts. "
           f"(example: neutral conveyed news about rise in deaths)\n"
           f"- Don't click on links or google for unknown concepts. Tweet itself = full information (Exception: unknown vocabulary)\n"
+          f"- Hashtags and Emojis are part of the tweet and its sentiment.\n"
           f"You can cancel and continue anytime.\n")
 
     count = 0
