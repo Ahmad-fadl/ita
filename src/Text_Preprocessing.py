@@ -80,7 +80,7 @@ def remove_specialChairsAll(data) -> str:
 
 
 count_files = 0
-directory = "data/Hydrated_Tweets_Long"
+directory = "data/Hydrated_Tweets"
 
 # For each file/day
 for entry in os.scandir(directory):
