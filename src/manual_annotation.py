@@ -157,9 +157,9 @@ def merge_single_anno_dicts():
 
 if __name__ == '__main__':
     # for 2. kappa test with 20 samples
-    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test_20.pkl"
+    # annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test_20.pkl"
     # generate_kappa_anno_dict(annot_dict_path=annot_dict_path, sample=20)  # already run and output uploaded by sina. don't overwrite
-    annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
+    # annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
     # for 3. kappa test
     annot_dict_path = "data/Manual_Annotation/annot_ID_dict_3._kappa_test_50.pkl"
