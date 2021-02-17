@@ -1,51 +1,25 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[11]:
-
-
 import pandas as pd
 import numpy as np
-annotation = pd.read_pickle("data\\Manual_Annotation\\annot_ID_dict.pkl")
-
-
-# In[12]:
 
 
 def makearray(a):
-    res =[0]*60
-    res = np.array(res).reshape(20,3)
-    j=0
+    team = ["ahmad", "severin", "sina", "ute"]
+    res = [0] * 60
+    res = np.array(res).reshape(20, 3)
+    j = 0
     for i in a.keys():
-        if (a[i]["ahmad"]==1):
-            res[j][0]+=1
-        elif(a[i]["ahmad"]==0):  
-            res[j][1]+=1
-        elif(a[i]["ahmad"]==-1):  
-            res[j][2]+=1            
-        if (a[i]["severin"]==1):
-            res[j][0]+=1
-        elif(a[i]["severin"]==0):  
-            res[j][1]+=1
-        elif(a[i]["severin"]==-1):  
-            res[j][2]+=1       
-        if (a[i]["sina"]==1):
-            res[j][0]+=1
-        elif(a[i]["sina"]==0):  
-            res[j][1]+=1
-        elif(a[i]["sina"]==-1):  
-            res[j][2]+=1   
-        if (a[i]["ute"]==1):
-            res[j][0]+=1
-        elif(a[i]["ute"]==0):  
-            res[j][1]+=1
-        elif(a[i]["ute"]==-1):  
-            res[j][2]+=1  
-        j+=1
-    return res    
-
-
-# In[13]:
+        for member in team:
+            if a[i][member] == 1:
+                res[j][0] += 1
+            elif a[i][member] == 0:
+                res[j][1] += 1
+            elif a[i][member] == -1:
+                res[j][2] += 1
+        j += 1
+    return res
 
 
 def fleiss_kappa(M):
@@ -72,14 +46,11 @@ def fleiss_kappa(M):
     return round((Pbar - PbarE) / (1 - PbarE), 4)
 
 
-# In[14]:
+if __name__ == '__main__':
+    # 1. kappa test with 20 tweets (baseline before group discussion)
+    annotation = pd.read_pickle("data\\Manual_Annotation\\annot_ID_dict_1st_kappa_test.pkl")
+    print(fleiss_kappa(makearray(annotation)))
 
-
-print(fleiss_kappa(makearray(annotation)))
-
-
-# In[ ]:
-
-
-
-
+    # 3. kappa test with 50 tweets
+    # annotation = pd.read_pickle("data\\Manual_Annotation\\annot_ID_dict_3._kappa_test_50.pkl")
+    # print(fleiss_kappa(makearray(annotation)))
