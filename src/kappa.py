@@ -48,10 +48,11 @@ def fleiss_kappa(M):
 
 if __name__ == '__main__':
     # 1. kappa test with 20 tweets (baseline before group discussion)
-    n=int(input('how many tweets do you want to calculate kappa for'))
-    annotation = pd.read_pickle("data\\Manual_Annotation\\annot_ID_dict_3._kappa_test_50.pkl")
-    print(fleiss_kappa(makearray(annotation,n)))
-    #print(annotation)
+    annotation = pd.read_pickle("data\\Manual_Annotation\\annot_ID_dict_1st_kappa_test_20.pkl")
+    print("first kappa test: ", annotation)
+    print(fleiss_kappa(makearray(annotation, n=20)))
+
     # 3. kappa test with 50 tweets
-    # annotation = pd.read_pickle("data\\Manual_Annotation\\annot_ID_dict_3._kappa_test_50.pkl")
-    # print(fleiss_kappa(makearray(annotation)))
+    annotation = pd.read_pickle("data\\Manual_Annotation\\annot_ID_dict_3._kappa_test_50.pkl")
+    print("third kappa test with 50 tweets: ", annotation)
+    print(fleiss_kappa(makearray(annotation, n=50)))
