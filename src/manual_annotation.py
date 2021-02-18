@@ -172,6 +172,7 @@ def gen_annot_mean_dict(anno_dict):
         mean_dict[id]['path'] = annotation[id]['path']
     return mean_dict
 
+
 if __name__ == '__main__':
     # for 2. kappa test with 20 samples
     # annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test_20"
@@ -190,9 +191,10 @@ if __name__ == '__main__':
     merge_single_anno_dicts()  # merge dicts of each team member. irrelevant if complete or not.
 
     # calc mean of 2. kappa test and add generated mean_dict to the merged dict
-    mean_dict = gen_annot_mean_dict("data/Manual_Annotation/annot_ID_dict_3._kappa_test_50.pkl")
+    mean_dic = gen_annot_mean_dict("data/Manual_Annotation/annot_ID_dict_3._kappa_test_50.pkl")
     merged_dict = pd.read_pickle("data/Manual_Annotation/merged_annotation_dict.pkl")
-    pd.to_pickle(merged_dict.update(mean_dict), "data/Manual_Annotation/merged_annotation_dict.pkl")
+    merged_dict.update(mean_dic)
+    pd.to_pickle(merged_dict, "data/Manual_Annotation/merged_annotation_dict.pkl")
 
     # result
     print("This is the final annotation dict: ")
