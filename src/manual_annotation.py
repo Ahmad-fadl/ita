@@ -159,6 +159,19 @@ def merge_single_anno_dicts():
     print("Annotation dicts are merged now. Please add/push to Git, if you are the last finishing annotator.")
 
 
+def gen_annot_mean_dict(anno_dict):
+    mean_dict = {}
+    annotation = pd.read_pickle(anno_dict)
+    for id in annotation:
+        sumup = 0
+        for member in ['ahmad', 'ute', 'severin', 'sina']:
+            sumup += annotation[id][member]
+        mean = round(sumup/len(member))
+        mean_dict[id] = {}
+        mean_dict[id]['mean'] = mean
+        mean_dict[id]['path'] = annotation[id]['path']
+    return mean_dict
+
 if __name__ == '__main__':
     # for 2. kappa test with 20 samples
     # annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test_20"
@@ -166,12 +179,21 @@ if __name__ == '__main__':
     # annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
     # for 3. kappa test
-    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_3._kappa_test_50"
+    # annot_dict_path = "data/Manual_Annotation/annot_ID_dict_3._kappa_test_50"
     # generate_kappa_anno_dict(annot_dict_path=annot_dict_path, sample=50)  # already run and output uploaded by sina. don't overwrite
-    annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
+    # annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
     # for single annotation of 250 tweets per team member, 1000 in total
     long_annot_dict_path = "data/Manual_Annotation/annot_ID_dict"
     # gen_great_annot_dict(long_annot_dict_path, sample=1000) # already run and output uploaded by sina. don't overwrite
     annotate_basis_tweets(long_annot_dict_path, kappa_test=False)
     merge_single_anno_dicts()  # merge dicts of each team member. irrelevant if complete or not.
+
+    # calc mean of 2. kappa test and add generated mean_dict to the merged dict
+    mean_dict = gen_annot_mean_dict("data/Manual_Annotation/annot_ID_dict_3._kappa_test_50.pkl")
+    merged_dict = pd.read_pickle("data/Manual_Annotation/merged_annotation_dict.pkl")
+    pd.to_pickle(merged_dict.update(mean_dict), "data/Manual_Annotation/merged_annotation_dict.pkl")
+
+    # result
+    print("This is the final annotation dict: ")
+    pprint(merged_dict)
