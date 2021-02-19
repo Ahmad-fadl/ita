@@ -81,6 +81,7 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
             count += 1
 
     print(f"You have annotated {count} tweets so far.\n")
+    #pprint(annot_dict)
 
     for tweet_id in annot_dict:
         if annotator in annot_dict[tweet_id] and annot_dict[tweet_id][annotator] is None:
@@ -142,7 +143,6 @@ def gen_great_annot_dict(annot_dict_path, sample=1000):
                       'wb') as f:  # generate and save annot dict as a pickle
                 pickle.dump(annot_dict, f)
                 # pprint(annot_dict)
-                # pprint(len(annot_dict))
 
 
 def merge_single_anno_dicts():
@@ -150,10 +150,13 @@ def merge_single_anno_dicts():
     for member in ['ahmad', 'ute', 'severin', 'sina']:
         with open("data/Manual_Annotation/annot_ID_dict_" + member + ".pkl", 'rb') as f:
             member_dict = pickle.load(f)
-        merged_dict.update(member_dict)
+        member_dict2 = member_dict.copy()
+        for k, v in member_dict.items():
+            if member not in v:
+                del member_dict2[k]
+        merged_dict.update(member_dict2)
 
-    with open("data/Manual_Annotation/merged_annotation_dict.pkl",
-              'wb') as f:  # generate and save annot dict as a pickle
+    with open("data/Manual_Annotation/merged_annotation_dict.pkl", 'wb') as f:
         pickle.dump(merged_dict, f)
     # pprint(merged_dict)
     print("Annotation dicts are merged now. Please add/push to Git, if you are the last finishing annotator.")
@@ -174,28 +177,30 @@ def gen_annot_mean_dict(anno_dict):
 
 
 if __name__ == '__main__':
-    # for 2. kappa test with 20 samples
-    # annot_dict_path = "data/Manual_Annotation/annot_ID_dict_2nd_kappa_test_20"
+    # for 1. kappa test with 20 samples
+    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_1st_kappa_test_20"
     # generate_kappa_anno_dict(annot_dict_path=annot_dict_path, sample=20)  # already run and output uploaded by sina. don't overwrite
-    # annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
+    annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
     # for 3. kappa test
-    # annot_dict_path = "data/Manual_Annotation/annot_ID_dict_3._kappa_test_50"
+    annot_dict_path = "data/Manual_Annotation/annot_ID_dict_3._kappa_test_50"
     # generate_kappa_anno_dict(annot_dict_path=annot_dict_path, sample=50)  # already run and output uploaded by sina. don't overwrite
-    # annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
+    annotate_basis_tweets(annot_dict_path=annot_dict_path, kappa_test=True)
 
     # for single annotation of 250 tweets per team member, 1000 in total
     long_annot_dict_path = "data/Manual_Annotation/annot_ID_dict"
     # gen_great_annot_dict(long_annot_dict_path, sample=1000) # already run and output uploaded by sina. don't overwrite
     annotate_basis_tweets(long_annot_dict_path, kappa_test=False)
-    merge_single_anno_dicts()  # merge dicts of each team member. irrelevant if complete or not.
 
-    # calc mean of 2. kappa test and add generated mean_dict to the merged dict
+    # merge dicts of each team member. irrelevant if annotations completed or not.
+    merge_single_anno_dicts()
+
+    # calc mean of 2. kappa test and add generated mean_dict to the merged dict #
     mean_dic = gen_annot_mean_dict("data/Manual_Annotation/annot_ID_dict_3._kappa_test_50.pkl")
     merged_dict = pd.read_pickle("data/Manual_Annotation/merged_annotation_dict.pkl")
     merged_dict.update(mean_dic)
     pd.to_pickle(merged_dict, "data/Manual_Annotation/merged_annotation_dict.pkl")
 
     # result
-    print("This is the final annotation dict: ")
+    print(f"This is the final annotation dict of length {len(merged_dict)}: ")
     pprint(merged_dict)
