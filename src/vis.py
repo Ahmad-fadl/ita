@@ -46,8 +46,8 @@ fig.savefig('data/Plots/Number_of_tweets_in_each_country.png')
 
 
 Number_Tweets_Each_Month = All_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
-months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+months = [ "Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec","Jan"]
 # sort the data by months
 Number_Tweets_Each_Month['MONTH'] = pd.Categorical(Number_Tweets_Each_Month['MONTH'], categories=months, ordered=True)
 Number_Tweets_Each_Month.sort_values(by='MONTH', inplace=True)
