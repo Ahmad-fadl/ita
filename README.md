@@ -1,5 +1,6 @@
 # Text Analytics Project
 * Maintainers
+* General requirements
 * Runthrough
 
 -------------
@@ -37,9 +38,8 @@ To get everything going follow the instructions here. First some requirements ne
 so you might want to use an extension like [GetThemAll!](https://chrome.google.com/webstore/detail/downthemall/nljkibfhlpcnanjgbnlnbjecgicbjkge). 
 If you use Chrome, go to settings, search for "downloads" and deactivate "Ask where to save each file before downloading" for convenience.
 Save files in `src/data/GeoCOV19TweetsDataset`
-  * open `src/Twitter-Access.py` with an editor and follow the instructions given in the python-file (credentials for the Twitter API * Tweets Hydration)
-For the final evaluation we need a file containing some information and numbers regarding Covid-19. Therefore got to https://github.com/owid/covid-19-data/tree/master/public/data and click "Download our complete COVID-19 dataset" as csv. Save the file in `src/data/Classifier_Evaluation/owid-covid-data.csv`. 
- 
+  * open `src/Twitter-Access.py` with an editor and follow the instructions given in the python-file (on credentials for the Twitter API + on Tweets Hydration).
+
 ### Data Preprocessing
 * When you have done the above, run ``src/Text_Preprocessing.py``. 
 * While this is running, you may want to check out the readme's in ``src/data/Hydrated_Tweets`` and ``src/data/Preprocessed_Tweets`` (not needed to execute the following steps).
@@ -54,7 +54,7 @@ For the final evaluation we need a file containing some information and numbers 
 
 ### Sentiment Feature Extraction
 * When you have done the above, run ``src/Classifier0.2.py``.
-* to run this file you need to download the word lexikon from https://raw.githubusercontent.com/sebastianruder/emotion_proposition_store/master/NRC-Emotion-Lexicon-v0.92/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt into "data/Sentiment_Classifier/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt"
+* to run this file you need to download the word lexikon from [here](https://raw.githubusercontent.com/sebastianruder/emotion_proposition_store/master/NRC-Emotion-Lexicon-v0.92/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt) into ```src/data/Sentiment_Classifier/NRC-emotion-lexicon-wordlevel-alphabetized-v0.92.txt```
 * May take 25 hours. You can stop and restart the session, since already generated files will be skipped then.
 * after running this file the folowing columns will beadded to our dataframe each column is a list of (o or 1) with len="the number of words in each tweet"
 * [WORD COUNT]['LEMMATIZED']['Sentiment anger']['Sentiment anticipation']['Sentiment disgust']['Sentiment fear']['Sentiment joy']['NEGATIVE']['POSITIVE']["rawEmojis"]["specialChairs"]["rawHashtags"]
@@ -67,15 +67,17 @@ For the final evaluation we need a file containing some information and numbers 
 * Then the given sentiment scores are loaded into the program. For now we use them as "gold truth" until we have annotated our own data. 
 * Then we test multiple classifiers applying k-fold-cross-validation on the given feature matrix and the given "gold truth".
 * The classification task is assigning each tweet either a positive, a negative or a neutral sentiment. 
-* Afterwards we choose the best of the recently tested classifiers to for further work. We apply it to all of the tweets in order to get an idea how the final distribution looks like. 
+* Afterwards we choose the best of the recently tested classfiers to for further work. We apply it to all of the tweets in order to get an idea how the final distribution looks like. 
 * In addition several visualizations are computed and saved locally in the `src/data/Classifier_Evaluation/` folder as svg.
 * May take 15-35 minutes.
 
 ### Relation to real world Covid development
 * In the file ``src/data/timeline_corona_events_csv.csv`` the main covid-related events in the US, India and the UK are listed by date of the event.
 Events of special importance are marked with 'x' and it will be checked if they show effects in twitter data, be it the number of tweets or a specific sentiment.  
-  We have collected and put together the data by ourselfs, using these sources: https://www.ajmc.com/view/a-timeline-of-covid19-developments-in-2020,,https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_India_(January%E2%80%93May_2020),,https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_England_(2020),
-https://timesofindia.indiatimes.com/india/coronavirus-india-timeline/articleshow/80030867.cms
+  We have collected and put together the data by ourselfs, using [this source for USA](https://www.ajmc.com/view/a-timeline-of-covid19-developments-in-2020) ,
+  [this source for India](https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_India_(January%E2%80%93May_2020))  ,
+  [this source for England](https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_England_(2020)) ,
+and [another source for India](https://timesofindia.indiatimes.com/india/coronavirus-india-timeline/articleshow/80030867.cms)
 
 
 ### Manual Annotation
