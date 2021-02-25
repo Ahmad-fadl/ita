@@ -20,7 +20,7 @@ from scipy.signal import savgol_filter
 import statistics
 
 
-# Get annotated scores
+# Get annotated scores from the given annotation dictionary
 def getScore(dictionary):
     try:
         return int((dictionary["ahmad"]))
@@ -93,8 +93,6 @@ for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))))
             continue
 
 classified['ID'] = classified['ID'].astype(str)
-print(len(classified))
-
 
 # This methods transforms binary vectors into real numbers
 def getValue(liste):
@@ -127,7 +125,6 @@ def getList(liste):
 def countLength(word):
     return len(str(word))
 
-
 # This methods maps values to either -1,0,1
 def getTernary(score):
     score = float(score)
@@ -137,7 +134,6 @@ def getTernary(score):
         return -1
     else:
         return 0
-
 
 # Put all "features" into the desired format by transforming them into numeric values
 classified['rawEmojis'] = classified['rawEmojis'].apply(getList)
@@ -208,7 +204,6 @@ def crossValidation(x, y, k, classifier):
         f1.append(f1_score(y_test_f, y_pred, average='micro'))
     return np.mean(np.array(f1))
 
-########
 # Test multiple classifiers
 
 clf = DecisionTreeClassifier(random_state=0)
@@ -223,11 +218,7 @@ clf = KNeighborsClassifier(n_neighbors=10)
 f1 = crossValidation(x, y, 3, clf)
 print(f"{clf} : f1-score: {f1}\n")
 
-
-#####################
 # Choose best classifier and show results
-
-# Choose one classifier and apply it on the complete dataset
 clf = RandomForestClassifier(random_state=0)
 clf.fit(x, y)
 
@@ -300,7 +291,7 @@ negMean = statistics.mean(yNeg) / (statistics.mean(yPos) + statistics.mean(yNeut
 fig, ax = plt.subplots(figsize=(12, 7))
 negativePatch = mpatches.Patch(color='red', label='Negative')
 neutralPatch = mpatches.Patch(color='black', label='Neutral')
-# positivePatch = mpatches.Patch(color='green', label='Positive')
+positivePatch = mpatches.Patch(color='green', label='Positive')
 
 plt.legend(loc="upper left", handles=[negativePatch, neutralPatch, positivePatch], fontsize=15)
 
