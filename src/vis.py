@@ -1,14 +1,11 @@
 # coding: utf-8
 
-import numpy as np
-import matplotlib.pyplot as plt
-import time
-from tqdm import tqdm
-import pandas as pd
 import os
-# Import the Twython class
-from twython import Twython
-import json
+import time
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from tqdm import tqdm
 
 start = time.time()
 
@@ -44,10 +41,9 @@ plt.title("Number of tweets in each country")
 plt.bar(x, y)
 fig.savefig('data/Plots/Number_of_tweets_in_each_country.png')
 
-
 Number_Tweets_Each_Month = All_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
-months = [ "Feb", "Mar", "Apr", "May", "Jun",
-          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec","Jan"]
+months = ["Feb", "Mar", "Apr", "May", "Jun",
+          "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "Jan"]
 # sort the data by months
 Number_Tweets_Each_Month['MONTH'] = pd.Categorical(Number_Tweets_Each_Month['MONTH'], categories=months, ordered=True)
 Number_Tweets_Each_Month.sort_values(by='MONTH', inplace=True)
@@ -55,7 +51,6 @@ fig = plt.figure()
 plt.title("Number of tweets in each month")
 plt.bar(Number_Tweets_Each_Month['MONTH'], Number_Tweets_Each_Month["counts"])
 fig.savefig('data/Plots/Number_of_tweets_in_each_month.png')
-
 
 US_Tweets_Each_Month = US_Tweets.groupby(['MONTH']).size().reset_index(name='counts')
 # sort the data by months
@@ -87,7 +82,7 @@ ax.legend()
 ax.figure.savefig('data/Plots/Number_of_tweets_in_each_month_and_in_each_country.png')
 
 word_Cloud = All_Tweets["TEXT_RAW"].str.lower().str.split(expand=True).stack().value_counts()[:100]
-#word_Cloud = word_Cloud["TEXT_RAW"].str.lower()
+# word_Cloud = word_Cloud["TEXT_RAW"].str.lower()
 word_Cloud = word_Cloud[word_Cloud.index.str.len() > 4]
 word_Cloud = word_Cloud[:6]
 
@@ -103,32 +98,29 @@ All_Tweets['char_count'] = All_Tweets['TEXT_RAW'].str.len()
 char_count = All_Tweets.groupby(['char_count']).size().reset_index(name='counts').sort_values("char_count",
                                                                                               ascending=False)
 fig = plt.figure()
-#plt.figure(figsize=(20, 5))
+# plt.figure(figsize=(20, 5))
 plt.title("Y is the number of tweets and X is the number of chars in each tweet")
 plt.bar(np.array(char_count["char_count"]),
         char_count["counts"], width=0.8)
-fig.savefig('data/Plots/Char_count_in_all_tweets.png')        
-
+fig.savefig('data/Plots/Char_count_in_all_tweets.png')
 
 fig = plt.figure()
-#plt.figure(figsize=(20, 5))
+# plt.figure(figsize=(20, 5))
 plt.title("Y is the number of tweets and X is the number of chars in each tweet")
 plt.bar(np.array(char_count[char_count["char_count"] < 160]["char_count"]),
         char_count[char_count["char_count"] < 160]["counts"], width=0.8)
-fig.savefig('data/Plots/Char_count_in_tweets_less_than_160.png')        
-
+fig.savefig('data/Plots/Char_count_in_tweets_less_than_160.png')
 
 fig = plt.figure()
-#plt.figure(figsize=(20, 5))
+# plt.figure(figsize=(20, 5))
 plt.title("Y is the number of tweets and X is the number of chars in each tweet")
 plt.bar(np.array(char_count[char_count["char_count"] >= 120]["char_count"]),
         char_count[char_count["char_count"] >= 120]["counts"], width=0.8)
-fig.savefig('data/Plots/Char_count_in_tweets_more_than_120.png') 
-
+fig.savefig('data/Plots/Char_count_in_tweets_more_than_120.png')
 
 fig = plt.figure()
-#plt.figure(figsize=(20, 5))
+# plt.figure(figsize=(20, 5))
 plt.title("Y is the number of tweets and X is the number of chars in each tweet")
 plt.bar(np.array(char_count[char_count["char_count"] < 50]["char_count"]),
         char_count[char_count["char_count"] < 50]["counts"], width=0.8)
-fig.savefig('data/Plots/Char_count_in_tweets_less_than_50.png')        
+fig.savefig('data/Plots/Char_count_in_tweets_less_than_50.png')

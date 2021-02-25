@@ -59,18 +59,15 @@ def findEmojis(data):
 
         return data
 
-    
-    
+
 # This method gets as input a string  outputs a list of all hashtags in the string
 def findHashtags(data):
-        HASHS=[]
-        for word in str(data).split():
-            if word.startswith('#'):
-                HASHS.append(word)
-        return HASHS
-    
-    
-    
+    HASHS = []
+    for word in str(data).split():
+        if word.startswith('#'):
+            HASHS.append(word)
+    return HASHS
+
 
 # This method gets as input a list of emojis outputs a binary vector that "says" if a smiley is in the string
 def convertEmojisToVector(data):
@@ -121,34 +118,54 @@ def convertEmojisToVector(data):
     return vector
 
 
-
-
 # This method gets as input a list of hashtags outputs a binary vector that "says" if a smiley is in the string
 def convertHashtagsToVector(data):
     # This are the most frequent smileys 
-    HASHLIST = ['#corona', '#alone', '#apocalypse', '#covid', '#Corona', '#IndiaFightsCorona', '#coronavid19', '#corona…', '#quarantine', '#quarantinelife', '#virus', '#rona',
-     '#socialdistancing', '#stayhome', '#staysafe…', '#covid_19', '#staysafe', '#support', '#success', '#COVID19', '#coronadiaries', '#lockdown', '#home', '#isolation',
-     '#safetyfirst', '#stayhomestaysafe', '#StayAtHome', '#CovidIndia', '#coronamemes', '#stayathome', '#lockdown…', '#covid19', '#savelives', '#God', '#love', '#happy',
-     '#stayhealthy', '#coronavirus', '#throwback', '#newnormal', '#covi̇d19', '#emptystreets', '#emptynyc', '#nycshutdown', '#stayhome…', '#coronavirusitalianews', '#lockdown2020',
-     '#workfromhome', '#selflove', '#selfisolation', '#socialdistancing…', '#doctor', '#live', '#quarentine', '#staypositive', '#sunshine', '#21dayslockdown', '#covid19india',
-     '#covidart', '#coronaindia', '#bored', '#truth', '#CORONA', '#people', '#coronatime', '#familytime', '#family', '#handsanitizer', '#positivevibes', '#StaySafe', '#thankful',
-     '#pandemic', '#online', '#friendship', '#friends', '#Covid-19', '#mask', '#washyourhands', '#CoronaVirus', '#Virus', '#Covid19', '#covıd19', '#protection', '#coronavirus…',
-     '#saferathome', '#relax', '#cuarentena', '#Covid', '#toiletpaper', '#maskon', '#COVID19…', '#empty', '#selfquarantine', '#covid-19', '#safety', '#safe', '#thoughts', '#reflection',
-     '#covid19…', '#facemask', '#essential', '#freedom', '#StayHomeStaySafe', '#news', '#covid2020', '#gocorona', '#quarantineandchill', '#nurse', '#walkwhileyoucan', '#shopping',
-     '#StayHome', '#peace', '#covid_19…', '#fight', '#quarantine…', '#humanity', '#motivation', '#coronavírus', '#washingtondc', '#masks', '#strength', '#party', '#Health', '#outside',
-     '#Coronavirus', '#maskup', '#happiness', '#hope', '#besafe', '#flattenthecurve', '#sanitizer', '#stopthespread', '#care', '#staystrong', '#smile', '#zoom', '#stayinghome',
-     '#alonetogether', '#Covid_19', '#Quarantine', '#supportsmallbusiness', '#shopsmall', '#coronawarriors', '#homesweethome', '#staycation', '#help', '#CoronaVirusUk', '#CoronaUk',
-     '#essentialworkers', '#lockdownlife', '#inspiration', '#doctors', '#pandemic2020', '#stayhomesavelives', '#update', '#healthcareworkers', '#frontlineworkers', '#socialdistance',
-     '#positivity', '#thankyou', '#PublicHealth', '#politics', '#firstresponders', '#pandemic.', '#SocialDistancing', '#COVID_19', '#weareinthistogether', '#coronaviruspandemic',
-     '#shutdown', '#healthy', '#free', '#sanitize', '#blessed', '#open', '#anxiety', '#indiafightscorona', '#education', '#depression', '#health', '#workingfromhome', '#pandemic…',
-     '#lifeinthetimeofcorona', '#coronavirusmemes😂😂😂', '#Pandemic', '#protectyourself', '#memories', '#inthistogether', '#pandemiclife', '#bekind', '#laugh', '#faith',
-     '#mentalhealth', '#COVID19.', '#vaccine', '#backtowork', '#leadership', '#covid…', '#chill#COVID-19', '#facemasks', '#COVID', '#masks4all', '#nurses', '#TogetherAtHome',
-     '#Lockdown2020', '#coronavirus.', '#socialdistancing2020', '#wearyourmask', '#Coronavirus!', '#SaveTheWorld:thanksdoc:', '#SaveTheWorld', '#Covid-19!', '#SaveTheWorld❤',
-     '#wewillsurvive', '#thenewnormal', '#getoutside', '#Mask', '#Coronaupdate', '#relief', '#supportlocal', '#dailywalk', '#QuarantineLife', '#loveoneanother', '#lovelife',
-     '#homeschooling', '#homeschool', '#homeworkout', '#team', '#grateful', '#healthcare', '#wearamask', '#covid19.', '#doingmypart', '#COVID19,', '#staysafeeveryone',
-     '#coronaupdate', '#crisis', '#Truth', '#localbusiness', '#keepgoing', '#wakeup', '#ShopLocal', '#smallbusiness', '#TrumpVirus', '#together', '#facecovering', '#reopening',
-     '#children', '#faceshield', '#HelpUsToHelpYou', '#TogetherForIndia', '#WorkFromHome', '#supportlocalbusiness', '#wearamask😷', '#LOCKDOWN2020', '#justice', '#worker',
-     '#WearAMask', '#MaskUp', '#stayingsafe', '#BeatThePandemic', '#Masks4All#covidvacccine']
+    HASHLIST = ['#corona', '#alone', '#apocalypse', '#covid', '#Corona', '#IndiaFightsCorona', '#coronavid19',
+                '#corona…', '#quarantine', '#quarantinelife', '#virus', '#rona',
+                '#socialdistancing', '#stayhome', '#staysafe…', '#covid_19', '#staysafe', '#support', '#success',
+                '#COVID19', '#coronadiaries', '#lockdown', '#home', '#isolation',
+                '#safetyfirst', '#stayhomestaysafe', '#StayAtHome', '#CovidIndia', '#coronamemes', '#stayathome',
+                '#lockdown…', '#covid19', '#savelives', '#God', '#love', '#happy',
+                '#stayhealthy', '#coronavirus', '#throwback', '#newnormal', '#covi̇d19', '#emptystreets', '#emptynyc',
+                '#nycshutdown', '#stayhome…', '#coronavirusitalianews', '#lockdown2020',
+                '#workfromhome', '#selflove', '#selfisolation', '#socialdistancing…', '#doctor', '#live', '#quarentine',
+                '#staypositive', '#sunshine', '#21dayslockdown', '#covid19india',
+                '#covidart', '#coronaindia', '#bored', '#truth', '#CORONA', '#people', '#coronatime', '#familytime',
+                '#family', '#handsanitizer', '#positivevibes', '#StaySafe', '#thankful',
+                '#pandemic', '#online', '#friendship', '#friends', '#Covid-19', '#mask', '#washyourhands',
+                '#CoronaVirus', '#Virus', '#Covid19', '#covıd19', '#protection', '#coronavirus…',
+                '#saferathome', '#relax', '#cuarentena', '#Covid', '#toiletpaper', '#maskon', '#COVID19…', '#empty',
+                '#selfquarantine', '#covid-19', '#safety', '#safe', '#thoughts', '#reflection',
+                '#covid19…', '#facemask', '#essential', '#freedom', '#StayHomeStaySafe', '#news', '#covid2020',
+                '#gocorona', '#quarantineandchill', '#nurse', '#walkwhileyoucan', '#shopping',
+                '#StayHome', '#peace', '#covid_19…', '#fight', '#quarantine…', '#humanity', '#motivation',
+                '#coronavírus', '#washingtondc', '#masks', '#strength', '#party', '#Health', '#outside',
+                '#Coronavirus', '#maskup', '#happiness', '#hope', '#besafe', '#flattenthecurve', '#sanitizer',
+                '#stopthespread', '#care', '#staystrong', '#smile', '#zoom', '#stayinghome',
+                '#alonetogether', '#Covid_19', '#Quarantine', '#supportsmallbusiness', '#shopsmall', '#coronawarriors',
+                '#homesweethome', '#staycation', '#help', '#CoronaVirusUk', '#CoronaUk',
+                '#essentialworkers', '#lockdownlife', '#inspiration', '#doctors', '#pandemic2020', '#stayhomesavelives',
+                '#update', '#healthcareworkers', '#frontlineworkers', '#socialdistance',
+                '#positivity', '#thankyou', '#PublicHealth', '#politics', '#firstresponders', '#pandemic.',
+                '#SocialDistancing', '#COVID_19', '#weareinthistogether', '#coronaviruspandemic',
+                '#shutdown', '#healthy', '#free', '#sanitize', '#blessed', '#open', '#anxiety', '#indiafightscorona',
+                '#education', '#depression', '#health', '#workingfromhome', '#pandemic…',
+                '#lifeinthetimeofcorona', '#coronavirusmemes😂😂😂', '#Pandemic', '#protectyourself', '#memories',
+                '#inthistogether', '#pandemiclife', '#bekind', '#laugh', '#faith',
+                '#mentalhealth', '#COVID19.', '#vaccine', '#backtowork', '#leadership', '#covid…', '#chill#COVID-19',
+                '#facemasks', '#COVID', '#masks4all', '#nurses', '#TogetherAtHome',
+                '#Lockdown2020', '#coronavirus.', '#socialdistancing2020', '#wearyourmask', '#Coronavirus!',
+                '#SaveTheWorld:thanksdoc:', '#SaveTheWorld', '#Covid-19!', '#SaveTheWorld❤',
+                '#wewillsurvive', '#thenewnormal', '#getoutside', '#Mask', '#Coronaupdate', '#relief', '#supportlocal',
+                '#dailywalk', '#QuarantineLife', '#loveoneanother', '#lovelife',
+                '#homeschooling', '#homeschool', '#homeworkout', '#team', '#grateful', '#healthcare', '#wearamask',
+                '#covid19.', '#doingmypart', '#COVID19,', '#staysafeeveryone',
+                '#coronaupdate', '#crisis', '#Truth', '#localbusiness', '#keepgoing', '#wakeup', '#ShopLocal',
+                '#smallbusiness', '#TrumpVirus', '#together', '#facecovering', '#reopening',
+                '#children', '#faceshield', '#HelpUsToHelpYou', '#TogetherForIndia', '#WorkFromHome',
+                '#supportlocalbusiness', '#wearamask😷', '#LOCKDOWN2020', '#justice', '#worker',
+                '#WearAMask', '#MaskUp', '#stayingsafe', '#BeatThePandemic', '#Masks4All#covidvacccine']
 
     vector = [0 for i in range(0, len(HASHLIST))]
     for i in range(0, len(HASHLIST)):
@@ -160,12 +177,10 @@ def convertHashtagsToVector(data):
 # This method gets as input a string and outputs a list of counts for each special chair
 def findSpecialChairs(data):
     specialChairs = list(set(punctuation))
-    vector = [0 for i in range(0, len(specialChairs))]
+    vector = [0 for _ in range(0, len(specialChairs))]
     for i in range(0, len(specialChairs)):
         vector[i] = data.count(specialChairs[i])
-    
 
-        
     return vector
 
 
@@ -210,7 +225,6 @@ def get_emotions(tweet_words):
 
         finally:
             j = j + 1
-
     return emotions
 
 
@@ -273,17 +287,15 @@ def create_df_with_emotions(Preprocessed_Tweets):
             Sentiment_Tweets["rawEmojis"] = Sentiment_Tweets["rawEmojis"].apply(convertEmojisToVector)
         except:
             continue
-         
+
         try:
             # Create special chair counts
             Sentiment_Tweets["specialChairs"] = Preprocessed_Tweets["TEXT_RAW_PUNCTUATION"].apply(findSpecialChairs)
-            
+
         except:
             continue
-            
-            
-            
-######
+
+        ######
         try:
             # Find all hashtags
             Sentiment_Tweets["rawHashtags"] = Preprocessed_Tweets["TEXT_RAW_PUNCTUATION"].apply(findHashtags)
@@ -294,15 +306,7 @@ def create_df_with_emotions(Preprocessed_Tweets):
             # Convert emojis to binary vectors
             Sentiment_Tweets["rawHashtags"] = Sentiment_Tweets["rawHashtags"].apply(convertHashtagsToVector)
         except:
-            continue           
-            
-            
-#######               
-            
-            
-            
-            
-            
+            continue
 
     return Sentiment_Tweets
 
@@ -330,7 +334,3 @@ for entry in tqdm(list(os.scandir(directory))):
 
     Tweets_with_emotions = create_df_with_emotions(Preprocessed_Tweets)
     Tweets_with_emotions.to_csv(target_path + "/" + os.path.basename(entry.path), index=False, header=True)
-
-    
-    
-

@@ -23,7 +23,8 @@ motivationals = ["All tweets can come true, if we have the courage to rate them.
 
 
 def generate_kappa_anno_dict(annot_dict_path,sample=20):
-    """param sample: how many tweets should be in dict"""
+    """generate and save an annotation dict (to be annotated later) as a pickle
+    param sample: how many tweets should be in dict"""
     if os.path.exists(annot_dict_path):
         print("You may be not supposed to run this again. "
               "Delete annot_dict file first if you really want to regenerate and overwrite the dict.")
@@ -52,6 +53,8 @@ def generate_kappa_anno_dict(annot_dict_path,sample=20):
 
 
 def annotate_basis_tweets(annot_dict_path, kappa_test=True):
+    """function to call to interact with user to fill up and save the user's annotations
+    param kappa_test: True or False. Due to different datastructures for dicts"""
     annotator = None
     while annotator not in ['ahmad', 'severin', 'sina', 'ute']:
         annotator = input("Welcome to the manual sentiment annotation.\n"
@@ -114,7 +117,7 @@ def annotate_basis_tweets(annot_dict_path, kappa_test=True):
 
 
 def gen_great_annot_dict(annot_dict_path, sample=1000):
-    "param sample: how many tweets should be in the dict"
+    """param sample: how many tweets should be in the dict"""
     if os.path.exists(annot_dict_path + "_sina.pkl"):
         print("You may be not supposed to run this again. "
               "Delete annot_dict file first if you really want to regenerate and overwrite the dict.")
@@ -125,7 +128,7 @@ def gen_great_annot_dict(annot_dict_path, sample=1000):
             if entry.path.endswith(".csv"):
                 doc_names.append(f"{os.path.basename(entry.path)}")
 
-        annot_basis = random.choices(doc_names, k=1000)  # change back to 100 or anything else. 20 is for short testing
+        annot_basis = random.choices(doc_names, k=sample)
         annot_dict = {}
         annot_dict_splits = [annot_basis[i:i + 250] for i in range(0, len(annot_basis), 250)]
         team = ['ahmad', 'severin', 'sina', 'ute']
@@ -146,6 +149,7 @@ def gen_great_annot_dict(annot_dict_path, sample=1000):
 
 
 def merge_single_anno_dicts():
+    """Save merged single annotation dicts"""
     merged_dict = {}
     for member in ['ahmad', 'ute', 'severin', 'sina']:
         with open("data/Manual_Annotation/annot_ID_dict_" + member + ".pkl", 'rb') as f:
@@ -163,6 +167,7 @@ def merge_single_anno_dicts():
 
 
 def gen_annot_mean_dict(anno_dict):
+    """returns a single annotation dict four user 'mean' out of a kappa annotation dict using the annotation's mean"""
     mean_dict = {}
     annotation = pd.read_pickle(anno_dict)
     for id in annotation:

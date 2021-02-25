@@ -7,8 +7,8 @@ from twython import Twython
 import twython.exceptions
 import pandas as pd
 import os
-from pprint import pprint
 import json
+from pprint import pprint
 
 # requirements:
 # install twyton package
@@ -58,8 +58,6 @@ python_tweets = Twython(credentials['CONSUMER_KEY'], credentials['CONSUMER_SECRE
 # Rolling window? -> No
 # DONE dynamische Berechnung der time-limits um ensprechend anfragefrequenz automatisch regeln
 
-
-
 log_into_file = True
 
 
@@ -82,8 +80,8 @@ def calc_delay_to_not_run_into_rate_limit(delay=True, request_method='show') -> 
     Last one ist for ID-batches of 100, first one for a single ID request.
     You should call this function every 50th request to work properly.
     Args:
-        request_method (): 'lookup' or 'show'
-        delay (): set to False if you don't want a delay
+        request_method: 'lookup' or 'show'
+        delay: set to False if you don't want a delay
     Returns:
         seconds to sleep before next request
     """
@@ -124,7 +122,7 @@ if not os.path.exists("data/Hydrated_Tweets_Long"):
 
 count_files = 0
 
-# error collecting #
+# error collecting
 count_corrupted_files = 0
 tweets_not_found = 0
 count_metadata_fail = 0
@@ -159,7 +157,7 @@ for csv in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))), d
         print(f)
         continue
 
-    #del tweets_csv["Sentiment"]  # or better keep, in case we need it later?
+    del tweets_csv["Sentiment"]  # or better keep, in case we need it later?
 
     # Initialize panda dataframe for the tweets
     Twitter_Tweets = pd.DataFrame(columns=['ID', 'COUNTRY', 'DAY', 'MONTH', 'TEXT_RAW'])

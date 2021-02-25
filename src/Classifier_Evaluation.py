@@ -19,28 +19,29 @@ import matplotlib.patches as mpatches
 from scipy.signal import savgol_filter
 import statistics
 
+
 # Get annotated scores
 def getScore(dictionary):
-    try:    
+    try:
         return int((dictionary["ahmad"]))
-    except: 
+    except:
         pass
-    try:    
+    try:
         return int((dictionary["severin"]))
-    except: 
-        pass    
-    try:    
+    except:
+        pass
+    try:
         return int((dictionary["sina"]))
-    except: 
+    except:
         pass
-    try:    
+    try:
         return int((dictionary["ute"]))
-    except: 
+    except:
         pass
-    try:    
+    try:
         return int((dictionary["mean"]))
-    except: 
-        pass    
+    except:
+        pass
     print("ERROR")
     return dictionary
 
@@ -49,9 +50,8 @@ def getScore(dictionary):
 path_annotation = "data/Manual_Annotation/merged_annotation_dict.pkl"
 file = open(path_annotation, "rb")
 annotated = pickle.load(file)
-annotation_df = pd.DataFrame(list(annotated.items()),columns = ['ID','values']) 
+annotation_df = pd.DataFrame(list(annotated.items()), columns=['ID', 'values'])
 annotation_df["annotation_score"] = annotation_df["values"].apply(getScore)
-
 
 # Import the gold sentiments
 directory = "data/GeoCOV19TweetsDataset"
@@ -74,7 +74,8 @@ classified = pd.DataFrame(columns=['ID', 'COUNTRY', 'DAY', 'MONTH', 'TEXT_RAW', 
                                    'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
                                    'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
                                    'Sentiment surprise', 'Sentiment trust', 'Capital Letters',
-                                   'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis", "specialChairs", "rawHashtags"])
+                                   'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis",
+                                   "specialChairs", "rawHashtags"])
 
 for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory)))):
     if entry.path.endswith(".csv"):
@@ -85,15 +86,15 @@ for entry in tqdm(os.scandir(directory), total=len(list(os.scandir(directory))))
                                   'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
                                   'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
                                   'Sentiment surprise', 'Sentiment trust', 'Capital Letters',
-                                  'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis", "specialChairs", "rawHashtags"]
+                                  'Longest Sequence Capital Letters', 'TEXT_RAW_PUNCTUATION', "rawEmojis",
+                                  "specialChairs", "rawHashtags"]
             classified = classified.append(tweets_csv)
         except ValueError as e:
             continue
 
 classified['ID'] = classified['ID'].astype(str)
-
-
 print(len(classified))
+
 
 # This methods transforms binary vectors into real numbers
 def getValue(liste):
@@ -107,6 +108,7 @@ def getValue(liste):
             continue
     return summe / len(liste.split())
 
+
 # This methods transforms binary strings into binary vectors
 def getList(liste):
     liste = str(liste)
@@ -118,32 +120,8 @@ def getList(liste):
             newList.append(int(val))
         except:
             continue
-    return np.array(newList)   
-  
-# Get annotated scores
-def getScore(dictionary):
-    try:    
-        return int((dictionary["ahmad"]))
-    except: 
-        pass
-    try:    
-        return int((dictionary["severin"]))
-    except: 
-        pass    
-    try:    
-        return int((dictionary["sina"]))
-    except: 
-        pass
-    try:    
-        return int((dictionary["ute"]))
-    except: 
-        pass
-    try:    
-        return int((dictionary["mean"]))
-    except: 
-        pass    
-    print("ERROR")
-    return dictionary
+    return np.array(newList)
+
 
 # This methods counts the length of the inputted string and returns it
 def countLength(word):
@@ -151,7 +129,7 @@ def countLength(word):
 
 
 # This methods maps values to either -1,0,1
-def getBinary(score):
+def getTernary(score):
     score = float(score)
     if score > 0:
         return 1
@@ -162,13 +140,9 @@ def getBinary(score):
 
 
 # Put all "features" into the desired format by transforming them into numeric values
-
-
-
 classified['rawEmojis'] = classified['rawEmojis'].apply(getList)
 classified['specialChairs'] = classified['specialChairs'].apply(getList)
 classified['rawHashtags'] = classified['rawHashtags'].apply(getList)
-
 classified['Sentiment anger'] = classified['Sentiment anger'].apply(getValue)
 classified['Sentiment anticipation'] = classified['Sentiment anticipation'].apply(getValue)
 classified['Sentiment  disgust'] = classified['Sentiment  disgust'].apply(getValue)
@@ -181,15 +155,12 @@ classified['Sentiment surprise'] = classified['Sentiment surprise'].apply(getVal
 classified['Sentiment trust'] = classified['Sentiment trust'].apply(getValue)
 classified['Longest Sequence Capital Letters'] = classified['Longest Sequence Capital Letters'].apply(countLength)
 
-
-
 # Here we merge the gold sentiments and the calculated features into one df
 classified = pd.merge(classified, sentiments, on="ID")
-classified['gold'] = classified['gold'].apply(getBinary)
+classified['gold'] = classified['gold'].apply(getTernary)
 
 
-####################################### For evluation
-
+# For evaluation
 # And now merge the annotated tweets+
 annotation_df['ID'] = annotation_df['ID'].astype(str)
 classifierForEvaluation = pd.merge(classified, annotation_df, on="ID")
@@ -200,9 +171,9 @@ y = np.array(classifierForEvaluation["annotation_score"].tolist())
 
 # Only use the "relevant" features
 forFeatures = classifierForEvaluation[['WORD COUNT', 'Sentiment anger',
-                         'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
-                         'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
-                         'Sentiment surprise', 'Sentiment trust', 'Longest Sequence Capital Letters']]
+                                       'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
+                                       'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
+                                       'Sentiment surprise', 'Sentiment trust', 'Longest Sequence Capital Letters']]
 
 emojis = np.array(classifierForEvaluation["rawEmojis"].tolist())
 specialChairs = np.array(classifierForEvaluation["specialChairs"].tolist())
@@ -210,51 +181,10 @@ rawHashtags = np.array(classifierForEvaluation["rawHashtags"].tolist())
 
 # The feature values of each tweet as array --> feature matrix
 x = forFeatures.to_numpy()
-x = np.concatenate((x,emojis), axis=1)
-x = np.concatenate((x,specialChairs), axis=1)
-x = np.concatenate((x,rawHashtags), axis=1)
+x = np.concatenate((x, emojis), axis=1)
+x = np.concatenate((x, specialChairs), axis=1)
+x = np.concatenate((x, rawHashtags), axis=1)
 
-"""
-#####
-
-
-DEL=[]
-for i in range(0, len(y)):
-    if y[i]==0:
-        DEL.append(i)
-np.random.shuffle(DEL)
-DEL = DEL[:600]
-DEL.sort(reverse=True)
-
-
-x = list(x)
-y = list(y)
-
-for i in range(0, len(DEL)):
-
-    del x[DEL[i]]
-    del y[DEL[i]]
-    #x = np.delete(x, DEL[i])
-    #y = np.delete(y, DEL[i])
-
-x = np.array(x)
-y = np.array(y)
-
-    
-    
-chekcer = list(y)
-
-print(-1)
-print(chekcer.count(-1))
-print(0)
-print(chekcer.count(0))
-print(1)
-print(chekcer.count(1))
-#######
-"""
-
-
-###########################################
 
 # Method that splits data in to k-folds in order to apply k-fold-cross-validation
 def split_folds(data, target, L):
@@ -276,30 +206,10 @@ def crossValidation(x, y, k, classifier):
         classifier.fit(X_train_f, y_train_f)
         y_pred = classifier.predict(X_test_f)
         f1.append(f1_score(y_test_f, y_pred, average='micro'))
-        #f1.append(adjusted_rand_score(y_test_f, y_pred))
-        
-        
-        #importances = classifier.feature_importances_
-        #std = np.std([tree.feature_importances_ for tree in classifier.estimators_],
-        #            axis=0)
-        #indices = np.argsort(importances)[::-1]
-        #count = 0
-        #for f in range(X_train_f.shape[1]):
-        #    count +=1
-        #    print("%d. feature %d (%f)" % (f + 1, indices[f], importances[indices[f]]))
-        #    if count >=50:
-        #        break
-
-
-
     return np.mean(np.array(f1))
 
-
-
-
-
-
-######## Test multiple classifiers
+########
+# Test multiple classifiers
 
 clf = DecisionTreeClassifier(random_state=0)
 f1 = crossValidation(x, y, 3, clf)
@@ -314,17 +224,18 @@ f1 = crossValidation(x, y, 3, clf)
 print(f"{clf} : f1-score: {f1}\n")
 
 
-####### Fix one classifier and show results
+#####################
+# Choose best classifier and show results
 
-# Choose on classifier and apply it on the complete dataset
+# Choose one classifier and apply it on the complete dataset
 clf = RandomForestClassifier(random_state=0)
 clf.fit(x, y)
 
 # Only use the "relevant" features
 forFeatures = classified[['WORD COUNT', 'Sentiment anger',
-                         'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
-                         'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
-                         'Sentiment surprise', 'Sentiment trust', 'Longest Sequence Capital Letters']]
+                          'Sentiment anticipation', 'Sentiment  disgust', 'Sentiment fear',
+                          'Sentiment joy', 'NEGATIVE', 'POSITIVE', 'Sentiment sadness',
+                          'Sentiment surprise', 'Sentiment trust', 'Longest Sequence Capital Letters']]
 
 emojis = np.array(classified["rawEmojis"].tolist())
 specialChairs = np.array(classified["specialChairs"].tolist())
@@ -332,20 +243,14 @@ rawHashtags = np.array(classified["rawHashtags"].tolist())
 
 # The feature values of each tweet as array --> feature matrix
 x_new = forFeatures.to_numpy()
-x_new = np.concatenate((x_new,emojis), axis=1)
-x_new = np.concatenate((x_new,specialChairs), axis=1)
-x_new = np.concatenate((x_new,rawHashtags), axis=1)
+x_new = np.concatenate((x_new, emojis), axis=1)
+x_new = np.concatenate((x_new, specialChairs), axis=1)
+x_new = np.concatenate((x_new, rawHashtags), axis=1)
 
 predictedLabels = clf.predict(x_new)
 
-
-
-
-
-
 # Append prediction to df
 classified["prediction"] = list(predictedLabels)
-
 
 
 # Method that converts string into date object
@@ -365,8 +270,6 @@ classified['DAY'] = classified['DAY'].astype(str)
 classified['date'] = classified['DAY'] + " " + classified['MONTH']
 classified['date'] = classified['date'].apply(convertToDate)
 
-
-
 # For Total Count
 relativeSentiments = classified[['COUNTRY', 'date', 'prediction']]
 maskNegative = (classified['prediction'] == -1)
@@ -385,37 +288,25 @@ positives = positives.rename(columns={"prediction": "Positive"})
 TotalSentiments = pd.merge(negatives, neutrals, left_index=True, right_index=True)
 TotalSentiments = pd.merge(TotalSentiments, positives, left_index=True, right_index=True)
 
-
-
-
 x = TotalSentiments.index.tolist()
 yNeg = TotalSentiments["Negative"].tolist()
 yNeut = TotalSentiments["Neutral"].tolist()
 yPos = TotalSentiments["Positive"].tolist()
 
-
 posMean = statistics.mean(yPos) / (statistics.mean(yPos) + statistics.mean(yNeut) + statistics.mean(yNeg))
 neutMean = statistics.mean(yNeut) / (statistics.mean(yPos) + statistics.mean(yNeut) + statistics.mean(yNeg))
 negMean = statistics.mean(yNeg) / (statistics.mean(yPos) + statistics.mean(yNeut) + statistics.mean(yNeg))
 
-#for i in range(0, len(x)):
-
-#    divide = yNeut[i]+yNeg[i]+yPos[i]
-#    yNeg[i] = (yNeg[i]/divide) + (0.5-negMean)
-#    yNeut[i] = (yNeut[i]/divide) + (0.5- neutMean)
-#    yPos[i] = (yPos[i]/divide)+ (0.5 - posMean)
-
-
 fig, ax = plt.subplots(figsize=(12, 7))
 negativePatch = mpatches.Patch(color='red', label='Negative')
 neutralPatch = mpatches.Patch(color='black', label='Neutral')
-#positivePatch = mpatches.Patch(color='green', label='Positive')
+# positivePatch = mpatches.Patch(color='green', label='Positive')
 
 plt.legend(loc="upper left", handles=[negativePatch, neutralPatch, positivePatch], fontsize=15)
 
 plt.title('Total Sentiments over time', fontsize=15)
 plt.xticks(rotation='vertical', fontsize=15)
-#plt.yticks(rotation='horizontal', fontsize=15)
+# plt.yticks(rotation='horizontal', fontsize=15)
 plt.yticks([])
 
 yNeg = savgol_filter(yNeg, 51, 5)  # window size 51, polynomial order 3
@@ -429,8 +320,6 @@ plt.plot(x, yPos, linewidth=2, color="green")
 
 plt.show()
 fig.savefig("data/Classifier_Evaluation/1)TotalSentiments.svg", format="svg")
-
-
 
 # For Country Count USA
 ##########
@@ -482,13 +371,13 @@ neutMean = statistics.mean(yNeut) / (statistics.mean(yPos) + statistics.mean(yNe
 negMean = statistics.mean(yNeg) / (statistics.mean(yPos) + statistics.mean(yNeut) + statistics.mean(yNeg))
 
 for i in range(0, len(x)):
+    divide = yNeut[i] + yNeg[i] + yPos[i]
+    yNeg[i] = (yNeg[i] / divide) + (0.5 - negMean)
+    yNeut[i] = (yNeut[i] / divide) + (0.5 - neutMean)
+    yPos[i] = (yPos[i] / divide) + (0.5 - posMean)
 
-    divide = yNeut[i]+yNeg[i]+yPos[i]
-    yNeg[i] = (yNeg[i]/divide) + (0.5-negMean)
-    yNeut[i] = (yNeut[i]/divide) + (0.5- neutMean)
-    yPos[i] = (yPos[i]/divide)+ (0.5 - posMean)
-    
-yINFECTIONS = [ (statistics.mean(yPos) - statistics.mean(yINFECTIONS)) +(yINFECTIONS[i]) for i in range(0, len(yINFECTIONS))]
+yINFECTIONS = [(statistics.mean(yPos) - statistics.mean(yINFECTIONS)) + (yINFECTIONS[i]) for i in
+               range(0, len(yINFECTIONS))]
 
 fig, ax = plt.subplots(figsize=(12, 7))
 negativePatch = mpatches.Patch(color='red', label='Negative')
@@ -496,12 +385,11 @@ neutralPatch = mpatches.Patch(color='black', label='Neutral')
 positivePatch = mpatches.Patch(color='green', label='Positive')
 infPatch = mpatches.Patch(color='purple', label='New Infections')
 
-
 plt.legend(loc="upper left", handles=[negativePatch, positivePatch, infPatch], fontsize=15)
 
 plt.title('Relative Sentiments over time USA', fontsize=15)
 plt.xticks(rotation='vertical', fontsize=15)
-#plt.yticks(rotation='horizontal', fontsize=15)
+# plt.yticks(rotation='horizontal', fontsize=15)
 plt.yticks([])
 
 yNeg = savgol_filter(yNeg, 51, 5)  # window size 51, polynomial order 3
@@ -511,13 +399,12 @@ yPos = savgol_filter(yPos, 51, 5)  # window size 51, polynomial order 3
 yINFECTIONS = savgol_filter(yINFECTIONS, 51, 5)  # window size 51, polynomial order 3
 plt.grid(True, which='both')
 plt.plot(x, yNeg, linewidth=2, color="red")
-#plt.plot(x, yNeut, linewidth=2, color="black")
+# plt.plot(x, yNeut, linewidth=2, color="black")
 plt.plot(x, yPos, linewidth=2, color="green")
 plt.plot(x, yINFECTIONS, linewidth=2, color="purple")
 
 plt.show()
 fig.savefig("data/Classifier_Evaluation/2)TotalSentiments_USA.svg", format="svg")
-
 
 # For Country Count Indien
 path = "data/Classifier_Evaluation/owid-covid-data.csv"
@@ -556,7 +443,6 @@ TotalSentiments = pd.merge(TotalSentiments, positives, left_index=True, right_in
 
 TotalSentiments = pd.merge(TotalSentiments, coronaMeta, left_index=True, right_index=True)
 
-
 x = TotalSentiments.index.tolist()
 yNeg = TotalSentiments["Negative"].tolist()
 yNeut = TotalSentiments["Neutral"].tolist()
@@ -569,13 +455,13 @@ neutMean = statistics.mean(yNeut) / (statistics.mean(yPos) + statistics.mean(yNe
 negMean = statistics.mean(yNeg) / (statistics.mean(yPos) + statistics.mean(yNeut) + statistics.mean(yNeg))
 
 for i in range(0, len(x)):
+    divide = yNeut[i] + yNeg[i] + yPos[i]
+    yNeg[i] = (yNeg[i] / divide) + (0.5 - negMean)
+    yNeut[i] = (yNeut[i] / divide) + (0.5 - neutMean)
+    yPos[i] = (yPos[i] / divide) + (0.5 - posMean)
 
-    divide = yNeut[i]+yNeg[i]+yPos[i]
-    yNeg[i] = (yNeg[i]/divide) + (0.5-negMean)
-    yNeut[i] = (yNeut[i]/divide) + (0.5- neutMean)
-    yPos[i] = (yPos[i]/divide)+ (0.5 - posMean)
-    
-yINFECTIONS = [ (statistics.mean(yPos) - statistics.mean(yINFECTIONS)) +(yINFECTIONS[i]) for i in range(0, len(yINFECTIONS))]
+yINFECTIONS = [(statistics.mean(yPos) - statistics.mean(yINFECTIONS)) + (yINFECTIONS[i]) for i in
+               range(0, len(yINFECTIONS))]
 
 fig, ax = plt.subplots(figsize=(12, 7))
 negativePatch = mpatches.Patch(color='red', label='Negative')
@@ -583,15 +469,12 @@ neutralPatch = mpatches.Patch(color='black', label='Neutral')
 positivePatch = mpatches.Patch(color='green', label='Positive')
 infPatch = mpatches.Patch(color='purple', label='New Infections')
 
-
 plt.legend(loc="upper left", handles=[negativePatch, positivePatch, infPatch], fontsize=15)
 
 plt.title('Relative Sentiments over time Indien', fontsize=15)
 plt.xticks(rotation='vertical', fontsize=15)
-#plt.yticks(rotation='horizontal', fontsize=15)
+# plt.yticks(rotation='horizontal', fontsize=15)
 plt.yticks([])
-
-
 
 yNeg = savgol_filter(yNeg, 43, 4)  # window size 51, polynomial order 3
 yNeut = savgol_filter(yNeut, 43, 4)  # window size 51, polynomial order 3
@@ -599,14 +482,13 @@ yPos = savgol_filter(yPos, 43, 4)  # window size 51, polynomial order 3
 yINFECTIONS = savgol_filter(yINFECTIONS, 43, 4)  # window size 51, polynomial order 3
 plt.grid(True, which='both')
 plt.plot(x, yNeg, linewidth=2, color="red")
-#plt.plot(x, yNeut, linewidth=2, color="black")
+# plt.plot(x, yNeut, linewidth=2, color="black")
 plt.plot(x, yPos, linewidth=2, color="green")
 plt.plot(x, yINFECTIONS, linewidth=2, color="purple")
 
 plt.show()
 
 fig.savefig("data/Classifier_Evaluation/3)TotalSentiments_Indien.svg", format="svg")
-
 
 # For Country Count UK
 path = "data/Classifier_Evaluation/owid-covid-data.csv"
@@ -656,13 +538,13 @@ neutMean = statistics.mean(yNeut) / (statistics.mean(yPos) + statistics.mean(yNe
 negMean = statistics.mean(yNeg) / (statistics.mean(yPos) + statistics.mean(yNeut) + statistics.mean(yNeg))
 
 for i in range(0, len(x)):
+    divide = yNeut[i] + yNeg[i] + yPos[i]
+    yNeg[i] = (yNeg[i] / divide) + (0.5 - negMean)
+    yNeut[i] = (yNeut[i] / divide) + (0.5 - neutMean)
+    yPos[i] = (yPos[i] / divide) + (0.5 - posMean)
 
-    divide = yNeut[i]+yNeg[i]+yPos[i]
-    yNeg[i] = (yNeg[i]/divide) + (0.5-negMean)
-    yNeut[i] = (yNeut[i]/divide) + (0.5- neutMean)
-    yPos[i] = (yPos[i]/divide)+ (0.5 - posMean)
-    
-yINFECTIONS = [ (statistics.mean(yPos) - statistics.mean(yINFECTIONS)) +(yINFECTIONS[i]) for i in range(0, len(yINFECTIONS))]
+yINFECTIONS = [(statistics.mean(yPos) - statistics.mean(yINFECTIONS)) + (yINFECTIONS[i]) for i in
+               range(0, len(yINFECTIONS))]
 
 fig, ax = plt.subplots(figsize=(12, 7))
 negativePatch = mpatches.Patch(color='red', label='Negative')
@@ -670,13 +552,11 @@ neutralPatch = mpatches.Patch(color='black', label='Neutral')
 positivePatch = mpatches.Patch(color='green', label='Positive')
 infPatch = mpatches.Patch(color='purple', label='New Infections')
 
-
 plt.legend(loc="upper left", handles=[negativePatch, positivePatch, infPatch], fontsize=15)
-
 
 plt.title('Relative Sentiments over time England', fontsize=15)
 plt.xticks(rotation='vertical', fontsize=15)
-#plt.yticks(rotation='horizontal', fontsize=15)
+# plt.yticks(rotation='horizontal', fontsize=15)
 plt.yticks([])
 
 yNeg = savgol_filter(yNeg, 51, 5)  # window size 51, polynomial order 3
@@ -686,7 +566,7 @@ yPos = savgol_filter(yPos, 51, 5)  # window size 51, polynomial order 3
 yINFECTIONS = savgol_filter(yINFECTIONS, 51, 5)  # window size 51, polynomial order 3
 plt.grid(True, which='both')
 plt.plot(x, yNeg, linewidth=2, color="red")
-#plt.plot(x, yNeut, linewidth=2, color="black")
+# plt.plot(x, yNeut, linewidth=2, color="black")
 plt.plot(x, yPos, linewidth=2, color="green")
 plt.plot(x, yINFECTIONS, linewidth=2, color="purple")
 
@@ -753,4 +633,3 @@ plt.plot(x, yInfections, linewidth=2, color="red")
 
 plt.show()
 fig.savefig("data/Classifier_Evaluation/5)TotalSentiments+TotalInfections.svg", format="svg")
-
