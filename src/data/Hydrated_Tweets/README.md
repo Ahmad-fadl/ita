@@ -1,4 +1,4 @@
-# Text Analytics Project
+# Hydrating Tweets
 
 This is the readme for `src/data/Hydrated_Tweets`.
 This directory should be empty at the beginning. This is where the hydrated tweets will go to.  
@@ -6,12 +6,10 @@ Due to twitters user guidlines you are not allowed to pass the original tweets, 
 This is currently managed in `ita-project/Twitter-Access.py`.  
 See main readme.
 -----------
-### Issues
-* In the extracted files is one column too much. Some tweets show text in there, like " Pub  â€” https://t.co/ndtlNUjAbi" or " LEARN CLUB https://t.co/WNDCww4mm4"  
-TODO Why / Remove them?  
+### Issues 
 * File october28_october29.csv (File 214) lead to an error: `ValueError: Length mismatch: Expected axis has 1 elements, new values have 2 elements`, pointing to line 
 `tweets_csv.columns = ["ID","Sentiment"]`. Currently handled by Exception Catch and omitting file.  
-TODO check problem, fix corrupted file(s)? 
+DONE check problem, fix corrupted file(s)
 
 -------------
 ### Number of Tweets and "Too many Requests"
@@ -27,6 +25,11 @@ Since the extraction for 880 tweets (9 batches=requests) took 20 seconds in a te
 we don't reach the rate limit anymore. We keep the delay-function and the parameter option to make use of it or not (delay=True/False), in case something changes or other systems run in better time and then get a Too Many Request Error.
 Btw: There are only daytime request limits for `/statuses/mentions_timelines` and `/statuses/user_timeline`,
 which we don't use ([source](https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/faq#:~:text=What%20are%20the%20new%20rate,auth%20and%20app%2Dauth%20requests.)).
+
+**Update:** The former extraction method cuts off tweets.  
+We have replaced it by another method (no changes in delay function was needed).  
+This method needs much more time (min 30 hours), since we cannot request in bigger batches.  
+Now, the time-delay-function is very useful again.
 
 ----------
 ### Packaging
