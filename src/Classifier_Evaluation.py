@@ -20,30 +20,12 @@ from scipy.signal import savgol_filter
 import statistics
 
 
-# Get annotated scores from the given annotation dictionary
-def getScore(dictionary):
-    try:
-        return int((dictionary["ahmad"]))
-    except:
-        pass
-    try:
-        return int((dictionary["severin"]))
-    except:
-        pass
-    try:
-        return int((dictionary["sina"]))
-    except:
-        pass
-    try:
-        return int((dictionary["ute"]))
-    except:
-        pass
-    try:
-        return int((dictionary["mean"]))
-    except:
-        pass
-    print("ERROR")
-    return dictionary
+def getScore(tweet):
+    """Return annotated score from the given annotation dictionary (for a tweet)"""
+    for member in ["ahmad", "severin", "sina", "ute", "mean"]:
+        if member in tweet:
+            return int(tweet[member])
+    raise KeyError("tweet-dict doesn't contain any of our names nor 'mean'")
 
 
 # Import annotated tweets and convert them into pandas df
