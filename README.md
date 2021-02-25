@@ -74,7 +74,9 @@ For the final evaluation we need a file containing some information and numbers 
 ### Relation to real world Covid development
 * In the file ``src/data/timeline_corona_events_csv.csv`` the main covid-related events in the US, India and the UK are listed by date of the event.
 Events of special importance are marked with 'x' and it will be checked if they show effects in twitter data, be it the number of tweets or a specific sentiment.  
-  We have collected and put together the data by ourselfs, using these sources: https://www.ajmc.com/view/a-timeline-of-covid19-developments-in-2020,,https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_India_(January%E2%80%93May_2020),,https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_England_(2020),
+  We have collected and put together the data by ourselfs, using these sources: https://www.ajmc.com/view/a-timeline-of-covid19-developments-in-2020,
+https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_India_(January%E2%80%93May_2020),
+https://en.wikipedia.org/wiki/Timeline_of_the_COVID-19_pandemic_in_England_(2020),
 https://timesofindia.indiatimes.com/india/coronavirus-india-timeline/articleshow/80030867.cms
 
 
